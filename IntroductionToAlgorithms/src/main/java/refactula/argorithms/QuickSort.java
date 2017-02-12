@@ -4,6 +4,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class QuickSort {
 
+    public static final SortingAlgorithm ALGORITHM = QuickSort::sort;
+
     public static void sort(int[] a) {
         sort(a, 0, a.length - 1);
     }

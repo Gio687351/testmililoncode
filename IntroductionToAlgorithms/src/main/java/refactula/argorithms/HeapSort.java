@@ -2,6 +2,8 @@ package refactula.argorithms;
 
 public class HeapSort {
 
+    public static final SortingAlgorithm ALGORITHM = HeapSort::sort;
+
     public static void sort(int[] a) {
         for (int i = a.length / 2; i >= 0; i--) {
             heapify(a, i, a.length);

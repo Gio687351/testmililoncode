@@ -2,6 +2,8 @@ package refactula.argorithms;
 
 public class InsertionSort {
 
+    public static final SortingAlgorithm ALGORITHM = InsertionSort::sort;
+
     public static void sort(int[] a) {
         for (int i = 1; i < a.length; i++) {
             int c = a[i];
