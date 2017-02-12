@@ -1,12 +1,13 @@
 package refactula.argorithms;
 
 import refactula.argorithms.sorting.QuickSort;
+import refactula.argorithms.sorting.SortingAlgorithm;
 
 public class QuickSortTest extends AbstractSortTest {
 
     @Override
-    protected void sort(int[] a) {
-        QuickSort.sort(a);
+    protected SortingAlgorithm getAlgorithm() {
+        return QuickSort.ALGORITHM;
     }
 
 }

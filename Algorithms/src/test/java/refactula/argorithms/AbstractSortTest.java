@@ -1,19 +1,28 @@
 package refactula.argorithms;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
+import refactula.argorithms.sorting.SortingAlgorithm;
 
 import java.util.Arrays;
 import java.util.Random;
 
 public abstract class AbstractSortTest {
 
-    protected abstract void sort(int[] a);
+    private SortingAlgorithm algorithm;
+
+    @Before
+    public void setUp() {
+        algorithm = getAlgorithm();
+    }
+
+    protected abstract SortingAlgorithm getAlgorithm();
 
     protected void test(int... a) {
         int[] copy = Arrays.copyOf(a, a.length);
         Arrays.sort(copy);
-        sort(a);
+        algorithm.sort(a);
         Assert.assertArrayEquals(copy, a);
     }
 
