@@ -33,18 +33,13 @@ public abstract class AbstractSortTest {
     }
 
     @Test
-    public void testSorted5() {
-        test(1, 0, -1);
-    }
-
-    @Test
     public void testRandom() {
         Random r = new Random(7515353);
         for (int i = 0; i < 10000; i++) {
-            int n = r.nextInt(20);
+            int n = r.nextInt(100);
             int[] a = new int[n];
             for (int j = 0; j < n; j++) {
-                a[j] = r.nextInt(100) - 50;
+                a[j] = r.nextInt(100000);
             }
             test(a);
         }
