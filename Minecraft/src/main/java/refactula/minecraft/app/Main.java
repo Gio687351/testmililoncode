@@ -1,12 +1,9 @@
 package refactula.minecraft.app;
 
-import com.google.common.collect.ImmutableList;
 import refactula.minecraft.Block;
-import refactula.minecraft.Blocks;
 import refactula.minecraft.Chunk;
 import refactula.minecraft.ChunkPosition;
 import refactula.minecraft.FlatMapGenerator;
-import refactula.minecraft.RandomGenerator;
 import refactula.minecraft.World;
 
 import javax.swing.JComponent;
@@ -15,31 +12,27 @@ import javax.swing.WindowConstants;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-        RandomGenerator randomGenerator = new RandomGenerator(
-                new Random(),
-                ImmutableList.copyOf(Blocks.values()));
         World world = new World(16, 100, 16, new FlatMapGenerator());
         Chunk chunk = world.getChunk(new ChunkPosition(10, 10));
 
-        int scale = 3;
-        int xSize = 2;
-        int ySize = 2;
-        int zSize = 1;
+        int viewScale = 3;
+        int scaleX = 2;
+        int scaleY = 2;
+        int scaleZ = 1;
         JComponent canvas = new JComponent() {
             @Override
             protected void paintComponent(Graphics graphics) {
                 super.paintComponent(graphics);
                 Graphics2D g = (Graphics2D) graphics;
-                g.scale(scale, scale);
-                int width = getWidth() / scale;
-                int height = getHeight() / scale;
-                int drawingHeight = chunk.getHeight() * ySize + chunk.getWidthZ() * zSize;
-                int drawingWidth = chunk.getWidthX() * xSize + chunk.getWidthZ() * zSize;
+                g.scale(viewScale, viewScale);
+                int width = getWidth() / viewScale;
+                int height = getHeight() / viewScale;
+                int drawingHeight = chunk.getHeight() * scaleY + chunk.getWidthZ() * scaleZ;
+                int drawingWidth = chunk.getWidthX() * scaleX + chunk.getWidthZ() * scaleZ;
                 int offsetX = (width - drawingWidth) / 2;
                 int offsetY = (height - drawingHeight) / 2;
 
@@ -49,18 +42,18 @@ public class Main {
                             Block block = chunk.get(x, y, z);
                             g.setColor(block.getColor());
                             g.fillRect(
-                                    offsetX + x * xSize + z * zSize,
-                                    height - (offsetY + chunk.getWidthZ() + y * ySize - z * zSize),
-                                    xSize,
-                                    ySize);
+                                    offsetX + x * scaleX + z * scaleZ,
+                                    height - (offsetY + chunk.getWidthZ() + y * scaleY - z * scaleZ),
+                                    scaleX,
+                                    scaleY);
                         }
                     }
                 }
             }
         };
         canvas.setPreferredSize(new Dimension(
-                (chunk.getWidthX() * xSize + 50) * scale,
-                (chunk.getHeight() * ySize + 50) * scale));
+                (chunk.getWidthX() * scaleX + 50) * viewScale,
+                (chunk.getHeight() * scaleY + 50) * viewScale));
 
         JFrame frame = new JFrame();
         frame.add(canvas);
