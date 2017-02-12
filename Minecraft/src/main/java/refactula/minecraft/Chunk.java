@@ -21,6 +21,18 @@ public class Chunk {
         }
     }
 
+    public int getWidthX() {
+        return widthX;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidthZ() {
+        return widthZ;
+    }
+
     public Block get(int x, int y, int z) {
         return blocks[x][y][z];
     }
