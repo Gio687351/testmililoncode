@@ -1,6 +1,7 @@
 package refactula.argorithms;
 
 import org.junit.Before;
+import refactula.argorithms.sorting.RadixSort;
 
 public class RadixSortTest extends AbstractSortTest {
 

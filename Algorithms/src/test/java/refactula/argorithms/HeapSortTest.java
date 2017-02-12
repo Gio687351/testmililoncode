@@ -1,5 +1,7 @@
 package refactula.argorithms;
 
+import refactula.argorithms.sorting.HeapSort;
+
 public class HeapSortTest extends AbstractSortTest {
 
     @Override

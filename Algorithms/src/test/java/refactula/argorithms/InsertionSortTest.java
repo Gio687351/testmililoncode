@@ -1,5 +1,7 @@
 package refactula.argorithms;
 
+import refactula.argorithms.sorting.InsertionSort;
+
 public class InsertionSortTest extends AbstractSortTest {
 
     @Override

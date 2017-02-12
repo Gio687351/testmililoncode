@@ -1,4 +1,4 @@
-package refactula.argorithms;
+package refactula.argorithms.sorting;
 
 import java.util.Arrays;
 
