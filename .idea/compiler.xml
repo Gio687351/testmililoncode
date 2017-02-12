@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Algorithms" />
+        <module name="Codeforces" />
         <module name="IntroductionToAlgorithms" />
         <module name="Lambdas" />
         <module name="Minecraft" />
@@ -16,6 +17,7 @@
     <bytecodeTargetLevel>
       <module name="1MLoC" target="1.8" />
       <module name="Algorithms" target="1.8" />
+      <module name="Codeforces" target="1.8" />
       <module name="IntroductionToAlgorithms" target="1.8" />
       <module name="Lambdas" target="1.8" />
       <module name="Minecraft" target="1.8" />
