@@ -16,6 +16,14 @@ public class Grid {
         }
     }
 
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
     public Cell get(int x, int y) {
         return cells[x][y];
     }
