@@ -13,6 +13,7 @@
         <module>Algorithms</module>
         <module>Lambdas</module>
         <module>Codeforces</module>
+        <module>Snake</module>
     </modules>
 
     <dependencies>
