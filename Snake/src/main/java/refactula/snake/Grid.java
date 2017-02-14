@@ -11,7 +11,7 @@ public class Grid {
         this.cells = new Cell[width][height];
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                cells[x][y] = Cell.EMPTY;
+                cells[x][y] = EmptyCell.INSTANCE;
             }
         }
     }

@@ -13,9 +13,9 @@ public class Snake {
         grid = new Grid(width, height);
         ThreadLocalRandom random = ThreadLocalRandom.current();
         for (int i = 0; i < Math.min(width, height); i++) {
-            grid.set(random.nextInt(width), random.nextInt(height), Cell.SNAKE);
+            grid.set(random.nextInt(width), random.nextInt(height), SnakeCell.DOWN);
         }
-        grid.set(random.nextInt(width), random.nextInt(height), Cell.RABBIT);
+        grid.set(random.nextInt(width), random.nextInt(height), RabbitCell.INSTANCE);
     }
 
     @Override

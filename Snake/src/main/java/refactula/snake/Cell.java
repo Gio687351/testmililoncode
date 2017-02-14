@@ -3,43 +3,7 @@ package refactula.snake;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
-public enum Cell {
-
-    EMPTY {
-        @Override
-        public char getChar() {
-            return '.';
-        }
-
-        @Override
-        protected void doPaint(Graphics2D g, int x, int y, int width, int height) {
-            g.drawRect(x, y, width, height);
-        }
-    },
-
-    RABBIT {
-        @Override
-        public char getChar() {
-            return 'R';
-        }
-
-        @Override
-        protected void doPaint(Graphics2D g, int x, int y, int width, int height) {
-            g.fillRect(x, y, width, height);
-        }
-    },
-
-    SNAKE {
-        @Override
-        public char getChar() {
-            return '#';
-        }
-
-        @Override
-        protected void doPaint(Graphics2D g, int x, int y, int width, int height) {
-            g.fillRect(x, y, width, height);
-        }
-    };
+public abstract class Cell {
 
     public abstract char getChar();
 
