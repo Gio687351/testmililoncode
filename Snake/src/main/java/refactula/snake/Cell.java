@@ -1,19 +1,35 @@
 package refactula.snake;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
+import com.google.common.base.Objects;
 
-public abstract class Cell {
+public final class Cell {
+    private final int column;
+    private final int row;
 
-    public abstract char getChar();
-
-    public final void paint(Graphics2D g, int x, int y, int width, int height) {
-        g.setColor(Color.BLACK);
-        int insideWidth = width * 8 / 10;
-        int insideHeight = height * 8 / 10;
-        doPaint(g, x + (width - insideWidth) / 2, y + (height - insideHeight) / 2, insideWidth, insideHeight);
+    public Cell(int column, int row) {
+        this.column = column;
+        this.row = row;
     }
 
-    protected abstract void doPaint(Graphics2D g, int x, int y, int width, int height);
-    
+    public int getColumn() {
+        return column;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cell cell = (Cell) o;
+        return column == cell.column &&
+                row == cell.row;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(column, row);
+    }
 }

@@ -1,49 +1,56 @@
 package refactula.snake;
 
-import java.awt.Graphics2D;
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.LinkedList;
 
 public class Snake {
-    public static final int CELL_WIDTH_PX = 50;
-    public static final int CELL_HEIGHT_PX = 50;
+    private final SnakeGameConfig config;
+    private final LinkedList<Cell> cells;
+    private MoveDirection moveDirection;
 
-    private Grid grid;
+    public Snake(SnakeGameConfig config) {
+        cells = new LinkedList<>(config.getInitialSnakeCells());
+        moveDirection = config.getInitialSnakeMoveDirection();
+        this.config = config;
+    }
 
-    public Snake(int width, int height) {
-        grid = new Grid(width, height);
-        ThreadLocalRandom random = ThreadLocalRandom.current();
-        for (int i = 0; i < Math.min(width, height); i++) {
-            grid.set(random.nextInt(width), random.nextInt(height), SnakeCell.DOWN);
+    public void move(Cell nextCell, CellType nextCellType) {
+        if (nextCellType == CellType.SNAKE) {
+            return;
         }
-        grid.set(random.nextInt(width), random.nextInt(height), RabbitCell.INSTANCE);
+        cells.add(nextCell);
+        if (nextCellType == CellType.EMPTY) {
+            cells.pollFirst();
+        }
     }
 
-    @Override
-    public String toString() {
-        return grid.toString();
+    public Cell getNextCell() {
+        return getNextCell(moveDirection);
     }
 
-    public int getWidth() {
-        return grid.getWidth();
+    private Cell getNextCell(MoveDirection moveDirection) {
+        return new Cell(
+                (cells.getLast().getColumn() + moveDirection.deltaColumn() + config.columns()) % config.columns(),
+                (cells.getLast().getRow() + moveDirection.deltaRow() + config.rows()) % config.rows());
     }
 
-    public int getHeight() {
-        return grid.getHeight();
+    public void setMoveDirection(MoveDirection direction) {
+        if (canMove(direction)) {
+            this.moveDirection = direction;
+        }
     }
 
-    public int getCanvasWidth() {
-        return CELL_HEIGHT_PX * getWidth();
+    public boolean canMove(MoveDirection moveDirection) {
+        Cell cell = getNextCell(moveDirection);
+        return cells.size() < 2 || !cells.get(cells.size() - 2).equals(cell);
     }
 
-    public int getCanvasHeight() {
-        return CELL_WIDTH_PX * getHeight();
+    public boolean contains(Cell cell) {
+        return cells.contains(cell);
     }
 
-    public void paint(Graphics2D g) {
-        for (int x = 0; x < getWidth(); x++) {
-            for (int y = 0; y < getHeight(); y++) {
-                grid.get(x, y).paint(g, x * CELL_WIDTH_PX, y * CELL_HEIGHT_PX, CELL_WIDTH_PX, CELL_HEIGHT_PX);
-            }
+    public void draw(Painter painter) {
+        for (Cell cell : cells) {
+            painter.fill(cell.getColumn(), cell.getRow());
         }
     }
 }
