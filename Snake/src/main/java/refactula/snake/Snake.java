@@ -1,26 +1,35 @@
 package refactula.snake;
 
+import com.google.common.base.Preconditions;
+
 import java.util.LinkedList;
 
 public class Snake {
-    private final SnakeGameConfig config;
+    private final GameConfig config;
     private final LinkedList<Cell> cells;
     private MoveDirection moveDirection;
+    private boolean isStuck = false;
 
-    public Snake(SnakeGameConfig config) {
-        cells = new LinkedList<>(config.getInitialSnakeCells());
-        moveDirection = config.getInitialSnakeMoveDirection();
+    public Snake(GameConfig config) {
+        this.cells = new LinkedList<>(config.getInitialSnakeCells());
+        this.moveDirection = config.getInitialSnakeMoveDirection();
         this.config = config;
     }
 
     public void move(Cell nextCell, CellType nextCellType) {
+        Preconditions.checkState(!isStuck, "snake is stuck");
         if (nextCellType == CellType.SNAKE) {
+            isStuck = true;
             return;
         }
         cells.add(nextCell);
         if (nextCellType == CellType.EMPTY) {
             cells.pollFirst();
         }
+    }
+
+    public boolean isStuck() {
+        return isStuck;
     }
 
     public Cell getNextCell() {
@@ -35,7 +44,7 @@ public class Snake {
 
     public void setMoveDirection(MoveDirection direction) {
         if (canMove(direction)) {
-            this.moveDirection = direction;
+            moveDirection = direction;
         }
     }
 

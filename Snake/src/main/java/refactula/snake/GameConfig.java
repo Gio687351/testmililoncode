@@ -5,28 +5,22 @@ import com.google.common.collect.ImmutableList;
 
 import java.util.List;
 
-public class SnakeGameConfig {
+public class GameConfig {
     private final int columns;
     private final int rows;
     private final ImmutableList<Cell> initialSnakeCells;
     private final MoveDirection initialSnakeMoveDirection;
-    private final int initialRabbitColumn;
-    private final int initialRabbitRow;
 
-    private SnakeGameConfig(
+    private GameConfig(
             int columns,
             int rows,
             ImmutableList<Cell> initialSnakeCells,
-            MoveDirection initialSnakeMoveDirection,
-            int initialRabbitColumn,
-            int initialRabbitRow) {
+            MoveDirection initialSnakeMoveDirection) {
 
         this.columns = columns;
         this.rows = rows;
         this.initialSnakeCells = initialSnakeCells;
         this.initialSnakeMoveDirection = initialSnakeMoveDirection;
-        this.initialRabbitColumn = initialRabbitColumn;
-        this.initialRabbitRow = initialRabbitRow;
     }
 
     public int columns() {
@@ -45,14 +39,6 @@ public class SnakeGameConfig {
         return initialSnakeMoveDirection;
     }
 
-    public int getInitialRabbitColumn() {
-        return initialRabbitColumn;
-    }
-
-    public int getInitialRabbitRow() {
-        return initialRabbitRow;
-    }
-
     public static Builder builder() {
         return new Builder();
     }
@@ -62,8 +48,6 @@ public class SnakeGameConfig {
         private Integer rows;
         private ImmutableList<Cell> initialSnakeCells;
         private MoveDirection initialSnakeMoveDirection;
-        private Integer initialRabbitColumn;
-        private Integer initialRabbitRow;
 
         private Builder() {}
 
@@ -87,24 +71,12 @@ public class SnakeGameConfig {
             return this;
         }
 
-        public Builder setInitialRabbitColumn(Integer initialRabbitColumn) {
-            this.initialRabbitColumn = initialRabbitColumn;
-            return this;
-        }
-
-        public Builder setInitialRabbitRow(Integer initialRabbitRow) {
-            this.initialRabbitRow = initialRabbitRow;
-            return this;
-        }
-
-        public SnakeGameConfig build() {
-            return new SnakeGameConfig(
+        public GameConfig build() {
+            return new GameConfig(
                     Preconditions.checkNotNull(columns),
                     Preconditions.checkNotNull(rows),
                     Preconditions.checkNotNull(initialSnakeCells),
-                    Preconditions.checkNotNull(initialSnakeMoveDirection),
-                    Preconditions.checkNotNull(initialRabbitColumn),
-                    Preconditions.checkNotNull(initialRabbitRow));
+                    Preconditions.checkNotNull(initialSnakeMoveDirection));
         }
     }
 }

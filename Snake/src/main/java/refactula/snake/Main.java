@@ -11,13 +11,14 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.Random;
 
 public class Main {
 
     public static void main(String[] args) {
-        SnakeGameConfig snakeGameConfig = SnakeGameConfig.builder()
-                .setColumns(10)
-                .setRows(10)
+        GameConfig gameConfig = GameConfig.builder()
+                .setColumns(20)
+                .setRows(20)
                 .setInitialSnakeCells(ImmutableList.of(
                         new Cell(0, 0),
                         new Cell(1, 0),
@@ -25,18 +26,16 @@ public class Main {
                         new Cell(2, 1),
                         new Cell(3, 1)))
                 .setInitialSnakeMoveDirection(MoveDirection.RIGHT)
-                .setInitialRabbitColumn(9)
-                .setInitialRabbitRow(6)
                 .build();
 
         Object lock = new Object();
-        SnakeBoard snakeBoard = new SnakeBoard(snakeGameConfig, new Snake(snakeGameConfig), new Rabbit(snakeGameConfig));
+        GameBoard gameBoard = new GameBoard(gameConfig, new Random(), new Snake(gameConfig), new Rabbit());
 
-        SnakeViewConfig viewConfig = SnakeViewConfig.builder()
-                .setColumns(snakeGameConfig.columns())
-                .setRows(snakeGameConfig.rows())
-                .setCellWidthPx(40)
-                .setCellHeightPx(40)
+        ViewConfig viewConfig = ViewConfig.builder()
+                .setColumns(gameConfig.columns())
+                .setRows(gameConfig.rows())
+                .setCellWidthPx(20)
+                .setCellHeightPx(20)
                 .setBackgroundColor(Color.YELLOW)
                 .setColor(Color.BLACK)
                 .build();
@@ -50,7 +49,7 @@ public class Main {
                 g.clearRect(0, 0, getWidth(), getHeight());
                 DesktopPainter painter = new DesktopPainter(viewConfig, g);
                 synchronized (lock) {
-                    snakeBoard.draw(painter);
+                    gameBoard.draw(painter);
                 }
             }
         };
@@ -77,7 +76,7 @@ public class Main {
                 }
                 if (newDirection != null) {
                     synchronized (lock) {
-                        snakeBoard.setSnakeDirection(newDirection);
+                        gameBoard.setSnakeDirection(newDirection);
                     }
                 }
             }
@@ -92,9 +91,9 @@ public class Main {
 
         try {
             while (true) {
-                Thread.sleep(200);
+                Thread.sleep(100);
                 synchronized (lock) {
-                    snakeBoard.moveSnake();
+                    gameBoard.moveSnake();
                 }
                 frame.repaint();
             }

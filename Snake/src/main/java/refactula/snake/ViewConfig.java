@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 
 import java.awt.Color;
 
-public class SnakeViewConfig {
+public class ViewConfig {
     private final int columns;
     private final int rows;
     private final int cellWidthPx;
@@ -12,7 +12,7 @@ public class SnakeViewConfig {
     private final Color backgroundColor;
     private final Color color;
 
-    public SnakeViewConfig(
+    public ViewConfig(
             int columns,
             int rows,
             int cellWidthPx,
@@ -105,8 +105,8 @@ public class SnakeViewConfig {
             return this;
         }
 
-        public SnakeViewConfig build() {
-            return new SnakeViewConfig(
+        public ViewConfig build() {
+            return new ViewConfig(
                     Preconditions.checkNotNull(columns),
                     Preconditions.checkNotNull(rows),
                     Preconditions.checkNotNull(cellWidthPx),

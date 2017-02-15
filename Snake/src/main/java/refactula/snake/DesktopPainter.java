@@ -3,10 +3,10 @@ package refactula.snake;
 import java.awt.Graphics2D;
 
 public class DesktopPainter implements Painter {
-    private final SnakeViewConfig config;
+    private final ViewConfig config;
     private final Graphics2D graphics;
 
-    public DesktopPainter(SnakeViewConfig config, Graphics2D graphics) {
+    public DesktopPainter(ViewConfig config, Graphics2D graphics) {
         this.config = config;
         this.graphics = graphics;
     }
