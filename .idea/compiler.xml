@@ -11,6 +11,7 @@
         <module name="IntroductionToAlgorithms" />
         <module name="Lambdas" />
         <module name="Minecraft" />
+        <module name="Minesweeper" />
         <module name="omloc-algorithms" />
         <module name="Snake" />
       </profile>
@@ -22,6 +23,7 @@
       <module name="IntroductionToAlgorithms" target="1.8" />
       <module name="Lambdas" target="1.8" />
       <module name="Minecraft" target="1.8" />
+      <module name="Minesweeper" target="1.8" />
       <module name="omloc-algorithms" target="1.8" />
       <module name="Snake" target="1.8" />
     </bytecodeTargetLevel>

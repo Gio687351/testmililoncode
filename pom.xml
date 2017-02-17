@@ -14,6 +14,7 @@
         <module>Lambdas</module>
         <module>Codeforces</module>
         <module>Snake</module>
+        <module>Minesweeper</module>
     </modules>
 
     <dependencies>
