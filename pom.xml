@@ -15,6 +15,7 @@
         <module>Codeforces</module>
         <module>Snake</module>
         <module>Minesweeper</module>
+        <module>Functional</module>
     </modules>
 
     <dependencies>
