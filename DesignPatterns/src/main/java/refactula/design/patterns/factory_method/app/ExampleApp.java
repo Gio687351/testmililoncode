@@ -12,9 +12,13 @@ public class ExampleApp {
 
     public static void main(String[] args) throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+
         System.out.print("Are we going graphical? (y/n): ");
         String choice = in.readLine();
-        AlertFactoryMethod factory = choice.equalsIgnoreCase("y") ? SwingAlertFactoryMethod.INSTANCE : ConsoleAlertFactoryMethod.INSTANCE;
+        AlertFactoryMethod factory = choice.equalsIgnoreCase("y")
+                ? SwingAlertFactoryMethod.INSTANCE
+                : ConsoleAlertFactoryMethod.INSTANCE;
+
         System.out.print("Enter a message to the world: ");
         String message = in.readLine();
         factory.createAlert(message).show();
