@@ -13,7 +13,7 @@ public class StorageFactory {
     private StorageFactory() { /* private constructor */}
 
     public static Storage createForgetful() {
-        return ForgetfulStorage.INTANCE;
+        return ForgetfulStorage.INSTANCE;
     }
 
     public static Storage createInMemory() {
