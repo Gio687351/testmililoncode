@@ -1,6 +1,6 @@
-package refactula.design.patterns.abstract_factory.console;
+package refactula.design.patterns.factory_method.console;
 
-import refactula.design.patterns.abstract_factory.Alert;
+import refactula.design.patterns.factory_method.Alert;
 
 public class ConsoleAlert implements Alert {
     private final String message;

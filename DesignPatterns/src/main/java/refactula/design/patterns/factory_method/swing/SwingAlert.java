@@ -1,6 +1,6 @@
-package refactula.design.patterns.abstract_factory.swing;
+package refactula.design.patterns.factory_method.swing;
 
-import refactula.design.patterns.abstract_factory.Alert;
+import refactula.design.patterns.factory_method.Alert;
 
 import javax.swing.JOptionPane;
 
