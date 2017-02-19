@@ -1,13 +1,15 @@
 package refactula.design.patterns.singleton;
 
 /**
+ * A general Logger interface.
+ *
  * @see EmptyLogger EmptyLogger - a singleton implementation of this interface
  */
 public interface Logger {
-    void error(String s);
-    void warn(String s);
-    void info(String s);
-    void debug(String s);
-    void trace(String s);
-    void error(String s, Throwable throwable);
+    void error(String message);
+    void warn(String message);
+    void info(String message);
+    void debug(String message);
+    void trace(String message);
+    void error(String message, Throwable throwable);
 }

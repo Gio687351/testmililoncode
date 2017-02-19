@@ -1,7 +1,9 @@
 package refactula.design.patterns.singleton;
 
 /**
- * A perfect usage of Singleton pattern:
+ * Logger implementation that does nothing.
+ *
+ * <p>A perfect Singleton example:
  * <ul>
  * <li> uniqueness is guaranteed by enum constant guarantees
  * <li> the instance is a stateless interface implementation,
@@ -12,11 +14,11 @@ package refactula.design.patterns.singleton;
 public enum EmptyLogger implements Logger {
     INSTANCE;
 
-    @Override public void error(String s) { /* do nothing */ }
-    @Override public void warn(String s) { /* do nothing */ }
-    @Override public void info(String s) { /* do nothing */ }
-    @Override public void debug(String s) { /* do nothing */ }
-    @Override public void trace(String s) { /* do nothing */ }
-    @Override public void error(String s, Throwable throwable) { /* do nothing */ }
+    @Override public void error(String message) { /* do nothing */ }
+    @Override public void warn(String message) { /* do nothing */ }
+    @Override public void info(String message) { /* do nothing */ }
+    @Override public void debug(String message) { /* do nothing */ }
+    @Override public void trace(String message) { /* do nothing */ }
+    @Override public void error(String message, Throwable throwable) { /* do nothing */ }
 }
 
