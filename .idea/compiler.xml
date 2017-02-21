@@ -15,6 +15,7 @@
         <module name="Minecraft" />
         <module name="Minesweeper" />
         <module name="omloc-algorithms" />
+        <module name="ProgressBar" />
         <module name="Snake" />
       </profile>
     </annotationProcessing>
@@ -29,6 +30,7 @@
       <module name="Minecraft" target="1.8" />
       <module name="Minesweeper" target="1.8" />
       <module name="omloc-algorithms" target="1.8" />
+      <module name="ProgressBar" target="1.8" />
       <module name="Snake" target="1.8" />
     </bytecodeTargetLevel>
   </component>

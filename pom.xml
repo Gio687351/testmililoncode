@@ -17,6 +17,7 @@
         <module>Minesweeper</module>
         <module>Functional</module>
         <module>DesignPatterns</module>
+        <module>ProgressBar</module>
     </modules>
 
     <dependencies>
