@@ -17,7 +17,7 @@ public class FileIO {
         try {
             Files.write(file.toPath(), stringConverter.getBytes(content));
         } catch (IOException e) {
-            throw exceptionFactory.throwBecause("Failed to write to file", e);
+            throw exceptionFactory.throwBecause("Failed to print to file", e);
         }
     }
 
