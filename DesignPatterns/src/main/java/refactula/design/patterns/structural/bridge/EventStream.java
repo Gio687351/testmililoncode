@@ -1,4 +1,4 @@
-package refactula.design.patterns.structual.bridge;
+package refactula.design.patterns.structural.bridge;
 
 /**
  * Represents <i>abstraction</i> in Bridge design pattern, decoupled from implementation.

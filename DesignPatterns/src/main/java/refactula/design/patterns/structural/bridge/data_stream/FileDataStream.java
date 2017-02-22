@@ -1,6 +1,6 @@
-package refactula.design.patterns.structual.bridge.data_stream;
+package refactula.design.patterns.structural.bridge.data_stream;
 
-import refactula.design.patterns.structual.bridge.DataStream;
+import refactula.design.patterns.structural.bridge.DataStream;
 
 import java.io.File;
 import java.io.IOException;

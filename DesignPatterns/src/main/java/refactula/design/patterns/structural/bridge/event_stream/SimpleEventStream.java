@@ -1,7 +1,7 @@
-package refactula.design.patterns.structual.bridge.event_stream;
+package refactula.design.patterns.structural.bridge.event_stream;
 
-import refactula.design.patterns.structual.bridge.DataStream;
-import refactula.design.patterns.structual.bridge.EventStream;
+import refactula.design.patterns.structural.bridge.DataStream;
+import refactula.design.patterns.structural.bridge.EventStream;
 
 import java.nio.charset.StandardCharsets;
 

@@ -1,4 +1,4 @@
-package refactula.design.patterns.structual.bridge;
+package refactula.design.patterns.structural.bridge;
 
 /**
  * Represents <i>implementation</i> in Bridge design pattern, independent of abstraction.

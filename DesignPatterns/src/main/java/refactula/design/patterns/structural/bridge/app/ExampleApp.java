@@ -1,9 +1,9 @@
-package refactula.design.patterns.structual.bridge.app;
+package refactula.design.patterns.structural.bridge.app;
 
-import refactula.design.patterns.structual.bridge.EventStream;
-import refactula.design.patterns.structual.bridge.data_stream.OutputDataStream;
-import refactula.design.patterns.structual.bridge.event_stream.AsyncEventStream;
-import refactula.design.patterns.structual.bridge.event_stream.SimpleEventStream;
+import refactula.design.patterns.structural.bridge.EventStream;
+import refactula.design.patterns.structural.bridge.data_stream.OutputDataStream;
+import refactula.design.patterns.structural.bridge.event_stream.AsyncEventStream;
+import refactula.design.patterns.structural.bridge.event_stream.SimpleEventStream;
 
 public class ExampleApp {
 

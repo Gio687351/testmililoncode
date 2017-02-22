@@ -1,11 +1,11 @@
-package refactula.design.patterns.structual.bridge;
+package refactula.design.patterns.structural.bridge;
 
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
-import refactula.design.patterns.structual.bridge.data_stream.FileDataStream;
-import refactula.design.patterns.structual.bridge.data_stream.OutputDataStream;
-import refactula.design.patterns.structual.bridge.event_stream.AsyncEventStream;
-import refactula.design.patterns.structual.bridge.event_stream.SimpleEventStream;
+import refactula.design.patterns.structural.bridge.data_stream.FileDataStream;
+import refactula.design.patterns.structural.bridge.data_stream.OutputDataStream;
+import refactula.design.patterns.structural.bridge.event_stream.AsyncEventStream;
+import refactula.design.patterns.structural.bridge.event_stream.SimpleEventStream;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
