@@ -1,4 +1,4 @@
-package refactula.design.patterns.structural.composite;
+package refactula.design.patterns.structural.composite.writer;
 
 import java.io.PrintWriter;
 
@@ -23,10 +23,6 @@ public class JsonWriter {
 
     public void delimitPairKeyAndValue() {
         printWriter.print(":");
-    }
-
-    public void writePairKey(String key) {
-        writeStringValue(key);
     }
 
     public void writeStringValue(String value) {

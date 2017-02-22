@@ -1,10 +1,16 @@
 package refactula.design.patterns.structural.composite;
 
-public class JsonBooleanValue implements JsonValue {
+import refactula.design.patterns.structural.composite.writer.JsonWriter;
+
+public class JsonBoolean implements JsonValue {
     private final boolean value;
 
-    public JsonBooleanValue(boolean value) {
+    public JsonBoolean(boolean value) {
         this.value = value;
+    }
+
+    public boolean get() {
+        return value;
     }
 
     @Override

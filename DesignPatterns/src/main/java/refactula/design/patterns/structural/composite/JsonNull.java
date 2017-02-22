@@ -1,6 +1,8 @@
 package refactula.design.patterns.structural.composite;
 
-public class JsonNullValue implements JsonValue {
+import refactula.design.patterns.structural.composite.writer.JsonWriter;
+
+public class JsonNull implements JsonValue {
     @Override
     public void write(JsonWriter jsonWriter) {
         jsonWriter.writeNull();
