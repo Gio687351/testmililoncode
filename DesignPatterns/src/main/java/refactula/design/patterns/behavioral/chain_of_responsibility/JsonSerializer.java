@@ -1,23 +1,21 @@
-package refactula.design.patterns.structural.chain_of_responsibility;
+package refactula.design.patterns.behavioral.chain_of_responsibility;
 
-import refactula.design.patterns.structural.chain_of_responsibility.value_serializer.JsonArraySerializer;
-import refactula.design.patterns.structural.chain_of_responsibility.value_serializer.JsonBooleanSerializer;
-import refactula.design.patterns.structural.chain_of_responsibility.value_serializer.JsonDoubleSerializer;
-import refactula.design.patterns.structural.chain_of_responsibility.value_serializer.JsonIntSerializer;
-import refactula.design.patterns.structural.chain_of_responsibility.value_serializer.JsonNullSerializer;
-import refactula.design.patterns.structural.chain_of_responsibility.value_serializer.JsonObjectSerializer;
-import refactula.design.patterns.structural.chain_of_responsibility.value_serializer.JsonStringSerializer;
-import refactula.design.patterns.structural.chain_of_responsibility.value_serializer.JsonValueSerializer;
+import refactula.design.patterns.behavioral.chain_of_responsibility.value_serializer.JsonArraySerializer;
+import refactula.design.patterns.behavioral.chain_of_responsibility.value_serializer.JsonBooleanSerializer;
+import refactula.design.patterns.behavioral.chain_of_responsibility.value_serializer.JsonDoubleSerializer;
+import refactula.design.patterns.behavioral.chain_of_responsibility.value_serializer.JsonIntSerializer;
+import refactula.design.patterns.behavioral.chain_of_responsibility.value_serializer.JsonNullSerializer;
+import refactula.design.patterns.behavioral.chain_of_responsibility.value_serializer.JsonObjectSerializer;
+import refactula.design.patterns.behavioral.chain_of_responsibility.value_serializer.JsonStringSerializer;
+import refactula.design.patterns.behavioral.chain_of_responsibility.value_serializer.JsonValueSerializer;
+import refactula.design.patterns.behavioral.chain_of_responsibility.value_serializer.UnknownValueSerializer;
 import refactula.design.patterns.structural.composite.JsonValue;
 
 public class JsonSerializer {
     private final JsonValueSerializer valueSerializer;
 
     public static JsonSerializer create() {
-        JsonValueSerializer unitSerializer = (root, builder, jsonValue) -> {
-            throw new RuntimeException("Unknown value: " + jsonValue);
-        };
-        return compose(unitSerializer,
+        return compose(new UnknownValueSerializer(),
                 JsonArraySerializer::new,
                 JsonBooleanSerializer::new,
                 JsonDoubleSerializer::new,

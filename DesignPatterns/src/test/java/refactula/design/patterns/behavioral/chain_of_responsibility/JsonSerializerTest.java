@@ -1,4 +1,4 @@
-package refactula.design.patterns.structural.chain_of_responsibility;
+package refactula.design.patterns.behavioral.chain_of_responsibility;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;

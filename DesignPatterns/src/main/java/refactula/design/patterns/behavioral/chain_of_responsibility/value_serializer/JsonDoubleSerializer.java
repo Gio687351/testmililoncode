@@ -1,4 +1,4 @@
-package refactula.design.patterns.structural.chain_of_responsibility.value_serializer;
+package refactula.design.patterns.behavioral.chain_of_responsibility.value_serializer;
 
 import refactula.design.patterns.structural.composite.JsonDouble;
 
