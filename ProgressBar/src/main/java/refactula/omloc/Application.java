@@ -1,12 +1,10 @@
 package refactula.omloc;
 
+import com.google.common.base.Preconditions;
+
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -19,15 +17,27 @@ import java.util.stream.Collectors;
 public class Application {
 
     public static final String PROGRESS_URL =
-            "https://raw.githubusercontent.com/Refactula/1MLoC/master/ProgressBar/export/Progress.png";
+            "ProgressBar/export/Progress.png";
 
     public static void main(String[] args) throws Exception {
-        int goalLines = 1000000;
+        int goalLoC = 1000000;
         String workingDir = System.getProperty("user.dir");
         int lines = countLines(Paths.get(workingDir));
 
-        double progress = Math.min(1, 1d * lines / goalLines);
-        String progressInPercents = String.format("%.2f%%", progress * 100.0);
+        int firstLevelLoC = 100;
+        int nextLevelLoC = 200;
+        int levels = 100;
+        Preconditions.checkState(getLoCAfterCompleted(levels, firstLevelLoC, nextLevelLoC) == goalLoC);
+
+        int level = 0;
+        while (getLoCAfterCompleted(level, firstLevelLoC, nextLevelLoC) <= lines) {
+            level++;
+        }
+
+        int completedLines = lines - getLoCBeforeCompleted(level, firstLevelLoC, nextLevelLoC);
+        int levelLines = getLoCToComplete(level, firstLevelLoC, nextLevelLoC);
+        double progress = 1.0 * completedLines / levelLines;
+        String progressString = String.format("%.2f%%", progress * 100.0);
 
         int barWidth = 500;
         int barHeight = 50;
@@ -44,10 +54,29 @@ public class Application {
 
         Path readme = Paths.get(Application.class.getClassLoader().getResource("README.md").toURI());
         Files.write(Paths.get(workingDir, "README.md"), Files.lines(readme)
-                .map(replace("%progress%", progressInPercents))
-                .map(replace("%lines%", lines))
+                .map(replace("%name%", "Refactula"))
+                .map(replace("%level%", level))
+                .map(replace("%progress%", progressString))
+                .map(replace("%completed_lines%", completedLines))
+                .map(replace("%level_lines%", levelLines))
+                .map(replace("%lines_of_code%", lines))
+                .map(replace("%quest_name%", "Design Patterns"))
+                .map(replace("%quest_link%", "DesignPatterns/DesignPatterns.md"))
                 .map(replace("%progress_url%", PROGRESS_URL))
                 .collect(Collectors.toList()));
+    }
+
+    protected static int getLoCAfterCompleted(int level, int firstLevelLoC, int nextLevelLoC) {
+        return level * firstLevelLoC + (level - 1) * level * nextLevelLoC / 2;
+    }
+
+    protected static int getLoCBeforeCompleted(int level, int firstLevelLoC, int nextLevelLoC) {
+        return getLoCAfterCompleted(level - 1, firstLevelLoC, nextLevelLoC);
+    }
+
+    protected static int getLoCToComplete(int level, int firstLevelLoC, int nextLevelLoC) {
+        return getLoCAfterCompleted(level, firstLevelLoC, nextLevelLoC) -
+                getLoCBeforeCompleted(level, firstLevelLoC, nextLevelLoC);
     }
 
     private static Function<String, String> replace(String pattern, Object value) {
@@ -78,10 +107,6 @@ public class Application {
 
     private interface IoOperation<T> {
         T perform() throws IOException;
-    }
-
-    private static void display(Image image) {
-        JOptionPane.showMessageDialog(null, new JLabel(new ImageIcon(image)), "Image", JOptionPane.PLAIN_MESSAGE, null);
     }
 
 }
