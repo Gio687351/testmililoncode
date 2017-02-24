@@ -40,7 +40,7 @@ public class Application {
         String progressString = String.format("%.2f%%", progress * 100.0);
 
         int barWidth = 500;
-        int barHeight = 50;
+        int barHeight = 20;
         int completedPx = (int) Math.round(barWidth * progress);
         BufferedImage image = new BufferedImage(barWidth, barHeight, BufferedImage.TYPE_INT_ARGB);
         Graphics g = image.getGraphics();
@@ -60,8 +60,6 @@ public class Application {
                 .map(replace("%completed_lines%", completedLines))
                 .map(replace("%level_lines%", levelLines))
                 .map(replace("%lines_of_code%", lines))
-                .map(replace("%quest_name%", "Design Patterns"))
-                .map(replace("%quest_link%", "DesignPatterns/DesignPatterns.md"))
                 .map(replace("%progress_url%", PROGRESS_URL))
                 .collect(Collectors.toList()));
     }
