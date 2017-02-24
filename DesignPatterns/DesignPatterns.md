@@ -33,5 +33,5 @@ Implement examples of all Design Patterns listed at [www.oodesign.com](http://ww
 * [x] [Bridge](src/main/java/refactula/design/patterns/structural/bridge)
 * [x] [Composite](src/main/java/refactula/design/patterns/structural/composite)
 * [x] [Decorator](src/main/java/refactula/design/patterns/structural/decorator)
-* [ ] Flyweight
+* [x] Flyweight
 * [ ] Proxy
