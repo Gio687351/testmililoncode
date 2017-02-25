@@ -19,7 +19,7 @@ public abstract class Free<X> implements Type<X> {
         return pure(null).flatMap(ignored -> value);
     }
 
-    private <Y> Free<Y> flatMap(Function<X, Free<Y>> f) {
+    public <Y> Free<Y> flatMap(Function<X, Free<Y>> f) {
         return new FlatMapped<>(this, f);
     }
 }
