@@ -14,6 +14,7 @@
         <module name="Lambdas" />
         <module name="Minecraft" />
         <module name="Minesweeper" />
+        <module name="ModernFP" />
         <module name="omloc-algorithms" />
         <module name="ProgressBar" />
         <module name="Snake" />
@@ -29,6 +30,7 @@
       <module name="Lambdas" target="1.8" />
       <module name="Minecraft" target="1.8" />
       <module name="Minesweeper" target="1.8" />
+      <module name="ModernFP" target="1.8" />
       <module name="omloc-algorithms" target="1.8" />
       <module name="ProgressBar" target="1.8" />
       <module name="Snake" target="1.8" />

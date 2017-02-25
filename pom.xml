@@ -18,6 +18,7 @@
         <module>Functional</module>
         <module>DesignPatterns</module>
         <module>ProgressBar</module>
+        <module>ModernFP</module>
     </modules>
 
     <dependencies>
