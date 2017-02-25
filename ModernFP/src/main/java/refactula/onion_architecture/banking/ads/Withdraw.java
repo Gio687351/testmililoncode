@@ -1,4 +1,4 @@
-package refactula.onion_architecture.banking.adt;
+package refactula.onion_architecture.banking.ads;
 
 import refactula.onion_architecture.banking.Amount;
 

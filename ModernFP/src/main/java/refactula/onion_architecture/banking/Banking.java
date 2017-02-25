@@ -1,5 +1,7 @@
 package refactula.onion_architecture.banking;
 
+import refactula.onion_architecture.functional.Type;
+
 import java.util.List;
 
 public interface Banking {
