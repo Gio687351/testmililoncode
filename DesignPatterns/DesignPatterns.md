@@ -16,7 +16,7 @@ Implement examples of all Design Patterns listed at [www.oodesign.com](http://ww
 ##### Behavioral Patterns
 
 * [x] [Chain of Responsibility](src/main/java/refactula/design/patterns/behavioral/chain_of_responsibility)
-* [ ] Command
+* [x] [Command](src/main/java/refactula/design/patterns/behavioral/command)
 * [ ] Interpreter
 * [ ] Iterator
 * [ ] Mediator

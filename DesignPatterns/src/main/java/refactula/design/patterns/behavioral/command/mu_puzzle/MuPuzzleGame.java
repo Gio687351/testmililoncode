@@ -24,7 +24,7 @@ public class MuPuzzleGame {
         perform(() -> puzzle.removeUU(index));
     }
 
-    public void perform(Command command) {
+    private void perform(Command command) {
         history.add(command);
         command.execute();
     }
