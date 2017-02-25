@@ -10,6 +10,6 @@ This repository is a journey one million lines of code long.
 Name: **Refactula**  
 Level: **8**  
 Ongoing quest: [Design Patterns](DesignPatterns/DesignPatterns.md) *(14/24)*  
-Level progress: 2.80% *(42/1500)*  
+Level progress: 2.87% *(43/1500)*  
 
-![Alt](ProgressBar/export/Progress.png "Progress: 2.80%")
+![Alt](ProgressBar/export/Progress.png "Progress: 2.87%")

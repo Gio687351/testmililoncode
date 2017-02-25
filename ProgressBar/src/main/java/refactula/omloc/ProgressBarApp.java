@@ -14,7 +14,7 @@ import java.nio.file.Paths;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Application {
+public class ProgressBarApp {
 
     public static final String PROGRESS_URL =
             "ProgressBar/export/Progress.png";
@@ -52,9 +52,10 @@ public class Application {
 
         ImageIO.write(image, "png", Paths.get(workingDir, "ProgressBar", "export", "Progress.png").toFile());
 
-        Path readme = Paths.get(Application.class.getClassLoader().getResource("README.md").toURI());
+        Path readme = Paths.get(ProgressBarApp.class.getClassLoader().getResource("README.md").toURI());
         Files.write(Paths.get(workingDir, "README.md"), Files.lines(readme)
                 .map(replace("%name%", "Refactula"))
+                .map(replace("%alt_name%", "Vlad the Refactula"))
                 .map(replace("%level%", level))
                 .map(replace("%progress%", progressString))
                 .map(replace("%completed_lines%", completedLines))
@@ -84,7 +85,7 @@ public class Application {
     private static int countLines(Path rootPath) {
         return uncheckedIO(() -> Files.walk(rootPath)
                 .filter(p -> p.toString().endsWith(".java"))
-                .mapToInt(Application::countFileLines)
+                .mapToInt(ProgressBarApp::countFileLines)
                 .reduce(0, (x, y) -> x + y));
     }
 

@@ -5,7 +5,7 @@ This repository is a journey one million lines of code long.
 
 ### Character
 
-<img src="https://github.com/%name%.png" alt="Vlad the Refactula" width="200px"/>
+<img src="https://github.com/%name%.png" alt="%alt_name%" width="200px"/>
 
 Name: **%name%**  
 Level: **%level%**  
