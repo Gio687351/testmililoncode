@@ -35,7 +35,7 @@ Completed: [Snake](#snake)
 Quests
 ------
 
-#### Design Patterns
+### Design Patterns
 
 Implement examples of all Design Patterns listed at [www.oodesign.com](http://www.oodesign.com). 
 
@@ -77,7 +77,7 @@ Implement examples of all Design Patterns listed at [www.oodesign.com](http://ww
 * Improve [Object-Oriented Programming](#object-oriented-programming) skill level (15/24).
 * Achieve [Gang of One](#gang-of-one) achievement.
 
-#### Onion Architecture
+### Onion Architecture
 
 Implement in Java example from [Modern Functional Programming: Part 2](http://degoes.net/articles/modern-fp-part-2) article by [John A De Goes](https://twitter.com/jdegoes).
 
@@ -86,7 +86,7 @@ Implement in Java example from [Modern Functional Programming: Part 2](http://de
 * Improve [Functional Programming](#functional-programming) skill level.
 * Achieve [Functional Freedom](#functional-freedom) by implementing `Free` monad in Java.
 
-#### Snake
+### Snake
 
 Praesent at condimentum diam. In a semper ex. Etiam malesuada dictum sem nec imperdiet. Nulla ullamcorper ac tortor ac cursus. Maecenas cursus nibh mauris, sagittis posuere enim fringilla quis. Morbi dignissim gravida pretium. Nulla non ornare metus. Morbi tempor nisi eu tellus sollicitudin pulvinar. Donec at imperdiet tortor, molestie condimentum enim. Proin ante felis, porta non enim quis, sollicitudin iaculis sapien. Ut id arcu arcu.
 
