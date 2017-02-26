@@ -41,36 +41,36 @@ Implement examples of all Design Patterns listed at [www.oodesign.com](http://ww
 
 ##### Creational Patterns
 
-* [x] [Singleton](DesignPatterns/src/main/java/refactula/design/patterns/creational/singleton)
-* [x] [Factory](DesignPatterns/src/main/java/refactula/design/patterns/creational/factory)
-* [x] [Factory Method](DesignPatterns/src/main/java/refactula/design/patterns/creational/factory_method)
-* [x] [Abstract Factory](DesignPatterns/src/main/java/refactula/design/patterns/creational/abstract_factory)
-* [x] [Builder](DesignPatterns/src/main/java/refactula/design/patterns/creational/builder)
-* [x] [Prototype](DesignPatterns/src/main/java/refactula/design/patterns/creational/prototype)
-* [x] [Object Pool](DesignPatterns/src/main/java/refactula/design/patterns/creational/prototype)
+[x] [Singleton](DesignPatterns/src/main/java/refactula/design/patterns/creational/singleton), 
+[x] [Factory](DesignPatterns/src/main/java/refactula/design/patterns/creational/factory), 
+[x] [Factory Method](DesignPatterns/src/main/java/refactula/design/patterns/creational/factory_method), 
+[x] [Abstract Factory](DesignPatterns/src/main/java/refactula/design/patterns/creational/abstract_factory), 
+[x] [Builder](DesignPatterns/src/main/java/refactula/design/patterns/creational/builder), 
+[x] [Prototype](DesignPatterns/src/main/java/refactula/design/patterns/creational/prototype), 
+[x] [Object Pool](DesignPatterns/src/main/java/refactula/design/patterns/creational/prototype), 
     
 ##### Behavioral Patterns
 
-* [x] [Chain of Responsibility](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/chain_of_responsibility)
-* [x] [Command](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/command)
-* [ ] Interpreter
-* [ ] Iterator
-* [ ] Mediator
-* [ ] Memento
-* [ ] Observer
-* [ ] Strategy
-* [ ] Template Method
-* [ ] Visitor
-* [ ] Null Object
+[x] [Chain of Responsibility](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/chain_of_responsibility), 
+[x] [Command](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/command), 
+[ ] Interpreter, 
+[ ] Iterator, 
+[ ] Mediator, 
+[ ] Memento, 
+[ ] Observer, 
+[ ] Strategy, 
+[ ] Template Method, 
+[ ] Visitor, 
+[ ] Null Object, 
     
 ##### Structural Patterns
 
-* [x] [Adapter](DesignPatterns/src/main/java/refactula/design/patterns/structural/adapter)
-* [x] [Bridge](DesignPatterns/src/main/java/refactula/design/patterns/structural/bridge)
-* [x] [Composite](DesignPatterns/src/main/java/refactula/design/patterns/structural/composite)
-* [x] [Decorator](DesignPatterns/src/main/java/refactula/design/patterns/structural/decorator)
-* [x] [Flyweight](DesignPatterns/src/main/java/refactula/design/patterns/structural/flyweight)
-* [x] [Proxy](DesignPatterns/src/main/java/refactula/design/patterns/structural/proxy)
+[x] [Adapter](DesignPatterns/src/main/java/refactula/design/patterns/structural/adapter), 
+[x] [Bridge](DesignPatterns/src/main/java/refactula/design/patterns/structural/bridge), 
+[x] [Composite](DesignPatterns/src/main/java/refactula/design/patterns/structural/composite), 
+[x] [Decorator](DesignPatterns/src/main/java/refactula/design/patterns/structural/decorator), 
+[x] [Flyweight](DesignPatterns/src/main/java/refactula/design/patterns/structural/flyweight), 
+[x] [Proxy](DesignPatterns/src/main/java/refactula/design/patterns/structural/proxy), 
 
 ##### Rewards
 
