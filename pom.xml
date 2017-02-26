@@ -19,6 +19,7 @@
         <module>DesignPatterns</module>
         <module>ProgressBar</module>
         <module>ModernFP</module>
+        <module>Story</module>
     </modules>
 
     <dependencies>

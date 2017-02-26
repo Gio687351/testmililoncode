@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/ModernFP/ModernFP.iml" filepath="$PROJECT_DIR$/ModernFP/ModernFP.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProgressBar/ProgressBar.iml" filepath="$PROJECT_DIR$/ProgressBar/ProgressBar.iml" />
       <module fileurl="file://$PROJECT_DIR$/Snake/Snake.iml" filepath="$PROJECT_DIR$/Snake/Snake.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Story/Story.iml" filepath="$PROJECT_DIR$/Story/Story.iml" />
     </modules>
   </component>
 </project>
