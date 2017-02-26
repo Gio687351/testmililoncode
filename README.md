@@ -13,3 +13,13 @@ Ongoing quest: [Design Patterns](DesignPatterns/DesignPatterns.md) *(15/24)*
 Level progress: 58.07% *(871/1500)*  
 
 ![Alt](ProgressBar/export/Progress.png "Progress: 58.07%")
+
+### Achievements
+
+[Creational], [Structural], [100 Source Files], [Level Up]
+ 
+[Level Up]: bla.bla
+[100 Source Files]: link.to.army.of.100
+[Creational]: creational.design.patterns
+[Structural]: structural.patterns
+
