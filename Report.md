@@ -1,7 +1,9 @@
 1 Million Lines of Code
 =======================
 
-#### Character
+
+Character
+---------
 
 <img src="https://github.com/Refactula.png" width="200px"/>
 
@@ -15,7 +17,7 @@ Progress: 58.07% *(871/1500)*
 
 * [Object-Oriented Programming (16)](#object-oriented-programming)  
 * [Functional Programming (3)](#functional-programming)
-* [Game Development (2)](#game-development)
+* [Game Development (1)](#game-development)
 
 #### Achievements
 
@@ -29,25 +31,6 @@ Ongoing: [Design Patterns](#design-patterns), [Onion Architecture](#onion-archit
 
 Completed: [Snake](#snake)
 
-Skills
-------
-
-#### Object-Oriented Programming
-
-Nunc vitae arcu dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu turpis ac nunc eleifend tincidunt. Cras id massa non sem posuere rutrum. Pellentesque vel egestas nibh. Nullam eleifend arcu at turpis commodo posuere. Aenean lacus orci, pharetra a lectus at, euismod condimentum augue. Aliquam lobortis euismod molestie. Suspendisse ac arcu et ante varius molestie sit amet eget ex. Duis porta rhoncus bibendum. Vivamus pellentesque placerat magna imperdiet pulvinar. Maecenas eu varius velit, eu aliquet ante.
-
-* [Design Patterns (15)](#design-pattern)
-* [Snake (1)](#snake)
-
-#### Functional Programming
-
-Quisque a turpis tortor. Morbi non euismod justo. Donec iaculis semper massa et rutrum. Nulla ac efficitur turpis, quis interdum nibh. Quisque id pharetra augue. Sed non velit et dolor tempor dictum ut sed nunc. Praesent vitae metus rhoncus, imperdiet arcu interdum, laoreet lacus. Proin pharetra, felis id accumsan rutrum, augue ligula feugiat velit, eu porttitor magna urna sed nulla. Phasellus vehicula sapien a nisi imperdiet laoreet. Duis vulputate lectus nibh, id sollicitudin diam porttitor vehicula. Quisque magna dolor, dictum id pellentesque id, rutrum eu arcu. Aliquam consectetur libero ac lacus tempor eleifend. Donec luctus neque in nisi sodales bibendum. Donec ut quam leo. Praesent pretium sem at urna ultricies finibus.
-
-#### Game Development
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus enim et vulputate posuere. Fusce a leo nulla. Vivamus molestie ligula a est gravida suscipit. Proin a pulvinar ante. Curabitur nec porta diam. Etiam sed mi imperdiet, pellentesque enim vel, hendrerit nunc. Fusce non mi ut felis sodales feugiat. Donec eu neque nisi. Quisque ut blandit urna, at porttitor ipsum. Curabitur ut tellus malesuada, tincidunt purus et, congue tortor. Ut luctus malesuada felis at gravida. Etiam molestie nibh eu ex pellentesque ullamcorper. Vestibulum mi ligula, blandit et ligula at, suscipit efficitur urna. Nunc venenatis feugiat egestas. Suspendisse luctus est dolor, ac convallis dui pharetra in.
-
-* [Snake (2)](#snake)
 
 Quests
 ------
@@ -91,7 +74,7 @@ Implement examples of all Design Patterns listed at [www.oodesign.com](http://ww
 
 ##### Rewards
 
-* Improve [Object-Oriented Programming](#object-oriented-programming) skill level (+24).
+* Improve [Object-Oriented Programming](#object-oriented-programming) skill level (15/24).
 * Achieve [Gang of One](#gang-of-one) achievement.
 
 #### Onion Architecture
@@ -106,6 +89,32 @@ Implement in Java example from [Modern Functional Programming: Part 2](http://de
 #### Snake
 
 Praesent at condimentum diam. In a semper ex. Etiam malesuada dictum sem nec imperdiet. Nulla ullamcorper ac tortor ac cursus. Maecenas cursus nibh mauris, sagittis posuere enim fringilla quis. Morbi dignissim gravida pretium. Nulla non ornare metus. Morbi tempor nisi eu tellus sollicitudin pulvinar. Donec at imperdiet tortor, molestie condimentum enim. Proin ante felis, porta non enim quis, sollicitudin iaculis sapien. Ut id arcu arcu.
+
+##### Rewards
+
+* Improve [Object-Oriented Programming](#object-oriented-programming) skill level (1/1).
+* Improve [Game Development](#game-development) skill level (1/1).
+
+
+Skills
+------
+
+#### Object-Oriented Programming
+
+Nunc vitae arcu dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu turpis ac nunc eleifend tincidunt. Cras id massa non sem posuere rutrum. Pellentesque vel egestas nibh. Nullam eleifend arcu at turpis commodo posuere. Aenean lacus orci, pharetra a lectus at, euismod condimentum augue. Aliquam lobortis euismod molestie. Suspendisse ac arcu et ante varius molestie sit amet eget ex. Duis porta rhoncus bibendum. Vivamus pellentesque placerat magna imperdiet pulvinar. Maecenas eu varius velit, eu aliquet ante.
+
+Proven by: [Design Patterns (15)](#design-patterns), [Snake (1)](#snake)
+
+#### Functional Programming
+
+Quisque a turpis tortor. Morbi non euismod justo. Donec iaculis semper massa et rutrum. Nulla ac efficitur turpis, quis interdum nibh. Quisque id pharetra augue. Sed non velit et dolor tempor dictum ut sed nunc. Praesent vitae metus rhoncus, imperdiet arcu interdum, laoreet lacus. Proin pharetra, felis id accumsan rutrum, augue ligula feugiat velit, eu porttitor magna urna sed nulla. Phasellus vehicula sapien a nisi imperdiet laoreet. Duis vulputate lectus nibh, id sollicitudin diam porttitor vehicula. Quisque magna dolor, dictum id pellentesque id, rutrum eu arcu. Aliquam consectetur libero ac lacus tempor eleifend. Donec luctus neque in nisi sodales bibendum. Donec ut quam leo. Praesent pretium sem at urna ultricies finibus.
+
+#### Game Development
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas cursus enim et vulputate posuere. Fusce a leo nulla. Vivamus molestie ligula a est gravida suscipit. Proin a pulvinar ante. Curabitur nec porta diam. Etiam sed mi imperdiet, pellentesque enim vel, hendrerit nunc. Fusce non mi ut felis sodales feugiat. Donec eu neque nisi. Quisque ut blandit urna, at porttitor ipsum. Curabitur ut tellus malesuada, tincidunt purus et, congue tortor. Ut luctus malesuada felis at gravida. Etiam molestie nibh eu ex pellentesque ullamcorper. Vestibulum mi ligula, blandit et ligula at, suscipit efficitur urna. Nunc venenatis feugiat egestas. Suspendisse luctus est dolor, ac convallis dui pharetra in.
+
+Proven by: [Snake (1)](#snake)
+
 
 Achievements
 ------------
