@@ -20,6 +20,7 @@
         <module>ProgressBar</module>
         <module>ModernFP</module>
         <module>Story</module>
+        <module>DesignJam</module>
     </modules>
 
     <dependencies>

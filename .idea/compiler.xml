@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Algorithms" />
         <module name="Codeforces" />
+        <module name="DesignJam" />
         <module name="DesignPatterns" />
         <module name="Functional" />
         <module name="IntroductionToAlgorithms" />
@@ -25,6 +26,7 @@
       <module name="1MLoC" target="1.8" />
       <module name="Algorithms" target="1.8" />
       <module name="Codeforces" target="1.8" />
+      <module name="DesignJam" target="1.8" />
       <module name="DesignPatterns" target="1.8" />
       <module name="Functional" target="1.8" />
       <module name="IntroductionToAlgorithms" target="1.8" />
