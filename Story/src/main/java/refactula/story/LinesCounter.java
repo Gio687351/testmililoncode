@@ -16,6 +16,7 @@ public class LinesCounter {
     private static final Function<String, Path> TO_PATH = Paths::get;
     private static final Function<Path, Stream<Path>> WALK = function(p -> Files.walk(p));
     private static final Predicate<Path> IS_JAVA_FILE = p -> p.toString().endsWith(".java");
+    private static final Function<String, String> TRIM = String::trim;
     private static final Predicate<String> NOT_EMPTY = not(String::isEmpty);
     private static final Function<Path, Stream<String>> READ_LINES = function(Files::lines);
     private static final ToIntFunction<Object> ONE = o -> 1;
@@ -28,6 +29,7 @@ public class LinesCounter {
         return transform(path, WALK)
                 .filter(IS_JAVA_FILE)
                 .flatMap(READ_LINES)
+                .map(TRIM)
                 .filter(NOT_EMPTY)
                 .mapToInt(ONE)
                 .sum();

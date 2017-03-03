@@ -7,9 +7,9 @@
 
 Name: **Refactula**  
 Level: **${level}**  
-Progress: ${progress} (${level.completed}/${level.lines})
+Progress: ${level.progress} (${level.completed}/${level.lines})
 
-![Alt](Journey/images/progress-bar.png "Progress: {progress}")
+![Alt](Journey/images/progress-bar.png "Progress: ${level.progress}")
 
 
 ## Quests
