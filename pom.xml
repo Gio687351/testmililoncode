@@ -21,6 +21,7 @@
         <module>ModernFP</module>
         <module>Story</module>
         <module>DesignJam</module>
+        <module>Poker</module>
     </modules>
 
     <dependencies>
