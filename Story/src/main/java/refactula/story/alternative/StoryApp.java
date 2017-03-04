@@ -16,7 +16,7 @@ public class StoryApp {
 
     public static void main(String[] args) {
         PrintWriter writer = new PrintWriter(System.out);
-        Hero hero = new Hero("Refactula");
+        Hero hero = new Hero("Refactula", "Vlad the Refactula");
         int lines = LinesCounter.countLines();
         LevelCalculator levelCalculator = new LevelCalculator(100, 200);
         int levelIndex = levelCalculator.getLevel(lines);

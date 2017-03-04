@@ -2,13 +2,13 @@
 
 ## Character
 
-<img src="http://github.com/Refactula.png" width="200px"/>
+<img src="https://github.com/Refactula.png" alt="Vlad the Refactula" width="200px"/>
 
 Name: **Refactula**  
 Level: **9**  
-Progress: 20.59% (350/1700)  
+Progress: 20.71% (352/1700)  
 
-![Progress: 20.59%](ProgressBar/export/Progress.png)
+![Progress: 20.71%](ProgressBar/export/Progress.png)
 
 ## Quests
 
