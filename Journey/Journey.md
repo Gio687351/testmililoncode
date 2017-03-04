@@ -3,7 +3,7 @@
 
 ## Character
 
-<img src="http://github.com/Refactula.png" width="200px"/>
+<img link="http://github.com/Refactula.png" width="200px"/>
 
 Name: **Refactula**  
 Level: **${level}**  

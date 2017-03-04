@@ -3,7 +3,7 @@
 
 ## Character
 
-<img src="http://github.com/Refactula.png" width="200px"/>
+<img link="http://github.com/Refactula.png" width="200px"/>
 
 Name: **Refactula**  
 Level: **${level}**  
@@ -145,7 +145,7 @@ Implement Markdown library. `Parsers` `Library Development`
 Implement dependency injection framework. 
 
 
-### Distributed Systems
+### Consensus
 
 Implement algorithms and utilities for reaching consensus in distributed systems
 

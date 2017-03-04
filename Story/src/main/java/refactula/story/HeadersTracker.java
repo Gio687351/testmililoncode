@@ -58,6 +58,12 @@ public class HeadersTracker {
         }
     }
 
+    public static void traverse(List<String> lines, HeaderTrackerListener listener) {
+        HeadersTracker tracker = new HeadersTracker();
+        lines.forEach(line -> tracker.update(line, listener));
+        tracker.endOfStream(listener);
+    }
+
     private static final class Token {
         private final static Token PLACEHOLDER = new Token(true, null);
 

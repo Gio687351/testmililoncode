@@ -1,8 +1,11 @@
 package refactula.story;
 
+import com.google.common.base.Preconditions;
 import refactula.story.HeadersTracker.HeaderTrackerListener;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import static com.google.common.collect.ImmutableList.toImmutableList;
 import static refactula.story.Resources.readLines;
@@ -21,32 +24,28 @@ public class StoryGenerator {
                 .map(bindings::enhance)
                 .collect(toImmutableList());
 
-        story.forEach(System.out::println);
+        HeaderCollector collector = new HeaderCollector();
+        HeadersTracker.traverse(story, collector);
 
-        HeaderTrackerListener listener = new HeaderTrackerListener() {
-            public void onHeaderOpened(int level, String text) {
-                printWhitespaces(level);
-                System.out.println("Opened H" + (level + 1) + ": " + text);
+        collector.headers.forEach(System.out::println);
+    }
+
+    private static final class HeaderCollector implements HeaderTrackerListener {
+        private final Set<String> headers = new HashSet<String>();
+
+        @Override
+        public void onHeaderOpened(int level, String text) {
+            if (level > 3) {
+                return;
             }
-
-            public void onHeaderClosed(int level, String text) {
-                printWhitespaces(level);
-                System.out.println("Closed H" + (level + 1) + ": " + text);
-            }
-
-            private void printWhitespaces(int amount) {
-                for (int i = 0; i < amount; i++) {
-                    System.out.print(" ");
-                }
-            }
-        };
-
-        HeadersTracker headersTracker = new HeadersTracker();
-        for (int lineIndex = 0; lineIndex < story.size(); lineIndex++) {
-            String line = story.get(lineIndex);
-            headersTracker.update(line, listener);
+            Preconditions.checkState(!headers.contains(text), "Duplicated header: " + text);
+            headers.add(text);
         }
-        headersTracker.endOfStream(listener);
+
+        @Override
+        public void onHeaderClosed(int level, String text) {
+
+        }
     }
 
 }
