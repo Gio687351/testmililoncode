@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **9**  
-Progress: 26.76% (455/1700)  
+Progress: 13.59% (231/1700)  
 
-![Progress: 26.76%](ProgressBar/export/Progress.png)
+![Progress: 13.59%](ProgressBar/export/Progress.png)
 
 ## Quests
 
@@ -57,7 +57,7 @@ Implement all design patterns.
 
 ### Object-Oriented Programming
 
-Proved by: [`Design Patterns`](#design-patterns)
+Proved by: [`Design Patterns`](#design-patterns).
 
 ## Achievements
 

@@ -8,9 +8,9 @@ import java.util.function.Predicate;
 import java.util.function.ToIntFunction;
 import java.util.stream.Stream;
 
-import static refactula.story.Predicates.not;
-import static refactula.story.Transform.transform;
-import static refactula.story.Unchecked.function;
+import static refactula.story.utils.Predicates.not;
+import static refactula.story.utils.Transform.transform;
+import static refactula.story.utils.Unchecked.function;
 
 public class LinesCounter {
     private static final Function<String, Path> TO_PATH = Paths::get;

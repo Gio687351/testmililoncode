@@ -29,9 +29,4 @@ public class LevelCalculator {
         return level;
     }
 
-    public Progress getProgress(int linesOfCode) {
-        int level = getLevel(linesOfCode);
-        return new Progress(level, linesOfCode - getLinesBeforeCompleted(level), getLinesToComplete(level));
-    }
-
 }
