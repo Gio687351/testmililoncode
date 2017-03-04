@@ -4,8 +4,11 @@ import refactula.story.alternative.chapter.AchievementsChapter;
 import refactula.story.alternative.chapter.CharacterChapter;
 import refactula.story.alternative.chapter.QuestsChapter;
 import refactula.story.alternative.chapter.SkillsChapter;
+import refactula.story.alternative.markdown.Header;
+import refactula.story.alternative.markdown.MDWriter;
+import refactula.story.alternative.markdown.Markdown;
 
-public class Story {
+public class Story implements Markdown {
     private final Header title = new Header(1, "1 Million Lines of Code");
     private final CharacterChapter characterChapter;
     private final QuestsChapter questsChapter;
@@ -24,11 +27,12 @@ public class Story {
         this.achievementsChapter = achievementsChapter;
     }
 
-    public void print(MDWriter writer) {
+    @Override
+    public void writeTo(MDWriter writer) {
         writer.writeln(title);
-        characterChapter.print(writer);
-        questsChapter.write(writer);
-        skillsChapter.write(writer);
-        achievementsChapter.write(writer);
+        writer.write(characterChapter);
+        writer.write(questsChapter);
+        writer.write(skillsChapter);
+        writer.write(achievementsChapter);
     }
 }

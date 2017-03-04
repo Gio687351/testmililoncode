@@ -1,10 +1,10 @@
 package refactula.story.alternative.chapter;
 
-import refactula.story.alternative.Header;
-import refactula.story.alternative.MDWriter;
+import refactula.story.alternative.markdown.Header;
+import refactula.story.alternative.markdown.MDWriter;
 import refactula.story.alternative.quest.DesignPatterns;
 
-public class QuestsChapter {
+public class QuestsChapter extends Chapter {
     private final Header header = new Header(2, "Quests");
 
     private final DesignPatterns designPatterns;
@@ -13,8 +13,9 @@ public class QuestsChapter {
         this.designPatterns = designPatterns;
     }
 
-    public void write(MDWriter writer) {
+    @Override
+    public void writeTo(MDWriter writer) {
         writer.writeln(header);
-        designPatterns.write(writer);
+        writer.write(designPatterns);
     }
 }

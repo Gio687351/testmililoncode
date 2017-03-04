@@ -1,16 +1,11 @@
 package refactula.story.alternative.achievement;
 
-import refactula.story.alternative.Header;
-import refactula.story.alternative.MDLine;
-import refactula.story.alternative.MDWriter;
+import refactula.story.alternative.markdown.Header;
+import refactula.story.alternative.markdown.MDLine;
+import refactula.story.alternative.markdown.MDWriter;
 
 public class GangOfOne extends Achievement {
     private final Header header = new Header(3, "Gang of One");
-
-    public void write(MDWriter writer) {
-        writer.writeln(header);
-        writer.writeln(MDLine.of("Has implemented all design patterns."));
-    }
 
     @Override
     public String getFormattedLink() {
@@ -20,5 +15,11 @@ public class GangOfOne extends Achievement {
     @Override
     public void activate() {
 
+    }
+
+    @Override
+    public void writeTo(MDWriter writer) {
+        writer.writeln(header);
+        writer.writeln(MDLine.of("Has implemented all design patterns."));
     }
 }

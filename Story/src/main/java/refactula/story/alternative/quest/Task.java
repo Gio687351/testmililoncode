@@ -2,13 +2,13 @@ package refactula.story.alternative.quest;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import refactula.story.alternative.MDElement;
-import refactula.story.alternative.MDLine;
+import refactula.story.alternative.markdown.MDParagraph;
+import refactula.story.alternative.markdown.MDLine;
 import refactula.story.alternative.Reward;
 
 import java.util.List;
 
-public class Task implements MDElement {
+public class Task implements MDParagraph {
     private final String text;
     private final List<Reward> rewards;
     private boolean completed = false;
@@ -18,13 +18,20 @@ public class Task implements MDElement {
         this.rewards = ImmutableList.copyOf(rewards);
     }
 
-    public Task completed() {
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void onCompleted() {
         Preconditions.checkState(!completed);
         completed = true;
         for (Reward reward : rewards) {
             reward.activate();
         }
-        return this;
+    }
+
+    public List<Reward> getRewards() {
+        return rewards;
     }
 
     @Override

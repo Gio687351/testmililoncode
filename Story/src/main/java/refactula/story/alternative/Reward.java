@@ -1,6 +1,8 @@
 package refactula.story.alternative;
 
-public abstract class Reward {
+import refactula.story.alternative.markdown.Markdown;
+
+public abstract class Reward implements Markdown {
 
     public abstract String getFormattedLink();
 

@@ -1,7 +1,7 @@
 package refactula.story.alternative.skill;
 
-import refactula.story.alternative.Header;
-import refactula.story.alternative.MDWriter;
+import refactula.story.alternative.markdown.Header;
+import refactula.story.alternative.markdown.MDWriter;
 
 public class OOPSkill extends Skill {
     private final Header header = new Header(5, "Object Oriented Programming");
@@ -15,7 +15,8 @@ public class OOPSkill extends Skill {
         return header.getFormattedLink();
     }
 
-    public void write(MDWriter writer) {
+    @Override
+    public void writeTo(MDWriter writer) {
         writer.writeln(header);
     }
 

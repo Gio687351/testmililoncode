@@ -1,5 +1,7 @@
 package refactula.story.alternative;
 
+import refactula.story.alternative.markdown.MDAdvancedImage;
+
 public class Hero {
     private final String name;
     private final MDAdvancedImage avatar;

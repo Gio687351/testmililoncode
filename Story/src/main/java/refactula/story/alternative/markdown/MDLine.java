@@ -1,8 +1,8 @@
-package refactula.story.alternative;
+package refactula.story.alternative.markdown;
 
 import com.google.common.base.Preconditions;
 
-public class MDLine implements MDElement {
+public class MDLine implements MDParagraph {
     private final String text;
 
     public static MDLine of(String text) {

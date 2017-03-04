@@ -1,8 +1,8 @@
-package refactula.story.alternative;
+package refactula.story.alternative.markdown;
 
 import com.google.common.base.Preconditions;
 
-public class Header implements MDElement {
+public class Header implements MDParagraph {
     private final int level;
     private final String text;
 

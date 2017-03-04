@@ -7,15 +7,17 @@ import refactula.story.alternative.chapter.AchievementsChapter;
 import refactula.story.alternative.chapter.CharacterChapter;
 import refactula.story.alternative.chapter.QuestsChapter;
 import refactula.story.alternative.chapter.SkillsChapter;
+import refactula.story.alternative.markdown.MDWriter;
 import refactula.story.alternative.quest.DesignPatterns;
 import refactula.story.alternative.skill.OOPSkill;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 
 public class StoryApp {
 
-    public static void main(String[] args) {
-        PrintWriter writer = new PrintWriter(System.out);
+    public static void main(String[] args) throws IOException {
         Hero hero = new Hero("Refactula", "Vlad the Refactula");
         int lines = LinesCounter.countLines();
         LevelCalculator levelCalculator = new LevelCalculator(100, 200);
@@ -28,8 +30,9 @@ public class StoryApp {
         GangOfOne gangOfOne = new GangOfOne();
         QuestsChapter questsChapter = new QuestsChapter(new DesignPatterns(oopSkill, gangOfOne));
         Story story = new Story(characterChapter, questsChapter, new SkillsChapter(oopSkill), new AchievementsChapter(gangOfOne));
-        story.print(new MDWriter(writer));
-        writer.flush();
+        try (MDWriter mdWriter = new MDWriter(new PrintWriter(new FileWriter("README.md")))) {
+            mdWriter.write(story);
+        }
     }
 
 }

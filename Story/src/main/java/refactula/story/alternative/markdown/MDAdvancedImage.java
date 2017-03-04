@@ -1,6 +1,6 @@
-package refactula.story.alternative;
+package refactula.story.alternative.markdown;
 
-public class MDAdvancedImage implements MDElement {
+public class MDAdvancedImage implements MDParagraph {
     private final String src;
     private final String altText;
     private final String width;

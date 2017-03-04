@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **9**  
-Progress: 20.71% (352/1700)  
+Progress: 24.65% (419/1700)  
 
-![Progress: 20.71%](ProgressBar/export/Progress.png)
+![Progress: 24.65%](ProgressBar/export/Progress.png)
 
 ## Quests
 
@@ -28,8 +28,8 @@ Implement all design patterns.
 
 ##### Behavioral Patterns
 
-* [ ] Chain of Responsibility [`Object Oriented Programming`](#object-oriented-programming)
-* [ ] Command [`Object Oriented Programming`](#object-oriented-programming)
+* [x] [Chain of Responsibility](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/chain_of_responsibility) [`Object Oriented Programming`](#object-oriented-programming)
+* [x] [Command](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/command) [`Object Oriented Programming`](#object-oriented-programming)
 * [ ] Interpreter [`Object Oriented Programming`](#object-oriented-programming)
 * [ ] Iterator [`Object Oriented Programming`](#object-oriented-programming)
 * [ ] Mediator [`Object Oriented Programming`](#object-oriented-programming)
@@ -42,12 +42,12 @@ Implement all design patterns.
 
 ##### Structural Patterns
 
-* [ ] Adapter [`Object Oriented Programming`](#object-oriented-programming)
-* [ ] Bridge [`Object Oriented Programming`](#object-oriented-programming)
-* [ ] Composite [`Object Oriented Programming`](#object-oriented-programming)
-* [ ] Decorator [`Object Oriented Programming`](#object-oriented-programming)
-* [ ] Flyweight [`Object Oriented Programming`](#object-oriented-programming)
-* [ ] Proxy [`Object Oriented Programming`](#object-oriented-programming)
+* [x] [Adapter](DesignPatterns/src/main/java/refactula/design/patterns/structural/adapter) [`Object Oriented Programming`](#object-oriented-programming)
+* [x] [Bridge](DesignPatterns/src/main/java/refactula/design/patterns/structural/bridge) [`Object Oriented Programming`](#object-oriented-programming)
+* [x] [Composite](DesignPatterns/src/main/java/refactula/design/patterns/structural/composite) [`Object Oriented Programming`](#object-oriented-programming)
+* [x] [Decorator](DesignPatterns/src/main/java/refactula/design/patterns/structural/decorator) [`Object Oriented Programming`](#object-oriented-programming)
+* [x] [Flyweight](DesignPatterns/src/main/java/refactula/design/patterns/structural/flyweight) [`Object Oriented Programming`](#object-oriented-programming)
+* [x] [Proxy](DesignPatterns/src/main/java/refactula/design/patterns/structural/proxy) [`Object Oriented Programming`](#object-oriented-programming)
 
 ##### Achievements
 
@@ -62,3 +62,4 @@ Implement all design patterns.
 ### Gang of One
 
 Has implemented all design patterns.
+

@@ -1,13 +1,12 @@
 package refactula.story.alternative.quest;
 
-import refactula.story.alternative.Formatting;
-import refactula.story.alternative.Header;
-import refactula.story.alternative.MDLine;
-import refactula.story.alternative.MDWriter;
+import refactula.story.alternative.markdown.Header;
+import refactula.story.alternative.markdown.MDLine;
+import refactula.story.alternative.markdown.MDWriter;
 import refactula.story.alternative.achievement.GangOfOne;
 import refactula.story.alternative.skill.OOPSkill;
 
-import static refactula.story.alternative.Formatting.link;
+import static refactula.story.alternative.markdown.Formatting.link;
 
 public class DesignPatterns extends Quest {
     private final Header header = new Header(3, "Design Patterns");
@@ -52,8 +51,8 @@ public class DesignPatterns extends Quest {
         prototype = done(link("Prototype", implPackage + "/creational/prototype"), oopSkill);
         objectPool = done(link("Object Pool", implPackage + "/creational/object_pool"), oopSkill);
         
-        chainOfResponsibility = task("Chain of Responsibility", oopSkill);
-        command = task("Command", oopSkill);
+        chainOfResponsibility = done(link("Chain of Responsibility", implPackage + "/behavioral/chain_of_responsibility"), oopSkill);
+        command = done(link("Command", implPackage + "/behavioral/command"), oopSkill);
         interpreter = task("Interpreter", oopSkill);
         iterator = task("Iterator", oopSkill);
         mediator = task("Mediator", oopSkill);
@@ -63,17 +62,19 @@ public class DesignPatterns extends Quest {
         templateMethod = task("Template Method", oopSkill);
         visitor = task("Visitor", oopSkill);
         nullObject = task("Null Object", oopSkill);
-        adapter = task("Adapter", oopSkill);
-        bridge = task("Bridge", oopSkill);
-        composite = task("Composite", oopSkill);
-        decorator = task("Decorator", oopSkill);
-        flyweight = task("Flyweight", oopSkill);
-        proxy = task("Proxy", oopSkill);
-        implementAll = task("Implement all patterns", gangOfOne);
 
+        adapter = done(link("Adapter", implPackage + "/structural/adapter"), oopSkill);
+        bridge = done(link("Bridge", implPackage + "/structural/bridge"), oopSkill);
+        composite = done(link("Composite", implPackage + "/structural/composite"), oopSkill);
+        decorator = done(link("Decorator", implPackage + "/structural/decorator"), oopSkill);
+        flyweight = done(link("Flyweight", implPackage + "/structural/flyweight"), oopSkill);
+        proxy = done(link("Proxy", implPackage + "/structural/proxy"), oopSkill);
+
+        implementAll = task("Implement all patterns", gangOfOne);
     }
 
-    public void write(MDWriter writer) {
+    @Override
+    public void writeTo(MDWriter writer) {
         writer.writeln(header);
         writer.writeln(MDLine.of("Implement all design patterns."));
 

@@ -1,15 +1,15 @@
 package refactula.story.alternative.chapter;
 
-import refactula.story.alternative.Header;
+import refactula.story.alternative.markdown.Header;
 import refactula.story.alternative.Hero;
 import refactula.story.alternative.Level;
-import refactula.story.alternative.MDLine;
-import refactula.story.alternative.MDImage;
-import refactula.story.alternative.MDWriter;
+import refactula.story.alternative.markdown.MDLine;
+import refactula.story.alternative.markdown.MDImage;
+import refactula.story.alternative.markdown.MDWriter;
 
-import static refactula.story.alternative.Formatting.bold;
+import static refactula.story.alternative.markdown.Formatting.bold;
 
-public class CharacterChapter {
+public class CharacterChapter extends Chapter {
     private final Header header = new Header(2, "Character");
     private final Hero hero;
     private final Level level;
@@ -21,7 +21,8 @@ public class CharacterChapter {
         this.progressBar = progressBar;
     }
 
-    public void print(MDWriter writer) {
+    @Override
+    public void writeTo(MDWriter writer) {
         writer.writeln(header);
         writer.writeln(hero.getAvatar());
         writer.write(MDLine.joined("Name: " + bold(hero.getName())));
