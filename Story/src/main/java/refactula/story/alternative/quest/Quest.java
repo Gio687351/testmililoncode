@@ -1,5 +1,6 @@
 package refactula.story.alternative.quest;
 
+import refactula.story.alternative.markdown.Header;
 import refactula.story.alternative.markdown.Markdown;
 import refactula.story.alternative.Reward;
 
@@ -11,7 +12,7 @@ public abstract class Quest implements Markdown {
     private final List<Task> tasks = new ArrayList<>();
 
     public Task task(String text, Reward... rewards) {
-        Task task = new Task(text, rewards);
+        Task task = new Task(this, text, rewards);
         register(task);
         return task;
     }
@@ -35,4 +36,6 @@ public abstract class Quest implements Markdown {
         }
         return rewards;
     }
+
+    public abstract Header getHeader();
 }

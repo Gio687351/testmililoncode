@@ -3,6 +3,7 @@ package refactula.story.alternative.achievement;
 import refactula.story.alternative.markdown.Header;
 import refactula.story.alternative.markdown.MDLine;
 import refactula.story.alternative.markdown.MDWriter;
+import refactula.story.alternative.quest.Quest;
 
 public class GangOfOne extends Achievement {
     private final Header header = new Header(3, "Gang of One");
@@ -13,7 +14,7 @@ public class GangOfOne extends Achievement {
     }
 
     @Override
-    public void activate() {
+    public void activate(Quest quest) {
 
     }
 

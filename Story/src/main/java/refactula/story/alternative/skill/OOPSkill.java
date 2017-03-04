@@ -3,6 +3,7 @@ package refactula.story.alternative.skill;
 import refactula.story.alternative.markdown.Formatting;
 import refactula.story.alternative.markdown.Header;
 import refactula.story.alternative.markdown.MDWriter;
+import refactula.story.alternative.quest.Quest;
 
 public class OOPSkill extends Skill {
     private final Header header = new Header(3, "Object-Oriented Programming");
@@ -19,10 +20,6 @@ public class OOPSkill extends Skill {
     @Override
     public void writeTo(MDWriter writer) {
         writer.writeln(header);
-    }
-
-    @Override
-    public void activate() {
-
+        writeActivations(writer);
     }
 }

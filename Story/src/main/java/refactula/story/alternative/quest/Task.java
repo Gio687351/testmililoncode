@@ -9,11 +9,13 @@ import refactula.story.alternative.Reward;
 import java.util.List;
 
 public class Task implements MDParagraph {
+    private final Quest quest;
     private final String text;
     private final List<Reward> rewards;
     private boolean completed = false;
 
-    public Task(String text, Reward... rewards) {
+    public Task(Quest quest, String text, Reward... rewards) {
+        this.quest = quest;
         this.text = text;
         this.rewards = ImmutableList.copyOf(rewards);
     }
@@ -26,7 +28,7 @@ public class Task implements MDParagraph {
         Preconditions.checkState(!completed);
         completed = true;
         for (Reward reward : rewards) {
-            reward.activate();
+            reward.activate(quest);
         }
     }
 

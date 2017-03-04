@@ -112,4 +112,8 @@ public class DesignPatterns extends Quest {
         writer.writeln(implementAll);
     }
 
+    @Override
+    public Header getHeader() {
+        return header;
+    }
 }
