@@ -1,10 +1,11 @@
 package refactula.story.alternative.skill;
 
+import refactula.story.alternative.markdown.Formatting;
 import refactula.story.alternative.markdown.Header;
 import refactula.story.alternative.markdown.MDWriter;
 
 public class OOPSkill extends Skill {
-    private final Header header = new Header(5, "Object Oriented Programming");
+    private final Header header = new Header(3, "Object-Oriented Programming");
 
     public Header getHeader() {
         return header;
@@ -12,7 +13,7 @@ public class OOPSkill extends Skill {
 
     @Override
     public String getFormattedLink() {
-        return header.getFormattedLink();
+        return Formatting.link("`+OOP`", header.getLinkAddress());
     }
 
     @Override

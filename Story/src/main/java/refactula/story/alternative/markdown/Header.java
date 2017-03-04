@@ -13,7 +13,12 @@ public class Header implements MDParagraph {
     }
 
     public String getFormattedLink() {
-        return Formatting.link("`" + text + "`", "#" + text.toLowerCase().replace(' ', '-'));
+        return Formatting.link("`" + text + "`", getLinkAddress());
+    }
+
+    public String getLinkAddress
+            () {
+        return "#" + text.toLowerCase().replace(' ', '-');
     }
 
     @Override
