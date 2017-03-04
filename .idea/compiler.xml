@@ -18,7 +18,6 @@
         <module name="ModernFP" />
         <module name="omloc-algorithms" />
         <module name="Poker" />
-        <module name="ProgressBar" />
         <module name="Snake" />
         <module name="Story" />
       </profile>

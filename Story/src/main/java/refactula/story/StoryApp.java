@@ -12,6 +12,7 @@ import refactula.story.skill.OOPSkill;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Paths;
 
 public class StoryApp {
 
@@ -23,11 +24,13 @@ public class StoryApp {
         int completed = lines - levelCalculator.getLinesBeforeCompleted(levelIndex);
         int levelLines = levelCalculator.getLinesToComplete(levelIndex);
         Level level = new Level(levelIndex, completed, levelLines);
-        CharacterChapter characterChapter = new CharacterChapter(hero, level, "ProgressBar/export/Progress.png");
+        String progressBar = "Story/files/progress-bar.png";
+        CharacterChapter characterChapter = new CharacterChapter(hero, level, progressBar);
         OOPSkill oopSkill = new OOPSkill();
         GangOfOne gangOfOne = new GangOfOne();
         QuestsChapter questsChapter = new QuestsChapter(new DesignPatterns(oopSkill, gangOfOne));
         Story story = new Story(characterChapter, questsChapter, new SkillsChapter(oopSkill), new AchievementsChapter(gangOfOne));
+        new ProgressBarPainter().draw(1.0 * completed / levelLines, Paths.get(progressBar).toFile());
         try (MDWriter mdWriter = new MDWriter(new PrintWriter(new FileWriter("README.md")))) {
             mdWriter.write(story);
         }
