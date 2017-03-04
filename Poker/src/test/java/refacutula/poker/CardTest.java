@@ -54,16 +54,4 @@ public class CardTest {
         assertEquals(Suit.DIAMONDS, card.suit());
     }
 
-    @Test
-    public void sevenOfSpadesToString() {
-        Card card = Card.of(Rank.SEVEN, Suit.SPADES);
-        assertEquals("7s", card.toString());
-    }
-
-    @Test
-    public void queenOfHeartsToString() {
-        Card card = Card.of(Rank.QUEEN, Suit.HEARTS);
-        assertEquals("Qh", card.toString());
-    }
-
 }

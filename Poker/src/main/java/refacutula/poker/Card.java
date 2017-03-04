@@ -5,12 +5,10 @@ import com.google.common.collect.ImmutableList;
 public final class Card {
     private final Rank rank;
     private final Suit suit;
-    private final String string;
 
     private Card(Rank rank, Suit suit) {
         this.rank = rank;
         this.suit = suit;
-        this.string = rank.toString() + suit.toString();
     }
 
     public static Card of(Rank rank, Suit suit) {
@@ -23,11 +21,6 @@ public final class Card {
 
     public Suit suit() {
         return suit;
-    }
-
-    @Override
-    public String toString() {
-        return string;
     }
 
     private static final class Pool {
