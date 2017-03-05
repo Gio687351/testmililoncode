@@ -6,17 +6,17 @@
 
 Name: **Refactula**  
 Level: **9**  
-Progress: 26.24% (446/1700)  
+Progress: 42.12% (716/1700)  
 
-![Progress: 26.24%](Story/files/progress-bar.png)
+![Progress: 42.12%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Design Patterns`](#design-patterns)
+
+Completed Quests: [`Story Teller`](#story-teller)
 
 Achievements: [`Let the Journey Begin`](#let-the-journey-begin)
 
 Skills: [`Object-Oriented Programming (20)`](#object-oriented-programming)
-
-Completed Quests: [`Story Teller`](#story-teller)
 
 ## Quests
 
