@@ -1,15 +1,7 @@
 package refactula.design.patterns.behavioral.interpreter;
 
 import com.google.common.collect.ImmutableList;
-import refactula.design.patterns.behavioral.interpreter.abstract_data_types.classes.Concat;
-import refactula.design.patterns.behavioral.interpreter.abstract_data_types.classes.Constant;
-import refactula.design.patterns.behavioral.interpreter.abstract_data_types.classes.Equals;
-import refactula.design.patterns.behavioral.interpreter.abstract_data_types.classes.If;
-import refactula.design.patterns.behavioral.interpreter.abstract_data_types.classes.Program;
-import refactula.design.patterns.behavioral.interpreter.abstract_data_types.classes.Read;
-import refactula.design.patterns.behavioral.interpreter.abstract_data_types.classes.Sequence;
-import refactula.design.patterns.behavioral.interpreter.abstract_data_types.classes.Show;
-import refactula.design.patterns.behavioral.interpreter.abstract_data_types.classes.Variable;
+import refactula.design.patterns.behavioral.interpreter.abstract_data_types.classes.*;
 import refactula.design.patterns.behavioral.interpreter.abstract_data_types.types.BooleanType;
 import refactula.design.patterns.behavioral.interpreter.abstract_data_types.types.CommandType;
 import refactula.design.patterns.behavioral.interpreter.abstract_data_types.types.StringType;
@@ -49,5 +41,9 @@ public final class DSL {
 
     public static Program Program(CommandType command) {
         return new Program(command);
+    }
+
+    public static And And(BooleanType... conditions) {
+        return new And(ImmutableList.copyOf(conditions));
     }
 }
