@@ -4,7 +4,7 @@ import refactula.story.markdown.Formatting;
 import refactula.story.markdown.Header;
 import refactula.story.markdown.MDWriter;
 
-public class OOPSkill extends Skill {
+public class ObjectOrientedProgramming extends Skill {
     private final Header header = new Header(3, "Object-Oriented Programming");
 
     public Header getHeader() {
@@ -17,8 +17,7 @@ public class OOPSkill extends Skill {
     }
 
     @Override
-    public void writeTo(MDWriter writer) {
+    protected void writeContent(MDWriter writer) {
         writer.writeln(header);
-        writeActivations(writer);
     }
 }

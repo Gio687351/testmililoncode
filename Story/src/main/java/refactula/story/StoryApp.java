@@ -1,13 +1,15 @@
 package refactula.story;
 
 import refactula.story.achievement.GangOfOne;
+import refactula.story.achievement.LetTheJourneyBegin;
 import refactula.story.chapter.AchievementsChapter;
 import refactula.story.chapter.CharacterChapter;
 import refactula.story.chapter.QuestsChapter;
 import refactula.story.chapter.SkillsChapter;
 import refactula.story.markdown.MDWriter;
 import refactula.story.quest.DesignPatterns;
-import refactula.story.skill.OOPSkill;
+import refactula.story.quest.StoryTeller;
+import refactula.story.skill.ObjectOrientedProgramming;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -25,11 +27,16 @@ public class StoryApp {
         int levelLines = levelCalculator.getLinesToComplete(levelIndex);
         Level level = new Level(levelIndex, completed, levelLines);
         String progressBar = "Story/files/progress-bar.png";
-        CharacterChapter characterChapter = new CharacterChapter(hero, level, progressBar);
-        OOPSkill oopSkill = new OOPSkill();
+        ObjectOrientedProgramming objectOrientedProgramming = new ObjectOrientedProgramming();
+        LetTheJourneyBegin letTheJourneyBegin = new LetTheJourneyBegin();
         GangOfOne gangOfOne = new GangOfOne();
-        QuestsChapter questsChapter = new QuestsChapter(new DesignPatterns(oopSkill, gangOfOne));
-        Story story = new Story(characterChapter, questsChapter, new SkillsChapter(oopSkill), new AchievementsChapter(gangOfOne));
+        StoryTeller storyTeller = new StoryTeller(objectOrientedProgramming, letTheJourneyBegin);
+        DesignPatterns designPatterns = new DesignPatterns(objectOrientedProgramming, gangOfOne);
+        CharacterChapter characterChapter = new CharacterChapter(hero, level, progressBar);
+        QuestsChapter questsChapter = new QuestsChapter(storyTeller, designPatterns);
+        SkillsChapter skillsChapter = new SkillsChapter(objectOrientedProgramming);
+        AchievementsChapter achievementsChapter = new AchievementsChapter(letTheJourneyBegin, gangOfOne);
+        Story story = new Story(characterChapter, questsChapter, skillsChapter, achievementsChapter);
         new ProgressBarPainter().draw(1.0 * completed / levelLines, Paths.get(progressBar).toFile());
         try (MDWriter mdWriter = new MDWriter(new PrintWriter(new FileWriter("README.md")))) {
             mdWriter.write(story);

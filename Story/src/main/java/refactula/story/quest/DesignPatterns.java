@@ -4,7 +4,7 @@ import refactula.story.markdown.Header;
 import refactula.story.markdown.MDLine;
 import refactula.story.markdown.MDWriter;
 import refactula.story.achievement.GangOfOne;
-import refactula.story.skill.OOPSkill;
+import refactula.story.skill.ObjectOrientedProgramming;
 
 import static refactula.story.markdown.Formatting.link;
 
@@ -40,35 +40,35 @@ public class DesignPatterns extends Quest {
 
     private final Task implementAll;
 
-    public DesignPatterns(OOPSkill oopSkill, GangOfOne gangOfOne) {
+    public DesignPatterns(ObjectOrientedProgramming objectOrientedProgramming, GangOfOne gangOfOne) {
         String implPackage = "DesignPatterns/src/main/java/refactula/design/patterns";
         
-        singleton = done(link("Singleton", implPackage + "/creational/singleton"), oopSkill);
-        factory = done(link("Factory", implPackage + "/creational/factory"), oopSkill);
-        factoryMethod = done(link("Factory Method", implPackage + "/creational/factory_method"), oopSkill);
-        abstractFactory = done(link("Abstract Factory", implPackage + "/creational/abstract_factory"), oopSkill);
-        builder = done(link("Builder", implPackage + "/creational/builder"), oopSkill);
-        prototype = done(link("Prototype", implPackage + "/creational/prototype"), oopSkill);
-        objectPool = done(link("Object Pool", implPackage + "/creational/object_pool"), oopSkill);
+        singleton = done(link("Singleton", implPackage + "/creational/singleton"), objectOrientedProgramming);
+        factory = done(link("Factory", implPackage + "/creational/factory"), objectOrientedProgramming);
+        factoryMethod = done(link("Factory Method", implPackage + "/creational/factory_method"), objectOrientedProgramming);
+        abstractFactory = done(link("Abstract Factory", implPackage + "/creational/abstract_factory"), objectOrientedProgramming);
+        builder = done(link("Builder", implPackage + "/creational/builder"), objectOrientedProgramming);
+        prototype = done(link("Prototype", implPackage + "/creational/prototype"), objectOrientedProgramming);
+        objectPool = done(link("Object Pool", implPackage + "/creational/object_pool"), objectOrientedProgramming);
         
-        chainOfResponsibility = done(link("Chain of Responsibility", implPackage + "/behavioral/chain_of_responsibility"), oopSkill);
-        command = done(link("Command", implPackage + "/behavioral/command"), oopSkill);
-        interpreter = task("Interpreter", oopSkill);
-        iterator = task("Iterator", oopSkill);
-        mediator = task("Mediator", oopSkill);
-        memento = task("Memento", oopSkill);
-        observer = task("Observer", oopSkill);
-        strategy = task("Strategy", oopSkill);
-        templateMethod = task("Template Method", oopSkill);
-        visitor = task("Visitor", oopSkill);
-        nullObject = task("Null Object", oopSkill);
+        chainOfResponsibility = done(link("Chain of Responsibility", implPackage + "/behavioral/chain_of_responsibility"), objectOrientedProgramming);
+        command = done(link("Command", implPackage + "/behavioral/command"), objectOrientedProgramming);
+        interpreter = task("Interpreter", objectOrientedProgramming);
+        iterator = task("Iterator", objectOrientedProgramming);
+        mediator = task("Mediator", objectOrientedProgramming);
+        memento = task("Memento", objectOrientedProgramming);
+        observer = task("Observer", objectOrientedProgramming);
+        strategy = task("Strategy", objectOrientedProgramming);
+        templateMethod = task("Template Method", objectOrientedProgramming);
+        visitor = task("Visitor", objectOrientedProgramming);
+        nullObject = task("Null Object", objectOrientedProgramming);
 
-        adapter = done(link("Adapter", implPackage + "/structural/adapter"), oopSkill);
-        bridge = done(link("Bridge", implPackage + "/structural/bridge"), oopSkill);
-        composite = done(link("Composite", implPackage + "/structural/composite"), oopSkill);
-        decorator = done(link("Decorator", implPackage + "/structural/decorator"), oopSkill);
-        flyweight = done(link("Flyweight", implPackage + "/structural/flyweight"), oopSkill);
-        proxy = done(link("Proxy", implPackage + "/structural/proxy"), oopSkill);
+        adapter = done(link("Adapter", implPackage + "/structural/adapter"), objectOrientedProgramming);
+        bridge = done(link("Bridge", implPackage + "/structural/bridge"), objectOrientedProgramming);
+        composite = done(link("Composite", implPackage + "/structural/composite"), objectOrientedProgramming);
+        decorator = done(link("Decorator", implPackage + "/structural/decorator"), objectOrientedProgramming);
+        flyweight = done(link("Flyweight", implPackage + "/structural/flyweight"), objectOrientedProgramming);
+        proxy = done(link("Proxy", implPackage + "/structural/proxy"), objectOrientedProgramming);
 
         implementAll = task("Implement all patterns", gangOfOne);
     }

@@ -7,8 +7,16 @@ import java.nio.file.Paths;
 
 public class Formatting {
 
+    public static String italic(Object text) {
+        return "*" + text + "*";
+    }
+
     public static String bold(Object text) {
         return "**" + text + "**";
+    }
+
+    public static String mono(Object text) {
+        return "`" + text + "`";
     }
 
     public static String link(String text, String address) {
@@ -22,5 +30,4 @@ public class Formatting {
         }
         Preconditions.checkArgument(Files.exists(Paths.get(link)), "Path doesn't exist: %s", link);
     }
-
 }

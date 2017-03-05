@@ -2,6 +2,9 @@ package refactula.story.markdown;
 
 import com.google.common.base.Preconditions;
 
+import static refactula.story.markdown.Formatting.link;
+import static refactula.story.markdown.Formatting.mono;
+
 public class Header implements MDParagraph {
     private final int level;
     private final String text;
@@ -12,12 +15,15 @@ public class Header implements MDParagraph {
         this.text = text;
     }
 
-    public String getFormattedLink() {
-        return Formatting.link("`" + text + "`", getLinkAddress());
+    public String getText() {
+        return text;
     }
 
-    public String getLinkAddress
-            () {
+    public String getFormattedLink() {
+        return link(mono(text), getLinkAddress());
+    }
+
+    public String getLinkAddress() {
         return "#" + text.toLowerCase().replace(' ', '-');
     }
 

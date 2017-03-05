@@ -5,6 +5,10 @@ import com.google.common.base.Preconditions;
 public class MDLine implements MDParagraph {
     private final String text;
 
+    public static MDLine empty() {
+        return new MDLine("");
+    }
+
     public static MDLine of(String text) {
         return new MDLine(text);
     }

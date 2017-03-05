@@ -1,6 +1,8 @@
 package refactula.story.quest;
 
 import refactula.story.markdown.Header;
+import refactula.story.markdown.MDLine;
+import refactula.story.markdown.MDWriter;
 import refactula.story.markdown.Markdown;
 import refactula.story.Reward;
 
@@ -38,4 +40,12 @@ public abstract class Quest implements Markdown {
     }
 
     public abstract Header getHeader();
+
+    protected void writeTasks(MDWriter writer) {
+        writer.writeln(new Header(5, "Tasks"));
+        for (Task task : tasks) {
+            writer.write(task);
+        }
+        writer.write(MDLine.empty());
+    }
 }

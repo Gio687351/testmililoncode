@@ -6,11 +6,24 @@
 
 Name: **Refactula**  
 Level: **9**  
-Progress: 10.76% (183/1700)  
+Progress: 18.24% (310/1700)  
 
-![Progress: 10.76%](Story/files/progress-bar.png)
+![Progress: 18.24%](Story/files/progress-bar.png)
 
 ## Quests
+
+### Story Teller
+
+Create a program that turns this *1 Million Lines of Code* challenge into an RPG-style journey with levels, quests, skills and achievements.
+
+##### Tasks
+
+* [x] Implement `Markdown` support [`+OOP`](#object-oriented-programming)
+* [x] Implement Quests [`+OOP`](#object-oriented-programming)
+* [x] Implement Achievements [`+OOP`](#object-oriented-programming)
+* [x] Implement Skills [`+OOP`](#object-oriented-programming)
+* [ ] Implement Character summary [`+OOP`](#object-oriented-programming)
+* [ ] Complete the quest [`Let the Journey Begin`](#let-the-journey-begin)
 
 ### Design Patterns
 
@@ -57,9 +70,13 @@ Implement all design patterns.
 
 ### Object-Oriented Programming
 
-Proved by: [`Design Patterns`](#design-patterns).
+Proved by: [`Design Patterns (15)`](#design-patterns) [`Story Teller (4)`](#story-teller).
 
 ## Achievements
+
+### Let the Journey Begin
+
+Has completed [`Story Teller`](#story-teller) quest.
 
 ### Gang of One
 
