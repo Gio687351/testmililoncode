@@ -48,4 +48,24 @@ public abstract class Quest implements Markdown {
         }
         writer.write(MDLine.empty());
     }
+
+    public boolean isInProgress() {
+        return hasCompletedTasks();
+    }
+
+    public boolean isCompleted() {
+        return hasTasks() && allTasksCompleted();
+    }
+
+    private boolean hasCompletedTasks() {
+        return tasks.stream().anyMatch(Task::isCompleted);
+    }
+
+    private boolean hasTasks() {
+        return !tasks.isEmpty();
+    }
+
+    private boolean allTasksCompleted() {
+        return tasks.stream().allMatch(Task::isCompleted);
+    }
 }

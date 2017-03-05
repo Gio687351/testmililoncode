@@ -19,6 +19,7 @@ import java.nio.file.Paths;
 public class StoryApp {
 
     public static void main(String[] args) throws IOException {
+        // TODO: replace with dependency injection.
         Hero hero = new Hero("Refactula", "Vlad the Refactula");
         int lines = LinesCounter.countLines();
         LevelCalculator levelCalculator = new LevelCalculator(100, 200);
@@ -32,10 +33,10 @@ public class StoryApp {
         GangOfOne gangOfOne = new GangOfOne();
         StoryTeller storyTeller = new StoryTeller(objectOrientedProgramming, letTheJourneyBegin);
         DesignPatterns designPatterns = new DesignPatterns(objectOrientedProgramming, gangOfOne);
-        CharacterChapter characterChapter = new CharacterChapter(hero, level, progressBar);
         QuestsChapter questsChapter = new QuestsChapter(storyTeller, designPatterns);
         SkillsChapter skillsChapter = new SkillsChapter(objectOrientedProgramming);
         AchievementsChapter achievementsChapter = new AchievementsChapter(letTheJourneyBegin, gangOfOne);
+        CharacterChapter characterChapter = new CharacterChapter(hero, level, progressBar);
         Story story = new Story(characterChapter, questsChapter, skillsChapter, achievementsChapter);
         new ProgressBarPainter().draw(1.0 * completed / levelLines, Paths.get(progressBar).toFile());
         try (MDWriter mdWriter = new MDWriter(new PrintWriter(new FileWriter("README.md")))) {

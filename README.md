@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **9**  
-Progress: 18.24% (310/1700)  
+Progress: 19.18% (326/1700)  
 
-![Progress: 18.24%](Story/files/progress-bar.png)
+![Progress: 19.18%](Story/files/progress-bar.png)
 
 ## Quests
 

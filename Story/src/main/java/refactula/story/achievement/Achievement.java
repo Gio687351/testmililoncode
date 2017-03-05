@@ -31,7 +31,7 @@ public abstract class Achievement extends Reward {
             for (Quest quest : activatedBy) {
                 builder.append(' ').append(quest.getHeader().getFormattedLink());
             }
-            writer.writeln(MDLine.of(builder.toString()));
+            writer.writeln(MDLine.of(builder.append('.').toString()));
         }
     }
 }
