@@ -34,4 +34,8 @@ public abstract class Achievement extends Reward {
             writer.writeln(MDLine.of(builder.append('.').toString()));
         }
     }
+
+    public boolean isGranted() {
+        return !activatedBy.isEmpty();
+    }
 }

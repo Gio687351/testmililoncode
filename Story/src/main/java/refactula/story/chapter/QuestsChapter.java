@@ -2,24 +2,27 @@ package refactula.story.chapter;
 
 import refactula.story.markdown.Header;
 import refactula.story.markdown.MDWriter;
-import refactula.story.quest.DesignPatterns;
-import refactula.story.quest.StoryTeller;
+import refactula.story.quest.Quest;
+
+import java.util.List;
 
 public class QuestsChapter extends Chapter {
     private final Header header = new Header(2, "Quests");
+    private final List<Quest> quests;
 
-    private final StoryTeller storyTeller;
-    private final DesignPatterns designPatterns;
-
-    public QuestsChapter(StoryTeller storyTeller, DesignPatterns designPatterns) {
-        this.storyTeller = storyTeller;
-        this.designPatterns = designPatterns;
+    public QuestsChapter(List<Quest> quests) {
+        this.quests = quests;
     }
 
     @Override
     public void writeTo(MDWriter writer) {
         writer.writeln(header);
-        writer.write(storyTeller);
-        writer.write(designPatterns);
+        for (Quest quest : quests) {
+            writer.write(quest);
+        }
+    }
+
+    public List<Quest> getQuests() {
+        return quests;
     }
 }

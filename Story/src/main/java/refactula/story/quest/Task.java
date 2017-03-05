@@ -45,7 +45,7 @@ public class Task implements MDParagraph {
         builder.append(text);;
         for (Reward reward : rewards) {
             builder.append(' ');
-            builder.append(reward.getFormattedLink());
+            builder.append(reward.getTaskLineLink());
         }
         return MDLine.of(builder.toString());
     }

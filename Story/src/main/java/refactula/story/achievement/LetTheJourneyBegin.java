@@ -21,7 +21,12 @@ public class LetTheJourneyBegin extends Achievement {
     }
 
     @Override
-    public String getFormattedLink() {
+    public String getTaskLineLink() {
         return header.getFormattedLink();
+    }
+
+    @Override
+    public Header getHeader() {
+        return header;
     }
 }

@@ -16,10 +16,12 @@ import static refactula.story.markdown.Formatting.link;
 import static refactula.story.markdown.Formatting.mono;
 
 public abstract class Skill extends Reward {
+    int activations = 0;
     private Map<Quest, Integer> activatedQuests = new HashMap<>();
 
     @Override
     public void activate(Quest quest) {
+        activations++;
         activatedQuests.put(quest, activatedQuests.getOrDefault(quest, 0) + 1);
     }
 
@@ -49,5 +51,13 @@ public abstract class Skill extends Reward {
             }
             writer.writeln(MDLine.of(builder.append('.').toString()));
         }
+    }
+
+    public boolean isActivated() {
+        return !activatedQuests.isEmpty();
+    }
+
+    public String getCharacterChapterLink() {
+        return link(mono(getHeader().getText() + " (" + activations + ")"), getHeader().getLinkAddress());
     }
 }

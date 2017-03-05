@@ -6,9 +6,17 @@
 
 Name: **Refactula**  
 Level: **9**  
-Progress: 19.18% (326/1700)  
+Progress: 26.24% (446/1700)  
 
-![Progress: 19.18%](Story/files/progress-bar.png)
+![Progress: 26.24%](Story/files/progress-bar.png)
+
+Ongoing Quests: [`Design Patterns`](#design-patterns)
+
+Achievements: [`Let the Journey Begin`](#let-the-journey-begin)
+
+Skills: [`Object-Oriented Programming (20)`](#object-oriented-programming)
+
+Completed Quests: [`Story Teller`](#story-teller)
 
 ## Quests
 
@@ -22,8 +30,8 @@ Create a program that turns this *1 Million Lines of Code* challenge into an RPG
 * [x] Implement Quests [`+OOP`](#object-oriented-programming)
 * [x] Implement Achievements [`+OOP`](#object-oriented-programming)
 * [x] Implement Skills [`+OOP`](#object-oriented-programming)
-* [ ] Implement Character summary [`+OOP`](#object-oriented-programming)
-* [ ] Complete the quest [`Let the Journey Begin`](#let-the-journey-begin)
+* [x] Implement Character summary [`+OOP`](#object-oriented-programming)
+* [x] Complete the quest [`Let the Journey Begin`](#let-the-journey-begin)
 
 ### Design Patterns
 
@@ -70,13 +78,15 @@ Implement all design patterns.
 
 ### Object-Oriented Programming
 
-Proved by: [`Design Patterns (15)`](#design-patterns) [`Story Teller (4)`](#story-teller).
+Proved by: [`Design Patterns (15)`](#design-patterns) [`Story Teller (5)`](#story-teller).
 
 ## Achievements
 
 ### Let the Journey Begin
 
 Has completed [`Story Teller`](#story-teller) quest.
+
+Granted by: [`Story Teller`](#story-teller).
 
 ### Gang of One
 

@@ -7,12 +7,13 @@ import refactula.story.markdown.MDWriter;
 public class ObjectOrientedProgramming extends Skill {
     private final Header header = new Header(3, "Object-Oriented Programming");
 
+    @Override
     public Header getHeader() {
         return header;
     }
 
     @Override
-    public String getFormattedLink() {
+    public String getTaskLineLink() {
         return Formatting.link("`+OOP`", header.getLinkAddress());
     }
 

@@ -1,5 +1,6 @@
 package refactula.story;
 
+import com.google.common.collect.ImmutableList;
 import refactula.story.achievement.GangOfOne;
 import refactula.story.achievement.LetTheJourneyBegin;
 import refactula.story.chapter.AchievementsChapter;
@@ -33,10 +34,20 @@ public class StoryApp {
         GangOfOne gangOfOne = new GangOfOne();
         StoryTeller storyTeller = new StoryTeller(objectOrientedProgramming, letTheJourneyBegin);
         DesignPatterns designPatterns = new DesignPatterns(objectOrientedProgramming, gangOfOne);
-        QuestsChapter questsChapter = new QuestsChapter(storyTeller, designPatterns);
-        SkillsChapter skillsChapter = new SkillsChapter(objectOrientedProgramming);
-        AchievementsChapter achievementsChapter = new AchievementsChapter(letTheJourneyBegin, gangOfOne);
-        CharacterChapter characterChapter = new CharacterChapter(hero, level, progressBar);
+        QuestsChapter questsChapter = new QuestsChapter(ImmutableList.of(storyTeller, designPatterns));
+        SkillsChapter skillsChapter = new SkillsChapter(ImmutableList.of(objectOrientedProgramming));
+        AchievementsChapter achievementsChapter = new AchievementsChapter(ImmutableList.of(
+                letTheJourneyBegin,
+                gangOfOne));
+
+        CharacterChapter characterChapter = new CharacterChapter(
+                hero,
+                level,
+                progressBar,
+                questsChapter,
+                skillsChapter,
+                achievementsChapter);
+
         Story story = new Story(characterChapter, questsChapter, skillsChapter, achievementsChapter);
         new ProgressBarPainter().draw(1.0 * completed / levelLines, Paths.get(progressBar).toFile());
         try (MDWriter mdWriter = new MDWriter(new PrintWriter(new FileWriter("README.md")))) {

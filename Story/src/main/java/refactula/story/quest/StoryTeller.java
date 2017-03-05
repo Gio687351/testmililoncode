@@ -18,8 +18,8 @@ public class StoryTeller extends Quest {
         done("Implement Quests", objectOrientedProgramming);
         done("Implement Achievements", objectOrientedProgramming);
         done("Implement Skills", objectOrientedProgramming);
-        task("Implement Character summary", objectOrientedProgramming);
-        task("Complete the quest", letTheJourneyBegin);
+        done("Implement Character summary", objectOrientedProgramming);
+        done("Complete the quest", letTheJourneyBegin);
     }
 
     @Override

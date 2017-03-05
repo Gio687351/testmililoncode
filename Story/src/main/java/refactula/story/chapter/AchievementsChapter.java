@@ -1,23 +1,27 @@
 package refactula.story.chapter;
 
-import refactula.story.achievement.GangOfOne;
-import refactula.story.achievement.LetTheJourneyBegin;
+import refactula.story.achievement.Achievement;
 import refactula.story.markdown.Header;
 import refactula.story.markdown.MDWriter;
 
-public class AchievementsChapter extends Chapter {
-    private final LetTheJourneyBegin letTheJourneyBegin;
-    private final GangOfOne gangOfOne;
+import java.util.List;
 
-    public AchievementsChapter(LetTheJourneyBegin letTheJourneyBegin, GangOfOne gangOfOne) {
-        this.letTheJourneyBegin = letTheJourneyBegin;
-        this.gangOfOne = gangOfOne;
+public class AchievementsChapter extends Chapter {
+    private final List<Achievement> achievements;
+
+    public AchievementsChapter(List<Achievement> achievements) {
+        this.achievements = achievements;
     }
 
     @Override
     public void writeTo(MDWriter writer) {
         writer.writeln(new Header(2, "Achievements"));
-        writer.write(letTheJourneyBegin);
-        writer.write(gangOfOne);
+        for (Achievement achievement : achievements) {
+            writer.write(achievement);
+        }
+    }
+
+    public List<Achievement> getAchievements() {
+        return achievements;
     }
 }

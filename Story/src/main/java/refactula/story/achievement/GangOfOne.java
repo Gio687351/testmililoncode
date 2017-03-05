@@ -8,8 +8,13 @@ public class GangOfOne extends Achievement {
     private final Header header = new Header(3, "Gang of One");
 
     @Override
-    public String getFormattedLink() {
+    public String getTaskLineLink() {
         return header.getFormattedLink();
+    }
+
+    @Override
+    public Header getHeader() {
+        return header;
     }
 
     @Override

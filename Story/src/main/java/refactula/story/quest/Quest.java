@@ -50,7 +50,7 @@ public abstract class Quest implements Markdown {
     }
 
     public boolean isInProgress() {
-        return hasCompletedTasks();
+        return hasTasks() && hasCompletedTasks() && !allTasksCompleted();
     }
 
     public boolean isCompleted() {
