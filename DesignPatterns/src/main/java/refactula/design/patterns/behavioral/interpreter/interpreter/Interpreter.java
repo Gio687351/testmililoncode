@@ -1,22 +1,23 @@
 package refactula.design.patterns.behavioral.interpreter.interpreter;
 
+import com.google.common.base.Preconditions;
 import refactula.design.patterns.behavioral.interpreter.abstract_data_types.Expression;
 
-public abstract class Interpreter<E extends Expression> {
-    private final Class<E> expessionClass;
+public abstract class Interpreter<E extends Expression, T> {
+    private final Class<E> expressionClass;
 
-    protected Interpreter(Class<E> expessionClass) {
-        this.expessionClass = expessionClass;
+    protected Interpreter(Class<E> expressionClass) {
+        this.expressionClass = expressionClass;
     }
 
-    public final boolean interpret(Context context, Expression expression) {
-        if (expessionClass.isAssignableFrom(expression.getClass())) {
-            doInterpret(context, expessionClass.cast(expression));
-            return true;
-        } else {
-            return false;
-        }
+    public boolean canInterpret(Expression expression) {
+        return expressionClass.isAssignableFrom(expression.getClass());
     }
 
-    protected abstract void doInterpret(Context context, E expression);
+    public final T interpret(InterpreterContext context, Expression expression) {
+        Preconditions.checkArgument(canInterpret(expression));
+        return doInterpret(context, expressionClass.cast(expression));
+    }
+
+    protected abstract T doInterpret(InterpreterContext context, E expression);
 }
