@@ -53,7 +53,7 @@ public class DesignPatterns extends Quest {
         
         chainOfResponsibility = done(link("Chain of Responsibility", implPackage + "/behavioral/chain_of_responsibility"), objectOrientedProgramming);
         command = done(link("Command", implPackage + "/behavioral/command"), objectOrientedProgramming);
-        interpreter = task("Interpreter", objectOrientedProgramming);
+        interpreter = done(link("Interpreter", implPackage + "/behavioral/interpreter"), objectOrientedProgramming);
         iterator = task("Iterator", objectOrientedProgramming);
         mediator = task("Mediator", objectOrientedProgramming);
         memento = task("Memento", objectOrientedProgramming);
