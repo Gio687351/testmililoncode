@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **9**  
-Progress: 70.29% (1195/1700)  
+Progress: 70.35% (1196/1700)  
 
-![Progress: 70.29%](Story/files/progress-bar.png)
+![Progress: 70.35%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Design Patterns`](#design-patterns)
 
@@ -31,7 +31,7 @@ Create a program that turns this *1 Million Lines of Code* challenge into an RPG
 * [x] Implement Achievements [`+OOP`](#object-oriented-programming)
 * [x] Implement Skills [`+OOP`](#object-oriented-programming)
 * [x] Implement Character summary [`+OOP`](#object-oriented-programming)
-* [x] Complete the quest [`Let the Journey Begin`](#let-the-journey-begin)
+* [x] [Complete the quest](Story/src/main/java/refactula/story) [`Let the Journey Begin`](#let-the-journey-begin)
 
 ### Design Patterns
 

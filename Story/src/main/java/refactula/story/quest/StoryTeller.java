@@ -7,6 +7,7 @@ import refactula.story.markdown.MDWriter;
 import refactula.story.skill.ObjectOrientedProgramming;
 
 import static refactula.story.markdown.Formatting.italic;
+import static refactula.story.markdown.Formatting.link;
 import static refactula.story.markdown.Formatting.mono;
 
 public class StoryTeller extends Quest {
@@ -19,7 +20,7 @@ public class StoryTeller extends Quest {
         done("Implement Achievements", objectOrientedProgramming);
         done("Implement Skills", objectOrientedProgramming);
         done("Implement Character summary", objectOrientedProgramming);
-        done("Complete the quest", letTheJourneyBegin);
+        done(link("Complete the quest", "Story/src/main/java/refactula/story"), letTheJourneyBegin);
     }
 
     @Override
