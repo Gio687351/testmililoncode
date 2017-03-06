@@ -18,22 +18,11 @@ public abstract class Achievement extends Reward {
 
     @Override
     public final void writeTo(MDWriter writer) {
-        writeContend(writer);
-        writeGrantedBy(writer);
+        writer.writeln(getHeader());
+        writer.writeln(MDLine.of("* [" + (isGranted() ? "x" : " ") + "] " + getLine().toString()));
     }
 
-    protected abstract void writeContend(MDWriter writer);
-
-    private void writeGrantedBy(MDWriter writer) {
-        if (!activatedBy.isEmpty()) {
-            StringBuilder builder = new StringBuilder();
-            builder.append("Granted by:");
-            for (Quest quest : activatedBy) {
-                builder.append(' ').append(quest.getHeader().getFormattedLink());
-            }
-            writer.writeln(MDLine.of(builder.append('.').toString()));
-        }
-    }
+    protected abstract MDLine getLine();
 
     public boolean isGranted() {
         return !activatedBy.isEmpty();

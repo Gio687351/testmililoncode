@@ -15,9 +15,8 @@ public class LetTheJourneyBegin extends Achievement {
     }
 
     @Override
-    protected void writeContend(MDWriter writer) {
-        writer.writeln(header);
-        writer.writeln(MDLine.of("Has completed " + storyTeller.getHeader().getFormattedLink() + " quest."));
+    protected MDLine getLine() {
+        return MDLine.of("Has completed " + storyTeller.getHeader().getFormattedLink() + " quest.");
     }
 
     @Override

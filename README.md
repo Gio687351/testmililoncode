@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **9**  
-Progress: 70.47% (1198/1700)  
+Progress: 70.29% (1195/1700)  
 
-![Progress: 70.47%](Story/files/progress-bar.png)
+![Progress: 70.29%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Design Patterns`](#design-patterns)
 
@@ -84,11 +84,9 @@ Proved by: [`Design Patterns (17)`](#design-patterns) [`Story Teller (5)`](#stor
 
 ### Let the Journey Begin
 
-Has completed [`Story Teller`](#story-teller) quest.
-
-Granted by: [`Story Teller`](#story-teller).
+* [x] Has completed [`Story Teller`](#story-teller) quest.
 
 ### Gang of One
 
-Has implemented all design patterns.
+* [ ] Has implemented all [`Design Patterns`](#design-patterns).
 
