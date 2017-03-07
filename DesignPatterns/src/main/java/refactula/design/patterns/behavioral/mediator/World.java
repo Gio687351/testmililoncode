@@ -1,6 +1,7 @@
 package refactula.design.patterns.behavioral.mediator;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 
 public class World {
@@ -42,5 +43,13 @@ public class World {
 
     public float restrictY(float y) {
         return Math.max(0, Math.min(y, height));
+    }
+
+    public Iterable<Creature> getCreaturesInRadius(float x, float y, float radius) {
+        return () -> creatures.stream().filter(creature -> creature.isInsideCircle(x, y, radius)).iterator();
+    }
+
+    public Collection<Creature> getCreatures() {
+        return Collections.unmodifiableCollection(creatures);
     }
 }

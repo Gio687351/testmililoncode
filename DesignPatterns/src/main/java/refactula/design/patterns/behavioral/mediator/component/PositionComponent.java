@@ -1,6 +1,7 @@
 package refactula.design.patterns.behavioral.mediator.component;
 
 import com.google.common.base.Preconditions;
+import refactula.design.patterns.behavioral.mediator.Geometry;
 
 public class PositionComponent extends CreatureComponent {
     private float x;
@@ -23,5 +24,9 @@ public class PositionComponent extends CreatureComponent {
     public void move(float dx, float dy) {
         x += dx;
         y += dy;
+    }
+
+    public boolean isInsideCircle(float x, float y, float radius) {
+        return Geometry.distanceSquared(x, y, getX(), getY()) <= radius * radius;
     }
 }

@@ -36,4 +36,16 @@ public class Creature {
     public float getVelocityY() {
         return creatureMediator.getVelocityY();
     }
+
+    public boolean isAlive() {
+        return creatureMediator.isActive();
+    }
+
+    public boolean isInsideCircle(float x, float y, float radius) {
+        return creatureMediator.isInsideCircle(x, y, radius);
+    }
+
+    public FleshType getFleshType() {
+        return creatureMediator.getFleshType();
+    }
 }

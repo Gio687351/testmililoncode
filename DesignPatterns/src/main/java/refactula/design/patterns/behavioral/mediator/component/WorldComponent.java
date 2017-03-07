@@ -25,4 +25,7 @@ public class WorldComponent extends CreatureComponent {
         return world;
     }
 
+    public boolean isActive() {
+        return world != null;
+    }
 }

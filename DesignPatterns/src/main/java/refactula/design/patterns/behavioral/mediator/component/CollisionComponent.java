@@ -2,12 +2,24 @@ package refactula.design.patterns.behavioral.mediator.component;
 
 import com.google.common.base.Preconditions;
 import refactula.design.patterns.behavioral.mediator.Creature;
+import refactula.design.patterns.behavioral.mediator.Geometry;
 import refactula.design.patterns.behavioral.mediator.shape.Circle;
 import refactula.design.patterns.behavioral.mediator.shape.Shape;
 
 public class CollisionComponent extends CreatureComponent {
 
-    public boolean collidesWith(Creature other) {
+    public void update() {
+        for (Creature creature : mediator().getWorld().getCreatures()) {
+            if (creature.isAlive() && collidesWith(creature)) {
+                mediator().onCollide(creature);
+                if (!mediator().isActive()) {
+                    break;
+                }
+            }
+        }
+    }
+
+    private boolean collidesWith(Creature other) {
         Shape myShape = mediator().getShape();
         float myX = mediator().getX();
         float myY = mediator().getY();
@@ -25,13 +37,7 @@ public class CollisionComponent extends CreatureComponent {
         float otherRadius = otherCircle.getRadius();
 
         float collisionDistance = myRadius + otherRadius;
-        return distanceSquared(myX, myY, otherX, otherY) < collisionDistance * collisionDistance;
-    }
-
-    private float distanceSquared(float x1, float y1, float x2, float y2) {
-        float dx = x1 - x2;
-        float dy = y1 - y2;
-        return dx * dx + dy * dy;
+        return Geometry.distanceSquared(myX, myY, otherX, otherY) < collisionDistance * collisionDistance;
     }
 
 }

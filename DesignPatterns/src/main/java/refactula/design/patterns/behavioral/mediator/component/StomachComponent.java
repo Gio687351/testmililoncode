@@ -1,4 +1,7 @@
 package refactula.design.patterns.behavioral.mediator.component;
 
-public class StomachComponent extends CreatureComponent {
+import refactula.design.patterns.behavioral.mediator.Creature;
+
+public abstract class StomachComponent extends CreatureComponent {
+    public abstract void onCollide(Creature creature);
 }
