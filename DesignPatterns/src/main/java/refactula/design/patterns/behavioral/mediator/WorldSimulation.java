@@ -12,12 +12,12 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.Random;
 
-public class WorldApp {
+public class WorldSimulation {
 
     public static void main(String[] args) {
-        World world = new World(1000f, 800f);
+        World world = new World(800f, 600f);
         Random random = new Random();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 300; i++) {
             createPlant(
                     world,
                     random.nextFloat() * world.getWidth(),
@@ -30,7 +30,7 @@ public class WorldApp {
                     random.nextFloat() * world.getWidth(),
                     random.nextFloat() * world.getHeight());
         }
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 1; i++) {
             createPredator(
                     world,
                     random,
@@ -42,7 +42,9 @@ public class WorldApp {
             @Override
             protected void paintComponent(Graphics graphics) {
                 super.paintComponent(graphics);
-                GraphicsPainter painter = new GraphicsPainter((Graphics2D) graphics);
+                Graphics2D g = (Graphics2D) graphics;
+                // g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                GraphicsPainter painter = new GraphicsPainter(g);
                 synchronized (world) {
                     world.draw(painter);
                 }
@@ -57,14 +59,24 @@ public class WorldApp {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
-        for (int i = 0; i < 10000; i++) {
+        while (true) {
             try {
-                Thread.sleep(10);
+                Thread.sleep(5);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
+                break;
             }
             synchronized (world) {
-                world.update(0.01f);
+                world.update(0.005f);
+                int plants = 0;
+                for (Creature creature : world.getCreatures()) {
+                    if (creature.getFleshType() == FleshType.PLANT) {
+                        plants++;
+                    }
+                }
+                for (; plants < 100; plants++) {
+                    createPlant(world, random.nextFloat() * world.getWidth(), random.nextFloat() * world.getHeight());
+                }
             }
             frame.repaint();
         }
@@ -97,7 +109,7 @@ public class WorldApp {
                 new CollisionComponent(),
                 new MotionComponent(),
                 new FleshComponent(FleshType.RICH_MEAT),
-                new HerbivoreBrain(random, 10, 50, 60),
+                new HerbivoreBrain(random, 20, 140, 60, 100),
                 new HerbivoreStomach(),
                 new AlivenessComponent(),
                 new PainterComponent(Color.BLUE)));
@@ -111,11 +123,11 @@ public class WorldApp {
         Creature creature = new Creature(new CreatureMediator(
                 new WorldComponent(),
                 new PositionComponent(),
-                new ShapeComponent(new Circle(5f)),
+                new ShapeComponent(new Circle(6f)),
                 new CollisionComponent(),
                 new MotionComponent(),
                 new FleshComponent(FleshType.LEAN_MEAT),
-                new PredatorBrain(random, 10, 30, 100),
+                new PredatorBrain(random, 40, 120, 80),
                 new PredatorStomach(),
                 new AlivenessComponent(),
                 new PainterComponent(Color.RED)));

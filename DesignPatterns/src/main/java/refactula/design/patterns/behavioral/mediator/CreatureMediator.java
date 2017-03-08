@@ -77,8 +77,8 @@ public class CreatureMediator {
         return positionComponent.getY();
     }
 
-    public void move(float dx, float dy) {
-        positionComponent.move(dx, dy);
+    public void movePosition(float dx, float dy) {
+        positionComponent.movePosition(dx, dy);
     }
 
     public boolean isInsideCircle(float x, float y, float radius) {

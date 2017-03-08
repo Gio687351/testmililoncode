@@ -1,7 +1,6 @@
 package refactula.design.patterns.behavioral.mediator.component;
 
 import refactula.design.patterns.behavioral.mediator.Geometry;
-import refactula.design.patterns.behavioral.mediator.World;
 
 public class MotionComponent extends CreatureComponent {
     private float velocityX;
@@ -9,11 +8,7 @@ public class MotionComponent extends CreatureComponent {
 
     public void limitAndSetVelocity(float x, float y, float maxVelocity) {
         float length = Geometry.length(x, y);
-        if (length > maxVelocity) {
-            setVelocity(x * maxVelocity / length, y * maxVelocity / length);
-        } else {
-            setVelocity(x, y);
-        }
+        setVelocity(x * maxVelocity / length, y * maxVelocity / length);
     }
 
     public void setVelocity(float x, float y) {
@@ -30,8 +25,7 @@ public class MotionComponent extends CreatureComponent {
     }
 
     public void updateMotion(float deltaTime) {
-        World world = mediator().getWorld();
-        mediator().move(world.restrictX(velocityX * deltaTime), world.restrictY(velocityY * deltaTime));
+        mediator().movePosition(velocityX * deltaTime, velocityY * deltaTime);
     }
 
     public void moveTowards(float x, float y, float maxVelocity) {

@@ -20,14 +20,15 @@ public class HerbivoreBrain extends BrainComponent {
             Random random,
             float maxWonderVelocity,
             float maxEscapeVelocity,
-            float visibilityRadius) {
+            float visibilityRadius,
+            float escapeVisibilityRadius) {
 
         this.random = random;
         this.visibilityRadius = visibilityRadius;
 
         this.wonder = new Wonder(maxWonderVelocity);
         this.eat = new Eat(maxWonderVelocity);
-        this.escape = new Escape(maxEscapeVelocity);
+        this.escape = new Escape(maxEscapeVelocity, escapeVisibilityRadius);
         this.activeStrategy = wonder;
     }
 
@@ -64,7 +65,6 @@ public class HerbivoreBrain extends BrainComponent {
             float y = mediator().getY();
             for (Creature creature : world.getCreaturesInRadius(x, y, visibilityRadius)) {
                 if (creature.getFleshType() == FleshType.LEAN_MEAT) {
-                    escape.predator = creature;
                     activeStrategy = escape;
                     return;
                 }
@@ -95,6 +95,15 @@ public class HerbivoreBrain extends BrainComponent {
                 target = null;
                 activeStrategy = wonder;
             } else {
+                World world = mediator().getWorld();
+                float x = mediator().getX();
+                float y = mediator().getY();
+                for (Creature creature : world.getCreaturesInRadius(x, y, visibilityRadius)) {
+                    if (creature.getFleshType() == FleshType.LEAN_MEAT) {
+                        activeStrategy = escape;
+                        return;
+                    }
+                }
                 mediator().moveTowards(target.getX(), target.getY(), maxVelocity);
             }
         }
@@ -105,27 +114,33 @@ public class HerbivoreBrain extends BrainComponent {
     }
 
     private class Escape extends Strategy {
-        private Creature predator;
+        private final float escapeVisibilityRadius;
 
-        private Escape(float maxVelocity) {
+        private Escape(float maxVelocity, float escapeVisibilityRadius) {
             super(maxVelocity);
+            this.escapeVisibilityRadius = escapeVisibilityRadius;
         }
 
         @Override
         public void update() {
-            if (predator == null || !predator.isAlive() || hasLostThePredator()) {
-                predator = null;
+            float x = mediator().getX();
+            float y = mediator().getY();
+            World world = mediator().getWorld();
+            int predatorsCount = 0;
+            float velocityX = 0;
+            float velocityY = 0;
+            for (Creature creature : world.getCreaturesInRadius(x, y, escapeVisibilityRadius)) {
+                if (creature.getFleshType() == FleshType.LEAN_MEAT) {
+                    predatorsCount++;
+                    velocityX += x - creature.getX();
+                    velocityY += y - creature.getY();
+                }
+            }
+            if (predatorsCount == 0) {
                 activeStrategy = wonder;
             } else {
-                mediator().limitAndSetVelocity(
-                        mediator().getX() - predator.getX(),
-                        mediator().getY() - predator.getY(),
-                        maxVelocity);
+                mediator().limitAndSetVelocity(velocityX, velocityY, maxVelocity);
             }
-        }
-
-        private boolean hasLostThePredator() {
-            return !predator.isInsideCircle(mediator().getX(), mediator().getY(), visibilityRadius);
         }
     }
 }

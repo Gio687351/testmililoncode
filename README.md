@@ -5,10 +5,10 @@
 <img src="https://github.com/Refactula.png" alt="Vlad the Refactula" width="200px"/>
 
 Name: **Refactula**  
-Level: **9**  
-Progress: 70.35% (1196/1700)  
+Level: **10**  
+Progress: 17.11% (325/1900)  
 
-![Progress: 70.35%](Story/files/progress-bar.png)
+![Progress: 17.11%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Design Patterns`](#design-patterns)
 
@@ -16,7 +16,7 @@ Completed Quests: [`Story Teller`](#story-teller)
 
 Achievements: [`Let the Journey Begin`](#let-the-journey-begin)
 
-Skills: [`Object-Oriented Programming (22)`](#object-oriented-programming)
+Skills: [`Object-Oriented Programming (23)`](#object-oriented-programming)
 
 ## Quests
 
@@ -53,7 +53,7 @@ Implement all design patterns.
 * [x] [Command](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/command) [`+OOP`](#object-oriented-programming)
 * [x] [Interpreter](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/interpreter) [`+OOP`](#object-oriented-programming)
 * [x] [Iterator](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/iterator) [`+OOP`](#object-oriented-programming)
-* [ ] Mediator [`+OOP`](#object-oriented-programming)
+* [x] [Mediator](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/mediator) [`+OOP`](#object-oriented-programming)
 * [ ] Memento [`+OOP`](#object-oriented-programming)
 * [ ] Observer [`+OOP`](#object-oriented-programming)
 * [ ] Strategy [`+OOP`](#object-oriented-programming)
@@ -78,7 +78,7 @@ Implement all design patterns.
 
 ### Object-Oriented Programming
 
-Proved by: [`Design Patterns (17)`](#design-patterns) [`Story Teller (5)`](#story-teller).
+Proved by: [`Design Patterns (18)`](#design-patterns) [`Story Teller (5)`](#story-teller).
 
 ## Achievements
 
