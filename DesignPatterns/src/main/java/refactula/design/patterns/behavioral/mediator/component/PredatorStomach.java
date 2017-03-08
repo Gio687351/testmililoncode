@@ -7,7 +7,7 @@ public class PredatorStomach extends StomachComponent {
     @Override
     public void onCollide(Creature creature) {
         if (creature.getFleshType() == FleshType.RICH_MEAT) {
-            mediator().getWorld().remove(creature);
+            creature.onEaten();
         }
     }
 }

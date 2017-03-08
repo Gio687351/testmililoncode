@@ -27,7 +27,7 @@ public class PredatorBrain extends BrainComponent {
     }
 
     @Override
-    public void update() {
+    public void updateBrain() {
         activeStrategy.update();
     }
 

@@ -38,7 +38,7 @@ public class Creature {
     }
 
     public boolean isAlive() {
-        return creatureMediator.isActive();
+        return creatureMediator.isActive() && creatureMediator.isAlive();
     }
 
     public boolean isInsideCircle(float x, float y, float radius) {
@@ -47,5 +47,19 @@ public class Creature {
 
     public FleshType getFleshType() {
         return creatureMediator.getFleshType();
+    }
+
+    public void update(float deltaTime) {
+        creatureMediator.updateBrain();
+        creatureMediator.updateMotion(deltaTime);
+        creatureMediator.updateCollisions();
+    }
+
+    public void setPosition(float x, float y) {
+        creatureMediator.setPosition(x, y);
+    }
+
+    public void onEaten() {
+        creatureMediator.die();
     }
 }

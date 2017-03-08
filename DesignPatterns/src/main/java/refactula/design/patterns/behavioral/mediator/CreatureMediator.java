@@ -1,5 +1,6 @@
 package refactula.design.patterns.behavioral.mediator;
 
+import refactula.design.patterns.behavioral.mediator.component.AlivenessComponent;
 import refactula.design.patterns.behavioral.mediator.component.BrainComponent;
 import refactula.design.patterns.behavioral.mediator.component.CollisionComponent;
 import refactula.design.patterns.behavioral.mediator.component.FleshComponent;
@@ -19,6 +20,7 @@ public class CreatureMediator {
     private final FleshComponent fleshComponent;
     private final BrainComponent brainComponent;
     private final StomachComponent stomachComponent;
+    private final AlivenessComponent alivenessComponent;
 
     public CreatureMediator(
             WorldComponent worldComponent,
@@ -28,7 +30,7 @@ public class CreatureMediator {
             MotionComponent motionComponent,
             FleshComponent fleshComponent,
             BrainComponent brainComponent,
-            StomachComponent stomachComponent) {
+            StomachComponent stomachComponent, AlivenessComponent alivenessComponent) {
 
         this.worldComponent = worldComponent;
         this.positionComponent = positionComponent;
@@ -38,6 +40,20 @@ public class CreatureMediator {
         this.fleshComponent = fleshComponent;
         this.brainComponent = brainComponent;
         this.stomachComponent = stomachComponent;
+        this.alivenessComponent = alivenessComponent;
+        init();
+    }
+
+    private void init() {
+        worldComponent.setMediator(this);
+        positionComponent.setMediator(this);
+        shapeComponent.setMediator(this);
+        collisionComponent.setMediator(this);
+        motionComponent.setMediator(this);
+        fleshComponent.setMediator(this);
+        brainComponent.setMediator(this);
+        stomachComponent.setMediator(this);
+        alivenessComponent.setMediator(this);
     }
 
     public void onAdded(World world) {
@@ -68,6 +84,10 @@ public class CreatureMediator {
         positionComponent.move(dx, dy);
     }
 
+    public boolean isInsideCircle(float x, float y, float radius) {
+        return positionComponent.isInsideCircle(x, y, radius);
+    }
+
     public Shape getShape() {
         return shapeComponent.getShape();
     }
@@ -84,10 +104,20 @@ public class CreatureMediator {
         return motionComponent.getVelocityY();
     }
 
-    public void update(float deltaTime) {
-        brainComponent.update();
-        motionComponent.update(deltaTime);
-        collisionComponent.update();
+    public void updateMotion(float deltaTime) {
+        motionComponent.updateMotion(deltaTime);
+    }
+
+    public void moveTowards(float x, float y, float maxVelocity) {
+        motionComponent.moveTowards(x, y, maxVelocity);
+    }
+
+    public void updateBrain() {
+        brainComponent.updateBrain();
+    }
+
+    public void updateCollisions() {
+        collisionComponent.updateCollisions();
     }
 
     public void limitAndSetVelocity(float x, float y, float maxVelocity) {
@@ -98,19 +128,19 @@ public class CreatureMediator {
         return worldComponent.isActive();
     }
 
-    public boolean isInsideCircle(float x, float y, float radius) {
-        return positionComponent.isInsideCircle(x, y, radius);
-    }
-
     public FleshType getFleshType() {
         return fleshComponent.getFleshType();
     }
 
-    public void moveTowards(float x, float y, float maxVelocity) {
-        motionComponent.moveTowards(x, y, maxVelocity);
-    }
-
     public void onCollide(Creature creature) {
         stomachComponent.onCollide(creature);
+    }
+
+    public void die() {
+        alivenessComponent.die();
+    }
+
+    public boolean isAlive() {
+        return alivenessComponent.isAlive();
     }
 }

@@ -22,6 +22,7 @@ public class WorldComponent extends CreatureComponent {
     }
 
     public World getWorld() {
+        Preconditions.checkNotNull(world);
         return world;
     }
 

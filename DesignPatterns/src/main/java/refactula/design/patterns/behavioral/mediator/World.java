@@ -1,8 +1,11 @@
 package refactula.design.patterns.behavioral.mediator;
 
+import com.google.common.collect.ImmutableList;
+
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class World {
     private final float width;
@@ -51,5 +54,10 @@ public class World {
 
     public Collection<Creature> getCreatures() {
         return Collections.unmodifiableCollection(creatures);
+    }
+
+    public void update(float deltaTime) {
+        creatures.forEach(creature -> creature.update(deltaTime));
+        creatures.removeIf(creature -> !creature.isAlive());
     }
 }

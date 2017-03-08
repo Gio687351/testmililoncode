@@ -29,7 +29,7 @@ public class MotionComponent extends CreatureComponent {
         return velocityY;
     }
 
-    public void update(float deltaTime) {
+    public void updateMotion(float deltaTime) {
         World world = mediator().getWorld();
         mediator().move(world.restrictX(velocityX * deltaTime), world.restrictY(velocityY * deltaTime));
     }

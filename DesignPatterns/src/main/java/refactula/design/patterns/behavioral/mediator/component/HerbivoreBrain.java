@@ -32,7 +32,7 @@ public class HerbivoreBrain extends BrainComponent {
     }
 
     @Override
-    public void update() {
+    public void updateBrain() {
         activeStrategy.update();
     }
 

@@ -8,7 +8,7 @@ import refactula.design.patterns.behavioral.mediator.shape.Shape;
 
 public class CollisionComponent extends CreatureComponent {
 
-    public void update() {
+    public void updateCollisions() {
         for (Creature creature : mediator().getWorld().getCreatures()) {
             if (creature.isAlive() && collidesWith(creature)) {
                 mediator().onCollide(creature);
