@@ -58,6 +58,16 @@ public class World {
 
     public void update(float deltaTime) {
         creatures.forEach(creature -> creature.update(deltaTime));
-        creatures.removeIf(creature -> !creature.isAlive());
+        for (Iterator<Creature> iterator = creatures.iterator(); iterator.hasNext(); ) {
+            Creature creature = iterator.next();
+            if (!creature.isAlive()) {
+                iterator.remove();
+                creature.onRemoved(this);
+            }
+        }
+    }
+
+    public void draw(Painter painter) {
+        creatures.forEach(creature ->  creature.draw(painter));
     }
 }

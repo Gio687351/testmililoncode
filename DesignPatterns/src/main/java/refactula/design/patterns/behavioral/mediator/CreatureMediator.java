@@ -1,14 +1,6 @@
 package refactula.design.patterns.behavioral.mediator;
 
-import refactula.design.patterns.behavioral.mediator.component.AlivenessComponent;
-import refactula.design.patterns.behavioral.mediator.component.BrainComponent;
-import refactula.design.patterns.behavioral.mediator.component.CollisionComponent;
-import refactula.design.patterns.behavioral.mediator.component.FleshComponent;
-import refactula.design.patterns.behavioral.mediator.component.MotionComponent;
-import refactula.design.patterns.behavioral.mediator.component.PositionComponent;
-import refactula.design.patterns.behavioral.mediator.component.ShapeComponent;
-import refactula.design.patterns.behavioral.mediator.component.StomachComponent;
-import refactula.design.patterns.behavioral.mediator.component.WorldComponent;
+import refactula.design.patterns.behavioral.mediator.component.*;
 import refactula.design.patterns.behavioral.mediator.shape.Shape;
 
 public class CreatureMediator {
@@ -21,6 +13,7 @@ public class CreatureMediator {
     private final BrainComponent brainComponent;
     private final StomachComponent stomachComponent;
     private final AlivenessComponent alivenessComponent;
+    private final PainterComponent painterComponent;
 
     public CreatureMediator(
             WorldComponent worldComponent,
@@ -30,7 +23,9 @@ public class CreatureMediator {
             MotionComponent motionComponent,
             FleshComponent fleshComponent,
             BrainComponent brainComponent,
-            StomachComponent stomachComponent, AlivenessComponent alivenessComponent) {
+            StomachComponent stomachComponent,
+            AlivenessComponent alivenessComponent,
+            PainterComponent painterComponent) {
 
         this.worldComponent = worldComponent;
         this.positionComponent = positionComponent;
@@ -41,6 +36,7 @@ public class CreatureMediator {
         this.brainComponent = brainComponent;
         this.stomachComponent = stomachComponent;
         this.alivenessComponent = alivenessComponent;
+        this.painterComponent = painterComponent;
         init();
     }
 
@@ -54,6 +50,7 @@ public class CreatureMediator {
         brainComponent.setMediator(this);
         stomachComponent.setMediator(this);
         alivenessComponent.setMediator(this);
+        painterComponent.setMediator(this);
     }
 
     public void onAdded(World world) {
@@ -142,5 +139,9 @@ public class CreatureMediator {
 
     public boolean isAlive() {
         return alivenessComponent.isAlive();
+    }
+
+    public void draw(Painter painter) {
+        painterComponent.draw(painter);
     }
 }

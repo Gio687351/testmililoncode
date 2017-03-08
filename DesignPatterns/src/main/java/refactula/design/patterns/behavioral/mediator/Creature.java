@@ -62,4 +62,8 @@ public class Creature {
     public void onEaten() {
         creatureMediator.die();
     }
+
+    public void draw(Painter painter) {
+        creatureMediator.draw(painter);
+    }
 }

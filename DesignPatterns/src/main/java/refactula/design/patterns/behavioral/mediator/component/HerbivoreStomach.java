@@ -7,7 +7,7 @@ public class HerbivoreStomach extends StomachComponent {
     @Override
     public void onCollide(Creature creature) {
         if (creature.getFleshType() == FleshType.PLANT) {
-            mediator().getWorld().remove(creature);
+            creature.onEaten();
         }
     }
 }
