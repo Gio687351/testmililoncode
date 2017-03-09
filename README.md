@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **10**  
-Progress: 18.53% (352/1900)  
+Progress: 20.47% (389/1900)  
 
-![Progress: 18.53%](Story/files/progress-bar.png)
+![Progress: 20.47%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Design Patterns`](#design-patterns)
 
@@ -16,7 +16,7 @@ Completed Quests: [`Story Teller`](#story-teller)
 
 Achievements: [`Let the Journey Begin`](#let-the-journey-begin)
 
-Skills: [`Object-Oriented Programming (24)`](#object-oriented-programming)
+Skills: [`Object-Oriented Programming (25)`](#object-oriented-programming)
 
 ## Quests
 
@@ -59,7 +59,7 @@ Implement all design patterns.
 * [ ] Strategy [`+OOP`](#object-oriented-programming)
 * [ ] Template Method [`+OOP`](#object-oriented-programming)
 * [ ] Visitor [`+OOP`](#object-oriented-programming)
-* [ ] Null Object [`+OOP`](#object-oriented-programming)
+* [x] [Null Object](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/null_object) [`+OOP`](#object-oriented-programming)
 
 ##### Structural Patterns
 
@@ -78,7 +78,7 @@ Implement all design patterns.
 
 ### Object-Oriented Programming
 
-Proved by: [`Design Patterns (19)`](#design-patterns) [`Story Teller (5)`](#story-teller).
+Proved by: [`Design Patterns (20)`](#design-patterns) [`Story Teller (5)`](#story-teller).
 
 ## Achievements
 
