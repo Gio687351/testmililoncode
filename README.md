@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **10**  
-Progress: 20.47% (389/1900)  
+Progress: 34.89% (663/1900)  
 
-![Progress: 20.47%](Story/files/progress-bar.png)
+![Progress: 34.89%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Design Patterns`](#design-patterns)
 
@@ -16,7 +16,7 @@ Completed Quests: [`Story Teller`](#story-teller)
 
 Achievements: [`Let the Journey Begin`](#let-the-journey-begin)
 
-Skills: [`Object-Oriented Programming (25)`](#object-oriented-programming)
+Skills: [`Object-Oriented Programming (26)`](#object-oriented-programming)
 
 ## Quests
 
@@ -55,7 +55,7 @@ Implement all design patterns.
 * [x] [Iterator](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/iterator) [`+OOP`](#object-oriented-programming)
 * [x] [Mediator](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/mediator) [`+OOP`](#object-oriented-programming)
 * [x] [Memento](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/memento) [`+OOP`](#object-oriented-programming)
-* [ ] Observer [`+OOP`](#object-oriented-programming)
+* [x] [Observer](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/observer) [`+OOP`](#object-oriented-programming)
 * [ ] Strategy [`+OOP`](#object-oriented-programming)
 * [ ] Template Method [`+OOP`](#object-oriented-programming)
 * [ ] Visitor [`+OOP`](#object-oriented-programming)
@@ -78,7 +78,7 @@ Implement all design patterns.
 
 ### Object-Oriented Programming
 
-Proved by: [`Design Patterns (20)`](#design-patterns) [`Story Teller (5)`](#story-teller).
+Proved by: [`Design Patterns (21)`](#design-patterns) [`Story Teller (5)`](#story-teller).
 
 ## Achievements
 
