@@ -60,7 +60,7 @@ public class DesignPatterns extends Quest {
         interpreter = done(link("Interpreter", behavioral + "/interpreter"), objectOrientedProgramming);
         iterator = done(link("Iterator", behavioral + "/iterator"), objectOrientedProgramming);
         mediator = done(link("Mediator", behavioral + "/mediator"), objectOrientedProgramming);
-        memento = task("Memento", objectOrientedProgramming);
+        memento = done(link("Memento", behavioral + "/memento"), objectOrientedProgramming);
         observer = task("Observer", objectOrientedProgramming);
         strategy = task("Strategy", objectOrientedProgramming);
         templateMethod = task("Template Method", objectOrientedProgramming);
