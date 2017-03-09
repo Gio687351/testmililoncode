@@ -64,7 +64,7 @@ public class DesignPatterns extends Quest {
         observer = done(link("Observer", behavioral + "/observer"), objectOrientedProgramming);
         strategy = task("Strategy", objectOrientedProgramming);
         templateMethod = task("Template Method", objectOrientedProgramming);
-        visitor = task("Visitor", objectOrientedProgramming);
+        visitor = done(link("Visitor", behavioral + "/visitor"), objectOrientedProgramming);
         nullObject = done(link("Null Object", behavioral + "/null_object"), objectOrientedProgramming);
 
         String structural = implPackage + "/structural";
