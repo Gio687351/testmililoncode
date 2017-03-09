@@ -2,8 +2,8 @@ package refactula.design.patterns.behavioral.memento;
 
 public interface Originator<T> {
 
-  Memento<T> createMemento();
+    Memento<T> createMemento();
 
-  void setMemento(Memento<T> memento);
+    void setMemento(Memento<T> memento);
 
 }
