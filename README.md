@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **10**  
-Progress: 57.42% (1091/1900)  
+Progress: 61.63% (1171/1900)  
 
-![Progress: 57.42%](Story/files/progress-bar.png)
+![Progress: 61.63%](Story/files/progress-bar.png)
 
 Completed Quests: [`Story Teller`](#story-teller) [`Design Patterns`](#design-patterns)
 
@@ -72,11 +72,52 @@ Implement all design patterns.
 
 * [x] Implement all patterns [`Gang of One`](#gang-of-one)
 
+### Introduction to Algorithms
+
+Implement algorithms from [Introduction to Algorithms](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844) book.
+
+##### Tasks
+
+* [ ] Insertion Sort [+Algorithms](#algorithms)
+* [ ] Heapsort [+Algorithms](#algorithms)
+* [ ] Quicksort [+Algorithms](#algorithms)
+* [ ] Counting Sort [+Algorithms](#algorithms)
+* [ ] Radix Sort [+Algorithms](#algorithms)
+* [ ] Bucket Sort [+Algorithms](#algorithms)
+* [ ] Order Statistics [+Algorithms](#algorithms)
+* [ ] Stack [+Algorithms](#algorithms)
+* [ ] Queue [+Algorithms](#algorithms)
+* [ ] Linked List [+Algorithms](#algorithms)
+* [ ] Hash Table [+Algorithms](#algorithms)
+* [ ] Binary Search Tree [+Algorithms](#algorithms)
+* [ ] Red-Black Tree [+Algorithms](#algorithms)
+* [ ] Matrix-chain Multiplication [+Algorithms](#algorithms)
+* [ ] Huffman Codes [+Algorithms](#algorithms)
+* [ ] B-Tree [+Algorithms](#algorithms)
+* [ ] Fibonacci Heap [+Algorithms](#algorithms)
+* [ ] Van Emde Boas tree [+Algorithms](#algorithms)
+* [ ] Disjoint Set [+Algorithms](#algorithms)
+* [ ] Representations of graphs [+Algorithms](#algorithms)
+* [ ] Breadth-first search [+Algorithms](#algorithms)
+* [ ] Depth-first search [+Algorithms](#algorithms)
+* [ ] Topological sort [+Algorithms](#algorithms)
+* [ ] Strongly connected components [+Algorithms](#algorithms)
+* [ ] Kruskal minimum spanning tree [+Algorithms](#algorithms)
+* [ ] Prim minimum spanning tree [+Algorithms](#algorithms)
+* [ ] Bellman-Ford algorithm [+Algorithms](#algorithms)
+* [ ] Dijkstra’s algorithm [+Algorithms](#algorithms)
+* [ ] Floyd-Warshall algorithm [+Algorithms](#algorithms)
+* [ ] Ford-Fulkerson method [+Algorithms](#algorithms)
+* [ ] RSA public-key cryptosystem [+Algorithms](#algorithms)
+* [ ] The Knuth-Morris-Pratt algorithm [+Algorithms](#algorithms)
+
 ## Skills
 
 ### Object-Oriented Programming
 
 Proved by: [`Design Patterns (24)`](#design-patterns) [`Story Teller (5)`](#story-teller).
+
+### Algorithms
 
 ## Achievements
 

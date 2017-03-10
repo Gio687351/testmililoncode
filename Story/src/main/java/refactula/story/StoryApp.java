@@ -9,7 +9,9 @@ import refactula.story.chapter.QuestsChapter;
 import refactula.story.chapter.SkillsChapter;
 import refactula.story.markdown.MDWriter;
 import refactula.story.quest.DesignPatterns;
+import refactula.story.quest.IntroductionToAlgorithms;
 import refactula.story.quest.StoryTeller;
+import refactula.story.skill.Algorithms;
 import refactula.story.skill.ObjectOrientedProgramming;
 
 import java.io.FileWriter;
@@ -34,8 +36,14 @@ public class StoryApp {
         GangOfOne gangOfOne = new GangOfOne();
         StoryTeller storyTeller = new StoryTeller(objectOrientedProgramming, letTheJourneyBegin);
         DesignPatterns designPatterns = new DesignPatterns(objectOrientedProgramming, gangOfOne);
-        QuestsChapter questsChapter = new QuestsChapter(ImmutableList.of(storyTeller, designPatterns));
-        SkillsChapter skillsChapter = new SkillsChapter(ImmutableList.of(objectOrientedProgramming));
+        Algorithms algorithms = new Algorithms();
+        IntroductionToAlgorithms introductionToAlgorithms = new IntroductionToAlgorithms(algorithms);
+        QuestsChapter questsChapter = new QuestsChapter(ImmutableList.of(
+                storyTeller,
+                designPatterns,
+                introductionToAlgorithms));
+
+        SkillsChapter skillsChapter = new SkillsChapter(ImmutableList.of(objectOrientedProgramming, algorithms));
         AchievementsChapter achievementsChapter = new AchievementsChapter(ImmutableList.of(
                 letTheJourneyBegin,
                 gangOfOne));
