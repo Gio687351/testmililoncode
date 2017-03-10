@@ -63,7 +63,7 @@ public class DesignPatterns extends Quest {
         memento = done(link("Memento", behavioral + "/memento"), objectOrientedProgramming);
         observer = done(link("Observer", behavioral + "/observer"), objectOrientedProgramming);
         strategy = done(link("Strategy", behavioral + "/strategy"), objectOrientedProgramming);
-        templateMethod = task("Template Method", objectOrientedProgramming);
+        templateMethod = done(link("Template Method", behavioral + "/template_method"), objectOrientedProgramming);
         visitor = done(link("Visitor", behavioral + "/visitor"), objectOrientedProgramming);
         nullObject = done(link("Null Object", behavioral + "/null_object"), objectOrientedProgramming);
 
@@ -75,7 +75,7 @@ public class DesignPatterns extends Quest {
         flyweight = done(link("Flyweight", structural + "/flyweight"), objectOrientedProgramming);
         proxy = done(link("Proxy", structural + "/proxy"), objectOrientedProgramming);
 
-        implementAll = task("Implement all patterns", gangOfOne);
+        implementAll = done("Implement all patterns", gangOfOne);
     }
 
     @Override

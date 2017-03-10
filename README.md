@@ -6,17 +6,15 @@
 
 Name: **Refactula**  
 Level: **10**  
-Progress: 51.26% (974/1900)  
+Progress: 57.42% (1091/1900)  
 
-![Progress: 51.26%](Story/files/progress-bar.png)
+![Progress: 57.42%](Story/files/progress-bar.png)
 
-Ongoing Quests: [`Design Patterns`](#design-patterns)
+Completed Quests: [`Story Teller`](#story-teller) [`Design Patterns`](#design-patterns)
 
-Completed Quests: [`Story Teller`](#story-teller)
+Achievements: [`Let the Journey Begin`](#let-the-journey-begin) [`Gang of One`](#gang-of-one)
 
-Achievements: [`Let the Journey Begin`](#let-the-journey-begin)
-
-Skills: [`Object-Oriented Programming (28)`](#object-oriented-programming)
+Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming)
 
 ## Quests
 
@@ -57,7 +55,7 @@ Implement all design patterns.
 * [x] [Memento](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/memento) [`+OOP`](#object-oriented-programming)
 * [x] [Observer](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/observer) [`+OOP`](#object-oriented-programming)
 * [x] [Strategy](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/strategy) [`+OOP`](#object-oriented-programming)
-* [ ] Template Method [`+OOP`](#object-oriented-programming)
+* [x] [Template Method](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/template_method) [`+OOP`](#object-oriented-programming)
 * [x] [Visitor](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/visitor) [`+OOP`](#object-oriented-programming)
 * [x] [Null Object](DesignPatterns/src/main/java/refactula/design/patterns/behavioral/null_object) [`+OOP`](#object-oriented-programming)
 
@@ -72,13 +70,13 @@ Implement all design patterns.
 
 ##### Achievements
 
-* [ ] Implement all patterns [`Gang of One`](#gang-of-one)
+* [x] Implement all patterns [`Gang of One`](#gang-of-one)
 
 ## Skills
 
 ### Object-Oriented Programming
 
-Proved by: [`Design Patterns (23)`](#design-patterns) [`Story Teller (5)`](#story-teller).
+Proved by: [`Design Patterns (24)`](#design-patterns) [`Story Teller (5)`](#story-teller).
 
 ## Achievements
 
@@ -88,5 +86,5 @@ Proved by: [`Design Patterns (23)`](#design-patterns) [`Story Teller (5)`](#stor
 
 ### Gang of One
 
-* [ ] Has implemented all [`Design Patterns`](#design-patterns).
+* [x] Has implemented all [`Design Patterns`](#design-patterns).
 
