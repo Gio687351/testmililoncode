@@ -1,6 +1,6 @@
 package refactula.introduction_to_algorithms.utils.array;
 
-class LongArray implements Array<Long> {
+class LongArray extends AbstractArray<Long> {
     private final long[] delegate;
 
     LongArray(long[] delegate) {

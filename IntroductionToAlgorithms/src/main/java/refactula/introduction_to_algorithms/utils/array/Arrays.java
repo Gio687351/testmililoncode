@@ -1,5 +1,8 @@
 package refactula.introduction_to_algorithms.utils.array;
 
+import java.util.AbstractList;
+import java.util.List;
+
 public class Arrays {
 
     private Arrays() {
@@ -79,4 +82,21 @@ public class Arrays {
         return new ShortArray(delegate);
     }
 
+    public static <T> Array<T> ofList(List<T> list) {
+        return new ListArray<>(list);
+    }
+
+    public static <T> List<T> asList(Array<T> array) {
+        return new AbstractList<T>() {
+            @Override
+            public int size() {
+                return array.length();
+            }
+
+            @Override
+            public T get(int index) {
+                return array.get(index);
+            }
+        };
+    }
 }

@@ -2,7 +2,6 @@ package refactula.introduction_to_algorithms.utils.sorting;
 
 import refactula.introduction_to_algorithms.utils.array.Array;
 import refactula.introduction_to_algorithms.utils.comparator.Comparator;
-import refactula.introduction_to_algorithms.utils.comparator.Comparator.PartialComparison;
 import refactula.introduction_to_algorithms.utils.comparator.Comparison;
 
 public abstract class ArraySorting<T> {
@@ -32,7 +31,9 @@ public abstract class ArraySorting<T> {
         return comparator.is(first, comparison, second);
     }
 
-    protected final PartialComparison<T> is(T first) {
-        return comparator.is(first);
+    protected final void swap(int i, int j) {
+        T temp = get(i);
+        set(i, get(j));
+        set(j, temp);
     }
 }

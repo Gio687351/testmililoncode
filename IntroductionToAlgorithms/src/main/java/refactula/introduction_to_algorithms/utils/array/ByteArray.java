@@ -1,6 +1,6 @@
 package refactula.introduction_to_algorithms.utils.array;
 
-class ByteArray implements Array<Byte> {
+class ByteArray extends AbstractArray<Byte> {
     private final byte[] delegate;
 
     ByteArray(byte[] delegate) {

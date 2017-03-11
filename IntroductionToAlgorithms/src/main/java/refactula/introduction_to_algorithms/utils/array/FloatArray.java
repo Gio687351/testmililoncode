@@ -1,6 +1,6 @@
 package refactula.introduction_to_algorithms.utils.array;
 
-class FloatArray implements Array<Float> {
+class FloatArray extends AbstractArray<Float> {
     private final float[] delegate;
 
     FloatArray(float[] delegate) {

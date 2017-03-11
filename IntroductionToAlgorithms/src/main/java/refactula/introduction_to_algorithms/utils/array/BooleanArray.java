@@ -1,6 +1,6 @@
 package refactula.introduction_to_algorithms.utils.array;
 
-class BooleanArray implements Array<Boolean> {
+class BooleanArray extends AbstractArray<Boolean> {
     private final boolean[] delegate;
 
     BooleanArray(boolean[] delegate) {

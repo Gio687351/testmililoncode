@@ -1,6 +1,6 @@
 package refactula.introduction_to_algorithms.utils.array;
 
-class DoubleArray implements Array<Double> {
+class DoubleArray extends AbstractArray<Double> {
     private final double[] delegate;
 
     DoubleArray(double[] delegate) {

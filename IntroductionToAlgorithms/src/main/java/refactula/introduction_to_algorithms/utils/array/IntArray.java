@@ -1,6 +1,6 @@
 package refactula.introduction_to_algorithms.utils.array;
 
-class IntArray implements Array<Integer> {
+class IntArray extends AbstractArray<Integer> {
     private final int[] delegate;
 
     IntArray(int[] delegate) {

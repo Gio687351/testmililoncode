@@ -1,6 +1,6 @@
 package refactula.introduction_to_algorithms.utils.array;
 
-class ObjectArray<T> implements Array<T> {
+class ObjectArray<T> extends AbstractArray<T> {
     private final T[] delegate;
 
     ObjectArray(T[] delegate) {

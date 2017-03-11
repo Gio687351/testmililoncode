@@ -1,6 +1,6 @@
 package refactula.introduction_to_algorithms.utils.array;
 
-class CharArray implements Array<Character> {
+class CharArray extends AbstractArray<Character> {
     private final char[] delegate;
 
     CharArray(char[] delegate) {

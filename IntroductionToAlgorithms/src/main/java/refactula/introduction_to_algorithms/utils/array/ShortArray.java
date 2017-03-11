@@ -1,6 +1,6 @@
 package refactula.introduction_to_algorithms.utils.array;
 
-class ShortArray implements Array<Short> {
+class ShortArray extends AbstractArray<Short> {
     private final short[] delegate;
 
     ShortArray(short[] delegate) {
