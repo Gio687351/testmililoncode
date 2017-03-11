@@ -1,7 +1,10 @@
 package refactula.story.quest;
 
+import refactula.story.markdown.DelayedMDWriter;
 import refactula.story.markdown.Header;
+import refactula.story.markdown.MDElements;
 import refactula.story.markdown.MDLine;
+import refactula.story.markdown.MDParagraph;
 import refactula.story.markdown.MDWriter;
 import refactula.story.markdown.Markdown;
 import refactula.story.Reward;
@@ -10,8 +13,29 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static refactula.story.markdown.MDElements.header;
+
 public abstract class Quest implements Markdown {
+    private final Header header;
+    private final DelayedMDWriter delayedWriter = new DelayedMDWriter();
     private final List<Task> tasks = new ArrayList<>();
+
+    protected Quest(String headerText) {
+        this.header = header(headerText);
+        writeln(header);
+    }
+
+    protected final void write(MDParagraph element) {
+        delayedWriter.write(element);
+    }
+
+    protected final void writeln(MDParagraph line) {
+        delayedWriter.writeln(line);
+    }
+
+    protected final void write(Markdown markdown) {
+        delayedWriter.write(markdown);
+    }
 
     public Task task(String text, Reward... rewards) {
         Task task = new Task(this, text, rewards);
@@ -39,14 +63,13 @@ public abstract class Quest implements Markdown {
         return rewards;
     }
 
-    public abstract Header getHeader();
+    public final Header getHeader() {
+        return header;
+    }
 
-    protected void writeTasks(MDWriter writer) {
-        writer.writeln(new Header(5, "Tasks"));
-        for (Task task : tasks) {
-            writer.write(task);
-        }
-        writer.write(MDLine.empty());
+    @Override
+    public final void writeTo(MDWriter writer) {
+        delayedWriter.writeTo(writer);
     }
 
     public boolean isInProgress() {

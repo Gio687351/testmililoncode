@@ -1,12 +1,15 @@
 package refactula.story.achievement;
 
 import refactula.story.markdown.Header;
+import refactula.story.markdown.MDElements;
 import refactula.story.markdown.MDLine;
 import refactula.story.markdown.MDWriter;
 import refactula.story.quest.StoryTeller;
 
+import static refactula.story.markdown.MDElements.header;
+
 public class LetTheJourneyBegin extends Achievement {
-    private final Header header = new Header(3, "Let the Journey Begin");
+    private final Header header = header("Let the Journey Begin");
 
     private StoryTeller storyTeller;
 

@@ -1,12 +1,15 @@
 package refactula.story.achievement;
 
 import refactula.story.markdown.Header;
+import refactula.story.markdown.MDElements;
 import refactula.story.markdown.MDLine;
 import refactula.story.markdown.MDWriter;
 import refactula.story.quest.DesignPatterns;
 
+import static refactula.story.markdown.MDElements.header;
+
 public class GangOfOne extends Achievement {
-    private final Header header = new Header(3, "Gang of One");
+    private final Header header = header("Gang of One");
 
     private DesignPatterns designPatterns;
 
