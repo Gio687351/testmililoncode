@@ -5,10 +5,10 @@
 <img src="https://github.com/Refactula.png" alt="Vlad the Refactula" width="200px"/>
 
 Name: **Refactula**  
-Level: **10**  
-Progress: 98.00% (1862/1900)  
+Level: **11**  
+Progress: 0.43% (9/2100)  
 
-![Progress: 98.00%](Story/files/progress-bar.png)
+![Progress: 0.43%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Introduction to Algorithms`](#introduction-to-algorithms)
 
@@ -16,7 +16,7 @@ Completed Quests: [`Story Teller`](#story-teller) [`Design Patterns`](#design-pa
 
 Achievements: [`Let the Journey Begin`](#let-the-journey-begin) [`Gang of One`](#gang-of-one)
 
-Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming) [`Algorithms (2)`](#algorithms)
+Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming) [`Algorithms (3)`](#algorithms)
 
 ## Quests
 
@@ -82,7 +82,7 @@ Implement algorithms from [Introduction to Algorithms](https://www.amazon.com/In
 
 * [x] [Insertion Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/insertion_sort) [`+Algorithms`](#algorithms)
 * [x] [Heapsort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/heapsort) [`+Algorithms`](#algorithms)
-* [ ] Quicksort [`+Algorithms`](#algorithms)
+* [x] [Quicksort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/quicksort) [`+Algorithms`](#algorithms)
 * [ ] Counting Sort [`+Algorithms`](#algorithms)
 * [ ] Radix Sort [`+Algorithms`](#algorithms)
 * [ ] Bucket Sort [`+Algorithms`](#algorithms)
@@ -121,7 +121,7 @@ Proved by: [`Design Patterns (24)`](#design-patterns) [`Story Teller (5)`](#stor
 
 ### Algorithms
 
-Proved by: [`Introduction to Algorithms (2)`](#introduction-to-algorithms).
+Proved by: [`Introduction to Algorithms (3)`](#introduction-to-algorithms).
 
 ## Achievements
 

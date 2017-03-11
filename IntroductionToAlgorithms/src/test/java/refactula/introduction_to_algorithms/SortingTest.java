@@ -1,6 +1,5 @@
 package refactula.introduction_to_algorithms;
 
-import org.junit.Assert;
 import org.junit.ComparisonFailure;
 import org.junit.Test;
 import refactula.introduction_to_algorithms.utils.array.Array;
@@ -9,11 +8,9 @@ import refactula.introduction_to_algorithms.utils.comparator.Comparator;
 import refactula.introduction_to_algorithms.utils.generator.Generator;
 import refactula.introduction_to_algorithms.utils.sorting.SortingAlgorithm;
 
-import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static refactula.introduction_to_algorithms.utils.comparator.Comparison.EQUAL_TO;
 
 public abstract class SortingTest<T> {

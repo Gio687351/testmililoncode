@@ -15,8 +15,8 @@ public abstract class IntArraySortTest extends SortingTest<Integer> {
     @Override
     protected final Generator<Array<Integer>> arrayGenerator() {
         Random random = new Random(753951);
-        IntegerGenerator elementGenerator = new IntegerGenerator(random, -1000, 1000);
-        ListGenerator<Integer> listGenerator = new ListGenerator<>(random, elementGenerator, 0, 1000);
+        IntegerGenerator elementGenerator = new IntegerGenerator(random, -100000, 100000);
+        ListGenerator<Integer> listGenerator = new ListGenerator<>(random, elementGenerator, 0, 100);
         return listGenerator.map(Arrays::ofList);
     }
 
