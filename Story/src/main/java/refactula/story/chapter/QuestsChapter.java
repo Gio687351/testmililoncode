@@ -6,8 +6,10 @@ import refactula.story.quest.Quest;
 
 import java.util.List;
 
+import static refactula.story.markdown.MDElements.chapterTitle;
+
 public class QuestsChapter extends Chapter {
-    private final Header header = new Header(2, "Quests");
+    private final Header header = chapterTitle("Quests");
     private final List<Quest> quests;
 
     public QuestsChapter(List<Quest> quests) {

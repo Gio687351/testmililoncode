@@ -1,9 +1,7 @@
 package refactula.story.achievement;
 
 import refactula.story.markdown.Header;
-import refactula.story.markdown.MDElements;
 import refactula.story.markdown.MDLine;
-import refactula.story.markdown.MDWriter;
 import refactula.story.quest.DesignPatterns;
 
 import static refactula.story.markdown.MDElements.header;

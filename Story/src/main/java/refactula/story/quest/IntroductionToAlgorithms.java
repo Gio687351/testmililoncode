@@ -1,9 +1,6 @@
 package refactula.story.quest;
 
-import refactula.story.markdown.Header;
-import refactula.story.markdown.MDElements;
 import refactula.story.markdown.MDLine;
-import refactula.story.markdown.MDWriter;
 import refactula.story.skill.Algorithms;
 
 import static refactula.story.markdown.Formatting.link;

@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **10**  
-Progress: 61.11% (1161/1900)  
+Progress: 60.53% (1150/1900)  
 
-![Progress: 61.11%](Story/files/progress-bar.png)
+![Progress: 60.53%](Story/files/progress-bar.png)
 
 Completed Quests: [`Story Teller`](#story-teller) [`Design Patterns`](#design-patterns)
 

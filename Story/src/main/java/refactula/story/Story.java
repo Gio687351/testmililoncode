@@ -8,8 +8,10 @@ import refactula.story.markdown.Header;
 import refactula.story.markdown.MDWriter;
 import refactula.story.markdown.Markdown;
 
+import static refactula.story.markdown.MDElements.title;
+
 public class Story implements Markdown {
-    private final Header title = new Header(1, "1 Million Lines of Code");
+    private final Header title = title("1 Million Lines of Code");
     private final CharacterChapter characterChapter;
     private final QuestsChapter questsChapter;
     private final SkillsChapter skillsChapter;

@@ -2,9 +2,9 @@ package refactula.story.quest;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import refactula.story.markdown.MDParagraph;
-import refactula.story.markdown.MDLine;
 import refactula.story.Reward;
+import refactula.story.markdown.MDLine;
+import refactula.story.markdown.MDParagraph;
 
 import java.util.List;
 

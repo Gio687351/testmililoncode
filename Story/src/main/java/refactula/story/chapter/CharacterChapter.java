@@ -1,19 +1,20 @@
 package refactula.story.chapter;
 
-import refactula.story.achievement.Achievement;
-import refactula.story.markdown.Header;
 import refactula.story.Hero;
 import refactula.story.Level;
-import refactula.story.markdown.MDLine;
+import refactula.story.achievement.Achievement;
+import refactula.story.markdown.Header;
 import refactula.story.markdown.MDImage;
+import refactula.story.markdown.MDLine;
 import refactula.story.markdown.MDWriter;
 import refactula.story.quest.Quest;
 import refactula.story.skill.Skill;
 
 import static refactula.story.markdown.Formatting.bold;
+import static refactula.story.markdown.MDElements.chapterTitle;
 
 public class CharacterChapter extends Chapter {
-    private final Header header = new Header(2, "Character");
+    private final Header header = chapterTitle("Character");
     private final Hero hero;
     private final Level level;
     private final String progressBar;

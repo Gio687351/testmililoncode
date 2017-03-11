@@ -1,13 +1,11 @@
 package refactula.story.quest;
 
+import refactula.story.Reward;
 import refactula.story.markdown.DelayedMDWriter;
 import refactula.story.markdown.Header;
-import refactula.story.markdown.MDElements;
-import refactula.story.markdown.MDLine;
 import refactula.story.markdown.MDParagraph;
 import refactula.story.markdown.MDWriter;
 import refactula.story.markdown.Markdown;
-import refactula.story.Reward;
 
 import java.util.ArrayList;
 import java.util.Collection;

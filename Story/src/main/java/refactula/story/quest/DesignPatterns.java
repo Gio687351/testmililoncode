@@ -1,10 +1,7 @@
 package refactula.story.quest;
 
-import refactula.story.markdown.Header;
-import refactula.story.markdown.MDElements;
-import refactula.story.markdown.MDLine;
-import refactula.story.markdown.MDWriter;
 import refactula.story.achievement.GangOfOne;
+import refactula.story.markdown.MDLine;
 import refactula.story.skill.ObjectOrientedProgramming;
 
 import static refactula.story.markdown.Formatting.link;
