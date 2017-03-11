@@ -1,5 +1,6 @@
 package refactula.story.quest;
 
+import refactula.story.Package;
 import refactula.story.markdown.MDLine;
 import refactula.story.skill.Algorithms;
 
@@ -14,8 +15,16 @@ public class IntroductionToAlgorithms extends Quest {
         writeln(MDLine.of("Implement algorithms from " + link("Introduction to Algorithms",
                 "https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844") + " book."));
 
+        Package questPackage = Package.create(
+                "IntroductionToAlgorithms",
+                "src",
+                "main",
+                "java",
+                "refactula",
+                "introduction_to_algorithms");
+
         writeln(subheader("Tasks"));
-        write(task("Insertion Sort", algorithms));
+        write(done(questPackage.child("insertion_sort").link("Insertion Sort"), algorithms));
         write(task("Heapsort", algorithms));
         write(task("Quicksort", algorithms));
         write(task("Counting Sort", algorithms));

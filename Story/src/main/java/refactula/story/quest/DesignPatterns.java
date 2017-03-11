@@ -1,55 +1,53 @@
 package refactula.story.quest;
 
+import refactula.story.Package;
 import refactula.story.achievement.GangOfOne;
 import refactula.story.markdown.MDLine;
 import refactula.story.skill.ObjectOrientedProgramming;
 
-import static refactula.story.markdown.Formatting.link;
 import static refactula.story.markdown.MDElements.subheader;
 
 public class DesignPatterns extends Quest {
 
     public DesignPatterns(ObjectOrientedProgramming objectOrientedProgramming, GangOfOne gangOfOne) {
         super("Design Patterns");
-
         gangOfOne.setDesignPatterns(this);
 
-        String implPackage = "DesignPatterns/src/main/java/refactula/design/patterns";
-        String creational = implPackage + "/creational";
-        String behavioral = implPackage + "/behavioral";
-        String structural = implPackage + "/structural";
-
+        Package implPackage = Package.create("DesignPatterns", "src", "main", "java", "refactula", "design", "patterns");
         writeln(MDLine.of("Implement all design patterns."));
 
+        Package creational = implPackage.child("creational");
         writeln(subheader("Creational Patterns"));
-        write(done(link("Singleton", creational + "/singleton"), objectOrientedProgramming));
-        write(done(link("Factory", creational + "/factory"), objectOrientedProgramming));
-        write(done(link("Factory Method", creational + "/factory_method"), objectOrientedProgramming));
-        write(done(link("Abstract Factory", creational + "/abstract_factory"), objectOrientedProgramming));
-        write(done(link("Builder", creational + "/builder"), objectOrientedProgramming));
-        write(done(link("Prototype", creational + "/prototype"), objectOrientedProgramming));
-        writeln(done(link("Object Pool", creational + "/object_pool"), objectOrientedProgramming));
+        write(done(creational.link("Singleton", "singleton"), objectOrientedProgramming));
+        write(done(creational.link("Factory", "factory"), objectOrientedProgramming));
+        write(done(creational.link("Factory Method", "factory_method"), objectOrientedProgramming));
+        write(done(creational.link("Abstract Factory", "abstract_factory"), objectOrientedProgramming));
+        write(done(creational.link("Builder", "builder"), objectOrientedProgramming));
+        write(done(creational.link("Prototype", "prototype"), objectOrientedProgramming));
+        writeln(done(creational.link("Object Pool", "object_pool"), objectOrientedProgramming));
 
+        Package behavioral = implPackage.child("behavioral");
         writeln(subheader("Behavioral Patterns"));
-        write(done(link("Chain of Responsibility", behavioral + "/chain_of_responsibility"), objectOrientedProgramming));
-        write(done(link("Command", behavioral + "/command"), objectOrientedProgramming));
-        write(done(link("Interpreter", behavioral + "/interpreter"), objectOrientedProgramming));
-        write(done(link("Iterator", behavioral + "/iterator"), objectOrientedProgramming));
-        write(done(link("Mediator", behavioral + "/mediator"), objectOrientedProgramming));
-        write(done(link("Memento", behavioral + "/memento"), objectOrientedProgramming));
-        write(done(link("Observer", behavioral + "/observer"), objectOrientedProgramming));
-        write(done(link("Strategy", behavioral + "/strategy"), objectOrientedProgramming));
-        write(done(link("Template Method", behavioral + "/template_method"), objectOrientedProgramming));
-        write(done(link("Visitor", behavioral + "/visitor"), objectOrientedProgramming));
-        writeln(done(link("Null Object", behavioral + "/null_object"), objectOrientedProgramming));
+        write(done(behavioral.link("Chain of Responsibility", "chain_of_responsibility"), objectOrientedProgramming));
+        write(done(behavioral.link("Command", "command"), objectOrientedProgramming));
+        write(done(behavioral.link("Interpreter", "interpreter"), objectOrientedProgramming));
+        write(done(behavioral.link("Iterator", "iterator"), objectOrientedProgramming));
+        write(done(behavioral.link("Mediator", "mediator"), objectOrientedProgramming));
+        write(done(behavioral.link("Memento", "memento"), objectOrientedProgramming));
+        write(done(behavioral.link("Observer", "observer"), objectOrientedProgramming));
+        write(done(behavioral.link("Strategy", "strategy"), objectOrientedProgramming));
+        write(done(behavioral.link("Template Method", "template_method"), objectOrientedProgramming));
+        write(done(behavioral.link("Visitor", "visitor"), objectOrientedProgramming));
+        writeln(done(behavioral.link("Null Object", "null_object"), objectOrientedProgramming));
 
+        Package structural = implPackage.child("structural");
         writeln(subheader("Structural Patterns"));
-        write(done(link("Adapter", structural + "/adapter"), objectOrientedProgramming));
-        write(done(link("Bridge", structural + "/bridge"), objectOrientedProgramming));
-        write(done(link("Composite", structural + "/composite"), objectOrientedProgramming));
-        write(done(link("Decorator", structural + "/decorator"), objectOrientedProgramming));
-        write(done(link("Flyweight", structural + "/flyweight"), objectOrientedProgramming));
-        writeln(done(link("Proxy", structural + "/proxy"), objectOrientedProgramming));
+        write(done(structural.link("Adapter", "adapter"), objectOrientedProgramming));
+        write(done(structural.link("Bridge", "bridge"), objectOrientedProgramming));
+        write(done(structural.link("Composite", "composite"), objectOrientedProgramming));
+        write(done(structural.link("Decorator", "decorator"), objectOrientedProgramming));
+        write(done(structural.link("Flyweight", "flyweight"), objectOrientedProgramming));
+        writeln(done(structural.link("Proxy", "proxy"), objectOrientedProgramming));
 
         writeln(subheader("Achievements"));
         writeln(done("Implement all patterns", gangOfOne));

@@ -6,15 +6,17 @@
 
 Name: **Refactula**  
 Level: **10**  
-Progress: 60.53% (1150/1900)  
+Progress: 82.84% (1574/1900)  
 
-![Progress: 60.53%](Story/files/progress-bar.png)
+![Progress: 82.84%](Story/files/progress-bar.png)
+
+Ongoing Quests: [`Introduction to Algorithms`](#introduction-to-algorithms)
 
 Completed Quests: [`Story Teller`](#story-teller) [`Design Patterns`](#design-patterns)
 
 Achievements: [`Let the Journey Begin`](#let-the-journey-begin) [`Gang of One`](#gang-of-one)
 
-Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming)
+Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming) [`Algorithms (1)`](#algorithms)
 
 ## Quests
 
@@ -78,7 +80,7 @@ Implement algorithms from [Introduction to Algorithms](https://www.amazon.com/In
 
 ##### Tasks
 
-* [ ] Insertion Sort [`+Algorithms`](#algorithms)
+* [x] [Insertion Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/insertion_sort) [`+Algorithms`](#algorithms)
 * [ ] Heapsort [`+Algorithms`](#algorithms)
 * [ ] Quicksort [`+Algorithms`](#algorithms)
 * [ ] Counting Sort [`+Algorithms`](#algorithms)
@@ -118,6 +120,8 @@ Implement algorithms from [Introduction to Algorithms](https://www.amazon.com/In
 Proved by: [`Design Patterns (24)`](#design-patterns) [`Story Teller (5)`](#story-teller).
 
 ### Algorithms
+
+Proved by: [`Introduction to Algorithms (1)`](#introduction-to-algorithms).
 
 ## Achievements
 
