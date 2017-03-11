@@ -21,6 +21,7 @@
         <module>Story</module>
         <module>DesignJam</module>
         <module>Poker</module>
+        <module>IntroductionToAlgorithms</module>
     </modules>
 
     <dependencies>
