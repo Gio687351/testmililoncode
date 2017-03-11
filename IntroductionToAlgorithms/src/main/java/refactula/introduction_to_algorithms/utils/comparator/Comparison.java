@@ -3,8 +3,8 @@ package refactula.introduction_to_algorithms.utils.comparator;
 import java.util.function.IntPredicate;
 
 public enum Comparison {
-    SMALLER_THAN(comparisonInt -> comparisonInt < 0),
-    SMALLER_THAN_OR_EQUAL_TO(comparisonInt -> comparisonInt <= 0),
+    LESS_THAN(comparisonInt -> comparisonInt < 0),
+    LESS_THAN_OR_EQUAL_TO(comparisonInt -> comparisonInt <= 0),
     EQUAL_TO(comparisonInt -> comparisonInt == 0),
     GREATER_THAN_OR_EQUAL_TO(comparisonInt -> comparisonInt >= 0),
     GREATER_THAN(comparisonInt -> comparisonInt > 0);

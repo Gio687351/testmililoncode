@@ -7,7 +7,7 @@ import refactula.introduction_to_algorithms.utils.sorting.SortingAlgorithm;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-import static refactula.introduction_to_algorithms.utils.comparator.Comparison.SMALLER_THAN_OR_EQUAL_TO;
+import static refactula.introduction_to_algorithms.utils.comparator.Comparison.LESS_THAN_OR_EQUAL_TO;
 
 public class Quicksort<T> implements SortingAlgorithm<T> {
     @Override
@@ -37,7 +37,7 @@ public class Quicksort<T> implements SortingAlgorithm<T> {
             private int partition(int l, int r) {
                 int j = l;
                 for (int i = l; i <= r; i++) {
-                    if (is(get(i), SMALLER_THAN_OR_EQUAL_TO, get(r))) {
+                    if (is(get(i), LESS_THAN_OR_EQUAL_TO, get(r))) {
                         swap(j, i);
                         j++;
                     }
