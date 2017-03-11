@@ -16,7 +16,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static refactula.introduction_to_algorithms.utils.comparator.Comparison.EQUAL_TO;
 
-public abstract class AbstractSortTest<T> {
+public abstract class SortingTest<T> {
 
     protected abstract SortingAlgorithm<T> sortingAlgorithm();
 

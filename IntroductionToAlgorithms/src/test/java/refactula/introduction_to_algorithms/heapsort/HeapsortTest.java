@@ -1,13 +1,13 @@
-package refactula.introduction_to_algorithms.insertion_sort;
+package refactula.introduction_to_algorithms.heapsort;
 
 import refactula.introduction_to_algorithms.IntArraySortTest;
 import refactula.introduction_to_algorithms.utils.sorting.SortingAlgorithm;
 
-public class InsertionSortTest extends IntArraySortTest {
+public class HeapsortTest extends IntArraySortTest {
 
     @Override
     protected SortingAlgorithm<Integer> sortingAlgorithm() {
-        return new InsertionSort<>();
+        return new Heapsort<>();
     }
 
 }

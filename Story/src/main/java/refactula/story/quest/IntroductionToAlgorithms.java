@@ -24,8 +24,8 @@ public class IntroductionToAlgorithms extends Quest {
                 "introduction_to_algorithms");
 
         writeln(subheader("Tasks"));
-        write(done(questPackage.child("insertion_sort").link("Insertion Sort"), algorithms));
-        write(task("Heapsort", algorithms));
+        write(done(questPackage.link("Insertion Sort", "insertion_sort"), algorithms));
+        write(done(questPackage.link("Heapsort", "heapsort"), algorithms));
         write(task("Quicksort", algorithms));
         write(task("Counting Sort", algorithms));
         write(task("Radix Sort", algorithms));
