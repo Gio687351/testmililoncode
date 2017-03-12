@@ -16,7 +16,7 @@ Completed Quests: [`Story Teller`](#story-teller) [`Design Patterns`](#design-pa
 
 Achievements: [`Let the Journey Begin`](#let-the-journey-begin) [`Gang of One`](#gang-of-one)
 
-Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming) [`Algorithms (6)`](#algorithms)
+Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming) [`Algorithms (7)`](#algorithms)
 
 ## Quests
 
@@ -86,7 +86,7 @@ Implement algorithms from [Introduction to Algorithms](https://www.amazon.com/In
 * [x] [Merge Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/merge_sort) [`+Algorithms`](#algorithms)
 * [x] [Counting Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/counting_sort) [`+Algorithms`](#algorithms)
 * [x] [Radix Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/radix_sort) [`+Algorithms`](#algorithms)
-* [ ] [Bucket Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/bucket_sort) [`+Algorithms`](#algorithms)
+* [x] [Bucket Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/bucket_sort) [`+Algorithms`](#algorithms)
 * [ ] Order Statistics [`+Algorithms`](#algorithms)
 * [ ] Stack [`+Algorithms`](#algorithms)
 * [ ] Queue [`+Algorithms`](#algorithms)
@@ -122,7 +122,7 @@ Proved by: [`Design Patterns (24)`](#design-patterns) [`Story Teller (5)`](#stor
 
 ### Algorithms
 
-Proved by: [`Introduction to Algorithms (6)`](#introduction-to-algorithms).
+Proved by: [`Introduction to Algorithms (7)`](#introduction-to-algorithms).
 
 ## Achievements
 
