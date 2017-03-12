@@ -15,15 +15,15 @@ import static refactula.introduction_to_algorithms.utils.comparator.Comparison.E
 
 public abstract class SortingTest<T> {
 
+    protected int samplesAmount() {
+        return 10000;
+    }
+
     protected abstract SortingAlgorithm<T> sortingAlgorithm();
 
     protected abstract Generator<Array<T>> arrayGenerator();
 
     protected abstract Comparator<T> comparator();
-
-    private int samplesAmount() {
-        return 10000;
-    }
 
     @Test
     public void test() {
