@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **11**  
-Progress: 8.05% (169/2100)  
+Progress: 12.29% (258/2100)  
 
-![Progress: 8.05%](Story/files/progress-bar.png)
+![Progress: 12.29%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Introduction to Algorithms`](#introduction-to-algorithms)
 
@@ -16,7 +16,7 @@ Completed Quests: [`Story Teller`](#story-teller) [`Design Patterns`](#design-pa
 
 Achievements: [`Let the Journey Begin`](#let-the-journey-begin) [`Gang of One`](#gang-of-one)
 
-Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming) [`Algorithms (5)`](#algorithms)
+Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming) [`Algorithms (6)`](#algorithms)
 
 ## Quests
 
@@ -85,7 +85,7 @@ Implement algorithms from [Introduction to Algorithms](https://www.amazon.com/In
 * [x] [Quicksort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/quicksort) [`+Algorithms`](#algorithms)
 * [x] [Merge Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/merge_sort) [`+Algorithms`](#algorithms)
 * [x] [Counting Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/counting_sort) [`+Algorithms`](#algorithms)
-* [ ] Radix Sort [`+Algorithms`](#algorithms)
+* [x] [Radix Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/radix_sort) [`+Algorithms`](#algorithms)
 * [ ] Bucket Sort [`+Algorithms`](#algorithms)
 * [ ] Order Statistics [`+Algorithms`](#algorithms)
 * [ ] Stack [`+Algorithms`](#algorithms)
@@ -122,7 +122,7 @@ Proved by: [`Design Patterns (24)`](#design-patterns) [`Story Teller (5)`](#stor
 
 ### Algorithms
 
-Proved by: [`Introduction to Algorithms (5)`](#introduction-to-algorithms).
+Proved by: [`Introduction to Algorithms (6)`](#introduction-to-algorithms).
 
 ## Achievements
 

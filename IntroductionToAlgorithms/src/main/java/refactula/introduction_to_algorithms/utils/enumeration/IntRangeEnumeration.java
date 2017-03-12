@@ -2,11 +2,11 @@ package refactula.introduction_to_algorithms.utils.enumeration;
 
 import com.google.common.base.Preconditions;
 
-public class IntegerRange implements Enumeration<Integer> {
+public class IntRangeEnumeration implements Enumeration<Integer> {
     private final int minInclusive;
     private final int maxExclusive;
 
-    public IntegerRange(int minInclusive, int maxExclusive) {
+    public IntRangeEnumeration(int minInclusive, int maxExclusive) {
         this.minInclusive = minInclusive;
         this.maxExclusive = maxExclusive;
     }

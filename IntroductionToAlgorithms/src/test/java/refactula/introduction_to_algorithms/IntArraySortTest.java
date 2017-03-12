@@ -3,7 +3,6 @@ package refactula.introduction_to_algorithms;
 import refactula.introduction_to_algorithms.utils.array.Array;
 import refactula.introduction_to_algorithms.utils.array.Arrays;
 import refactula.introduction_to_algorithms.utils.comparator.Comparator;
-import refactula.introduction_to_algorithms.utils.comparator.ComparatorAdapter;
 import refactula.introduction_to_algorithms.utils.generator.Generator;
 import refactula.introduction_to_algorithms.utils.generator.IntegerGenerator;
 import refactula.introduction_to_algorithms.utils.generator.ListGenerator;
@@ -22,11 +21,11 @@ public abstract class IntArraySortTest extends SortingTest<Integer> {
 
     @Override
     protected final Comparator<Integer> comparator() {
-        return ComparatorAdapter.naturalOrder();
+        return Comparator.naturalOrder();
     }
 
     protected int maxArraySize() {
-        return 1000;
+        return 50;
     }
 
     protected int minArraySize() {
