@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **11**  
-Progress: 12.29% (258/2100)  
+Progress: 16.95% (356/2100)  
 
-![Progress: 12.29%](Story/files/progress-bar.png)
+![Progress: 16.95%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Introduction to Algorithms`](#introduction-to-algorithms)
 
@@ -86,7 +86,7 @@ Implement algorithms from [Introduction to Algorithms](https://www.amazon.com/In
 * [x] [Merge Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/merge_sort) [`+Algorithms`](#algorithms)
 * [x] [Counting Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/counting_sort) [`+Algorithms`](#algorithms)
 * [x] [Radix Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/radix_sort) [`+Algorithms`](#algorithms)
-* [ ] Bucket Sort [`+Algorithms`](#algorithms)
+* [ ] [Bucket Sort](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/bucket_sort) [`+Algorithms`](#algorithms)
 * [ ] Order Statistics [`+Algorithms`](#algorithms)
 * [ ] Stack [`+Algorithms`](#algorithms)
 * [ ] Queue [`+Algorithms`](#algorithms)
