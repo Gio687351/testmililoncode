@@ -33,6 +33,7 @@ public class ArrayQueue<T> implements Queue<T> {
             return null;
         }
         T element = array.get(head);
+        array.set(head, null);
         head = (head + 1) % array.length();
         size--;
         return element;
