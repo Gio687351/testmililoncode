@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **11**  
-Progress: 34.71% (729/2100)  
+Progress: 52.90% (1111/2100)  
 
-![Progress: 34.71%](Story/files/progress-bar.png)
+![Progress: 52.90%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Introduction to Algorithms`](#introduction-to-algorithms)
 
@@ -16,7 +16,7 @@ Completed Quests: [`Story Teller`](#story-teller) [`Design Patterns`](#design-pa
 
 Achievements: [`Let the Journey Begin`](#let-the-journey-begin) [`Gang of One`](#gang-of-one)
 
-Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming) [`Algorithms (10)`](#algorithms)
+Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming) [`Algorithms (11)`](#algorithms)
 
 ## Quests
 
@@ -90,7 +90,7 @@ Implement algorithms from [Introduction to Algorithms](https://www.amazon.com/In
 * [x] [Order Statistics](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/order_statistics) [`+Algorithms`](#algorithms)
 * [x] [Stack](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/stack) [`+Algorithms`](#algorithms)
 * [x] [Queue](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/queue) [`+Algorithms`](#algorithms)
-* [ ] Linked List [`+Algorithms`](#algorithms)
+* [x] [Linked List](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/linked_list) [`+Algorithms`](#algorithms)
 * [ ] Hash Table [`+Algorithms`](#algorithms)
 * [ ] Binary Search Tree [`+Algorithms`](#algorithms)
 * [ ] Red-Black Tree [`+Algorithms`](#algorithms)
@@ -122,7 +122,7 @@ Proved by: [`Design Patterns (24)`](#design-patterns) [`Story Teller (5)`](#stor
 
 ### Algorithms
 
-Proved by: [`Introduction to Algorithms (10)`](#introduction-to-algorithms).
+Proved by: [`Introduction to Algorithms (11)`](#introduction-to-algorithms).
 
 ## Achievements
 
