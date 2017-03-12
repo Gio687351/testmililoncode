@@ -1,8 +1,8 @@
 package refactula.introduction_to_algorithms;
 
 import refactula.introduction_to_algorithms.utils.array.Array;
-import refactula.introduction_to_algorithms.utils.array.Arrays;
 import refactula.introduction_to_algorithms.utils.comparator.Comparator;
+import refactula.introduction_to_algorithms.utils.generator.ArrayGenerator;
 import refactula.introduction_to_algorithms.utils.generator.Generator;
 import refactula.introduction_to_algorithms.utils.generator.IntegerGenerator;
 import refactula.introduction_to_algorithms.utils.generator.ListGenerator;
@@ -16,7 +16,7 @@ public abstract class IntArraySortTest extends SortingTest<Integer> {
         Random random = new Random(753951);
         IntegerGenerator elementGenerator = new IntegerGenerator(random, minElement(), maxElement());
         ListGenerator<Integer> listGenerator = new ListGenerator<>(random, elementGenerator, minArraySize(), maxArraySize());
-        return listGenerator.map(Arrays::ofList);
+        return new ArrayGenerator<>(listGenerator);
     }
 
     @Override

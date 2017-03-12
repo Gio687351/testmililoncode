@@ -27,13 +27,11 @@ public abstract class ArraySorting<T> {
         array.set(index, value);
     }
 
-    protected final boolean is(T first, Comparison comparison, T second) {
-        return comparator.is(first, comparison, second);
+    protected final void swap(int i, int j) {
+        array.swap(i, j);
     }
 
-    protected final void swap(int i, int j) {
-        T temp = get(i);
-        set(i, get(j));
-        set(j, temp);
+    protected final boolean is(T first, Comparison comparison, T second) {
+        return comparator.is(first, comparison, second);
     }
 }

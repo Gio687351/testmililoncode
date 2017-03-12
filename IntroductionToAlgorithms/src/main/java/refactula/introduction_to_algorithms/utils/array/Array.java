@@ -8,4 +8,10 @@ public interface Array<T> {
 
     void set(int index, T value);
 
+    default void swap(int i, int j) {
+        T tmp = get(i);
+        set(i, get(j));
+        set(j, tmp);
+    }
+
 }

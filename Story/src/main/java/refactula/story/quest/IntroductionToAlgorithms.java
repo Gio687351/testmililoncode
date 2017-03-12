@@ -31,7 +31,7 @@ public class IntroductionToAlgorithms extends Quest {
         write(done(questPackage.link("Counting Sort", "counting_sort"), algorithms));
         write(done(questPackage.link("Radix Sort", "radix_sort"), algorithms));
         write(done(questPackage.link("Bucket Sort", "bucket_sort"), algorithms));
-        write(task("Order Statistics", algorithms));
+        write(done(questPackage.link("Order Statistics", "order_statistics"), algorithms));
         write(task("Stack", algorithms));
         write(task("Queue", algorithms));
         write(task("Linked List", algorithms));

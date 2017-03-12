@@ -50,35 +50,35 @@ public class Arrays {
         return of(new short[length]);
     }
 
-    public static Array<Boolean> of(boolean[] delegate) {
+    public static Array<Boolean> of(boolean... delegate) {
         return new BooleanArray(delegate);
     }
 
-    public static Array<Byte> of(byte[] delegate) {
+    public static Array<Byte> of(byte... delegate) {
         return new ByteArray(delegate);
     }
 
-    public static Array<Character> of(char[] delegate) {
+    public static Array<Character> of(char... delegate) {
         return new CharArray(delegate);
     }
 
-    public static Array<Double> of(double[] delegate) {
+    public static Array<Double> of(double... delegate) {
         return new DoubleArray(delegate);
     }
 
-    public static Array<Float> of(float[] delegate) {
+    public static Array<Float> of(float... delegate) {
         return new FloatArray(delegate);
     }
 
-    public static Array<Integer> of(int[] delegate) {
+    public static Array<Integer> of(int... delegate) {
         return new IntArray(delegate);
     }
 
-    public static Array<Long> of(long[] delegate) {
+    public static Array<Long> of(long... delegate) {
         return new LongArray(delegate);
     }
 
-    public static Array<Short> of(short[] delegate) {
+    public static Array<Short> of(short... delegate) {
         return new ShortArray(delegate);
     }
 
