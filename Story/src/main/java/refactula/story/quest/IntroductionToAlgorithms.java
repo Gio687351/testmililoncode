@@ -35,6 +35,8 @@ public class IntroductionToAlgorithms extends Quest {
         write(done(questPackage.link("Stack", "stack"), algorithms));
         write(done(questPackage.link("Queue", "queue"), algorithms));
         write(done(questPackage.link("Linked List", "linked_list"), algorithms));
+        write(done(questPackage.link("Binary Tree", "binary_tree"), algorithms));
+        write(task("Linked Tree", algorithms));
         write(done(questPackage.link("Hash Table", "hash_table"), algorithms));
         write(task("Binary Search Tree", algorithms));
         write(task("Red-Black Tree", algorithms));
