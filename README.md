@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **11**  
-Progress: 69.19% (1453/2100)  
+Progress: 77.48% (1627/2100)  
 
-![Progress: 69.19%](Story/files/progress-bar.png)
+![Progress: 77.48%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Introduction to Algorithms`](#introduction-to-algorithms)
 
@@ -16,7 +16,7 @@ Completed Quests: [`Story Teller`](#story-teller) [`Design Patterns`](#design-pa
 
 Achievements: [`Let the Journey Begin`](#let-the-journey-begin) [`Gang of One`](#gang-of-one)
 
-Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming) [`Algorithms (14)`](#algorithms)
+Skills: [`Object-Oriented Programming (29)`](#object-oriented-programming) [`Algorithms (15)`](#algorithms)
 
 ## Quests
 
@@ -94,7 +94,7 @@ Implement algorithms from [Introduction to Algorithms](https://www.amazon.com/In
 * [x] [Binary Tree](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/binary_tree) [`+Algorithms`](#algorithms)
 * [x] [Linked Tree](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/linked_tree) [`+Algorithms`](#algorithms)
 * [x] [Hash Table](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/hash_table) [`+Algorithms`](#algorithms)
-* [ ] Binary Search Tree [`+Algorithms`](#algorithms)
+* [x] [Binary Search Tree](IntroductionToAlgorithms/src/main/java/refactula/introduction_to_algorithms/binary_search_tree) [`+Algorithms`](#algorithms)
 * [ ] Red-Black Tree [`+Algorithms`](#algorithms)
 * [ ] Matrix-chain Multiplication [`+Algorithms`](#algorithms)
 * [ ] Huffman Codes [`+Algorithms`](#algorithms)
@@ -124,7 +124,7 @@ Proved by: [`Design Patterns (24)`](#design-patterns) [`Story Teller (5)`](#stor
 
 ### Algorithms
 
-Proved by: [`Introduction to Algorithms (14)`](#introduction-to-algorithms).
+Proved by: [`Introduction to Algorithms (15)`](#introduction-to-algorithms).
 
 ## Achievements
 
