@@ -6,9 +6,9 @@
 
 Name: **Refactula**  
 Level: **11**  
-Progress: 77.48% (1627/2100)  
+Progress: 90.24% (1895/2100)  
 
-![Progress: 77.48%](Story/files/progress-bar.png)
+![Progress: 90.24%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Introduction to Algorithms`](#introduction-to-algorithms)
 
