@@ -1,5 +1,6 @@
 package refactula.micro.futuristic.utils;
 
+import java.util.Optional;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicReference;
@@ -8,7 +9,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class FutureImpl<T> implements Future<T> {
-    private final AtomicReference<T> result = new AtomicReference<>();
+    private final AtomicReference<Optional<T>> result = new AtomicReference<>();
     private final Queue<Consumer<T>> listeners = new ConcurrentLinkedQueue<>();
 
     @Override
@@ -29,25 +30,30 @@ public class FutureImpl<T> implements Future<T> {
     public <R> Future<R> flatMap(Function<T, Future<R>> function) {
         FutureImpl<R> future = new FutureImpl<>();
         subscribe(value ->
-            function.apply(value).flatMap(x -> {
+            function.apply(value).map(x -> {
                 future.commit(x);
-                return future;
+                return null;
             })
         );
         return future;
     }
 
     public void commit(T value) {
-        if (result.compareAndSet(null, value)) {
+        if (result.compareAndSet(null, Optional.ofNullable(value))) {
             notify(value);
         }
     }
 
     public void subscribe(Consumer<T> listener) {
-        listeners.add(listener);
-        T value = result.get();
+        Optional<T> value = result.get();
         if (value != null) {
-            notify(value);
+            listener.accept(value.orElse(null));
+            return;
+        }
+        listeners.add(listener);
+        value = result.get();
+        if (value != null) {
+            notify(value.orElse(null));
         }
     }
 

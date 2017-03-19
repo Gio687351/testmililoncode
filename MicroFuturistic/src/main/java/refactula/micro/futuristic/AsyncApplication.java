@@ -19,8 +19,11 @@ import refactula.micro.futuristic.model.Username;
 import refactula.micro.futuristic.utils.Logger;
 
 import java.util.Random;
-import java.util.concurrent.Executors;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -28,27 +31,27 @@ public class AsyncApplication {
 
     public static void main(String[] args) {
         Random random = new Random(573042751);
-        Logger logger = System.out::println;
-        // Logger logger = message -> {};
+        // Logger logger = System.out::println;
+        Logger logger = message -> {};
 
         int usersAmount = 100;
-        int messagesAmount = 1000;
-        int minNetworkDelay = 1;
-        int maxNetworkDelay = 10;
+        int messagesAmount = 1000000;
+        int minNetworkDelay = 10;
+        int maxNetworkDelay = 100;
 
-        ScheduledExecutorService accountExecutor = Executors.newScheduledThreadPool(4);
+        ScheduledExecutorService accountExecutor = createThreadPool(4);
         AccountServer accountServer = new AccountServer();
         AccountServiceF accountService = new AccountClientF(accountExecutor, minNetworkDelay, maxNetworkDelay, logger, accountServer);
 
-        ScheduledExecutorService billingExecutor = Executors.newScheduledThreadPool(4);
+        ScheduledExecutorService billingExecutor = createThreadPool(4);
         BillingServer billingServer = new BillingServer();
         BillingServiceF billingService = new BillingClientF(billingExecutor, minNetworkDelay, maxNetworkDelay, logger, billingServer);
 
-        ScheduledExecutorService emailExecutor = Executors.newScheduledThreadPool(4);
+        ScheduledExecutorService emailExecutor = createThreadPool(4);
         EmailServer emailServer = new EmailServer(logger);
         EmailServiceF emailService = new EmailClientF(emailExecutor, minNetworkDelay, maxNetworkDelay, logger, emailServer);
 
-        ScheduledExecutorService frontendExecutor = Executors.newScheduledThreadPool(4);
+        ScheduledExecutorService frontendExecutor = createThreadPool(4);
         FrontendServerF frontendServer = new FrontendServerF(accountService, billingService, emailService);
         FrontendClientF frontendClient = new FrontendClientF(frontendExecutor, minNetworkDelay, maxNetworkDelay, logger, frontendServer);
 
@@ -73,6 +76,33 @@ public class AsyncApplication {
 
         System.out.println("Sent " + messagesAmount + " messages in " + (finishAt - startAt) + " ms");
         System.exit(0);
+    }
+
+    private static ScheduledThreadPoolExecutor createThreadPool(final int corePoolSize) {
+        return new ScheduledThreadPoolExecutor(corePoolSize) {
+            @Override
+            protected void afterExecute(Runnable r, Throwable t) {
+                super.afterExecute(r, t);
+                if (t == null && r instanceof Future<?>) {
+                    try {
+                        Future<?> future = (Future<?>) r;
+                        if (future.isDone()) {
+                            future.get();
+                        }
+                    } catch (CancellationException ce) {
+                        t = ce;
+                    } catch (ExecutionException ee) {
+                        t = ee.getCause();
+                    } catch (InterruptedException ie) {
+                        Thread.currentThread().interrupt(); // ignore/reset
+                    }
+                }
+                if (t != null) {
+                    t.printStackTrace();
+                    System.exit(-1);
+                }
+            }
+        };
     }
 
     private static <T> Supplier<T> indexedGenerator(Function<Integer, T> indexFunction) {
