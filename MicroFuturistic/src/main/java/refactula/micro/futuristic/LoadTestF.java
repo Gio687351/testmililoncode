@@ -7,6 +7,7 @@ import refactula.micro.futuristic.model.Email;
 import refactula.micro.futuristic.model.Token;
 import refactula.micro.futuristic.model.Username;
 import refactula.micro.futuristic.utils.Future;
+import refactula.micro.futuristic.utils.Futures;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +47,7 @@ public class LoadTestF {
     public void run() {
         ConcurrentMap<Username, Token> tokens = new ConcurrentHashMap<>();
         List<Username> users = new ArrayList<>();
-        Future<Void> allTokensReceived = null;
+        List<Future<Void>> allTokensReceived = new ArrayList<>();
         for (int i = 0; i < usersAmount; i++) {
             Username username = usernameSupplier.get();
             Email email = emailSupplier.get();
@@ -57,21 +58,17 @@ public class LoadTestF {
                     frontend.setBillingDetails(username, token, billingDetailsSupplier.get()) .flatMap(afterDetails ->
                     frontend.deposit(username, token, Credits.withAmount(messagesAmount)));
             });
-            allTokensReceived = (allTokensReceived != null)
-                    ? allTokensReceived.map2(tokenReceived, (a, b) -> null)
-                    : tokenReceived;
+            allTokensReceived.add(tokenReceived);
         }
-        Future<Void> simulationFinished = allTokensReceived.flatMap(tokensReceived -> {
-            Future<Void> allTransfersMade = null;
+        Future<List<Void>> simulationFinished = Futures.transform(allTokensReceived).flatMap(tokensReceived -> {
+            List<Future<Void>> allTransfersMade = new ArrayList<>();
             for (int i = 0; i < messagesAmount; i++) {
                 Username sender = users.get(random.nextInt(users.size()));
                 Username receiver = users.get(random.nextInt(users.size()));
                 Future<Void> transferMade = frontend.transfer(sender, tokens.get(sender), receiver, Credits.withAmount(1));
-                allTransfersMade = (allTransfersMade != null)
-                        ? allTransfersMade.map2(transferMade, (a, b) -> null)
-                        : transferMade;
+                allTransfersMade.add(transferMade);
             }
-            return allTransfersMade;
+            return Futures.transform(allTransfersMade);
         });
         CountDownLatch latch = new CountDownLatch(1);
         simulationFinished.map(done -> {
