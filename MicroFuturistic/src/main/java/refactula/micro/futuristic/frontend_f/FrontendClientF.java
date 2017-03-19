@@ -1,4 +1,4 @@
-package refactula.micro.futuristic.frontend;
+package refactula.micro.futuristic.frontend_f;
 
 import refactula.micro.futuristic.model.BillingDetails;
 import refactula.micro.futuristic.model.Credits;

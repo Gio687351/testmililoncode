@@ -1,5 +1,6 @@
-package refactula.micro.futuristic.billing;
+package refactula.micro.futuristic.billing_f;
 
+import refactula.micro.futuristic.billing.BillingService;
 import refactula.micro.futuristic.model.BillingDetails;
 import refactula.micro.futuristic.model.Credits;
 import refactula.micro.futuristic.model.Username;
@@ -9,10 +10,10 @@ import refactula.micro.futuristic.utils.NetworkAdapterF;
 
 import java.util.concurrent.ScheduledExecutorService;
 
-public class BillingClientF extends NetworkAdapterF implements BillingServiceF {
+public class BillingServerF extends NetworkAdapterF implements BillingServiceF {
     private final BillingService billingService;
 
-    public BillingClientF(ScheduledExecutorService executorService, int minDelay, int maxDelay, Logger logger, BillingService billingService) {
+    public BillingServerF(ScheduledExecutorService executorService, int minDelay, int maxDelay, Logger logger, BillingService billingService) {
         super(executorService, minDelay, maxDelay, logger);
         this.billingService = billingService;
     }

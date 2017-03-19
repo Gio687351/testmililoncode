@@ -1,8 +1,8 @@
-package refactula.micro.futuristic.frontend;
+package refactula.micro.futuristic.frontend_f;
 
-import refactula.micro.futuristic.account.AccountServiceF;
-import refactula.micro.futuristic.billing.BillingServiceF;
-import refactula.micro.futuristic.email.EmailServiceF;
+import refactula.micro.futuristic.account_f.AccountServiceF;
+import refactula.micro.futuristic.billing_f.BillingServiceF;
+import refactula.micro.futuristic.email_f.EmailServiceF;
 import refactula.micro.futuristic.model.BillingDetails;
 import refactula.micro.futuristic.model.Credits;
 import refactula.micro.futuristic.model.Email;

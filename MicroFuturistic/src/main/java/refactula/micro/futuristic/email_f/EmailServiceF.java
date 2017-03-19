@@ -1,4 +1,4 @@
-package refactula.micro.futuristic.email;
+package refactula.micro.futuristic.email_f;
 
 import refactula.micro.futuristic.Microservice;
 import refactula.micro.futuristic.model.Email;

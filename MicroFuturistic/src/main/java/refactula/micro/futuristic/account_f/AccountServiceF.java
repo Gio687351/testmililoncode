@@ -1,4 +1,4 @@
-package refactula.micro.futuristic.account;
+package refactula.micro.futuristic.account_f;
 
 import refactula.micro.futuristic.Microservice;
 import refactula.micro.futuristic.model.Token;

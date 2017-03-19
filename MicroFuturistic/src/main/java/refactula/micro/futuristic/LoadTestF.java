@@ -1,6 +1,6 @@
 package refactula.micro.futuristic;
 
-import refactula.micro.futuristic.frontend.FrontendServiceF;
+import refactula.micro.futuristic.frontend_f.FrontendServiceF;
 import refactula.micro.futuristic.model.BillingDetails;
 import refactula.micro.futuristic.model.Credits;
 import refactula.micro.futuristic.model.Email;

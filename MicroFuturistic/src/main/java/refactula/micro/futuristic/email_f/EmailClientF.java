@@ -1,5 +1,6 @@
-package refactula.micro.futuristic.email;
+package refactula.micro.futuristic.email_f;
 
+import refactula.micro.futuristic.email.EmailService;
 import refactula.micro.futuristic.model.Email;
 import refactula.micro.futuristic.model.Username;
 import refactula.micro.futuristic.utils.Future;

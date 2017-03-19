@@ -1,16 +1,16 @@
 package refactula.micro.futuristic;
 
-import refactula.micro.futuristic.account.AccountClientF;
+import refactula.micro.futuristic.account_f.AccountClientF;
 import refactula.micro.futuristic.account.AccountServer;
-import refactula.micro.futuristic.account.AccountServiceF;
-import refactula.micro.futuristic.billing.BillingClientF;
+import refactula.micro.futuristic.account_f.AccountServiceF;
+import refactula.micro.futuristic.billing_f.BillingClientF;
 import refactula.micro.futuristic.billing.BillingServer;
-import refactula.micro.futuristic.billing.BillingServiceF;
-import refactula.micro.futuristic.email.EmailClientF;
+import refactula.micro.futuristic.billing_f.BillingServiceF;
+import refactula.micro.futuristic.email_f.EmailClientF;
 import refactula.micro.futuristic.email.EmailServer;
-import refactula.micro.futuristic.email.EmailServiceF;
-import refactula.micro.futuristic.frontend.FrontendClientF;
-import refactula.micro.futuristic.frontend.FrontendServerF;
+import refactula.micro.futuristic.email_f.EmailServiceF;
+import refactula.micro.futuristic.frontend_f.FrontendClientF;
+import refactula.micro.futuristic.frontend_f.FrontendServerF;
 import refactula.micro.futuristic.model.BillingDetails;
 import refactula.micro.futuristic.model.CVCode;
 import refactula.micro.futuristic.model.CreditCardNumber;
@@ -35,25 +35,44 @@ public class AsyncApplication {
         Logger logger = message -> {};
 
         int usersAmount = 100;
-        int messagesAmount = 1000000;
+        int messagesAmount = 200000;
         int minNetworkDelay = 10;
         int maxNetworkDelay = 100;
+        int executorThreads = 16;
 
-        ScheduledExecutorService accountExecutor = createThreadPool(4);
+        ScheduledExecutorService executor = createThreadPool(executorThreads);
+
         AccountServer accountServer = new AccountServer();
-        AccountServiceF accountService = new AccountClientF(accountExecutor, minNetworkDelay, maxNetworkDelay, logger, accountServer);
+        AccountServiceF accountService = new AccountClientF(
+                executor,
+                minNetworkDelay,
+                maxNetworkDelay,
+                logger,
+                accountServer);
 
-        ScheduledExecutorService billingExecutor = createThreadPool(4);
         BillingServer billingServer = new BillingServer();
-        BillingServiceF billingService = new BillingClientF(billingExecutor, minNetworkDelay, maxNetworkDelay, logger, billingServer);
+        BillingServiceF billingService = new BillingClientF(
+                executor,
+                minNetworkDelay,
+                maxNetworkDelay,
+                logger,
+                billingServer);
 
-        ScheduledExecutorService emailExecutor = createThreadPool(4);
         EmailServer emailServer = new EmailServer(logger);
-        EmailServiceF emailService = new EmailClientF(emailExecutor, minNetworkDelay, maxNetworkDelay, logger, emailServer);
+        EmailServiceF emailService = new EmailClientF(
+                executor,
+                minNetworkDelay,
+                maxNetworkDelay,
+                logger,
+                emailServer);
 
-        ScheduledExecutorService frontendExecutor = createThreadPool(4);
         FrontendServerF frontendServer = new FrontendServerF(accountService, billingService, emailService);
-        FrontendClientF frontendClient = new FrontendClientF(frontendExecutor, minNetworkDelay, maxNetworkDelay, logger, frontendServer);
+        FrontendClientF frontendClient = new FrontendClientF(
+                executor,
+                minNetworkDelay,
+                maxNetworkDelay,
+                logger,
+                frontendServer);
 
         Supplier<Username> usernameSupplier = indexedGenerator(i -> new Username("User #" + i));
         Supplier<Email> emailSupplier = indexedGenerator(i -> new Email("email" + i + "@mail.com"));
