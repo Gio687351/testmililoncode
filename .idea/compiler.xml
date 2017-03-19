@@ -13,6 +13,7 @@
         <module name="Functional" />
         <module name="IntroductionToAlgorithms" />
         <module name="Lambdas" />
+        <module name="MicroFuturistic" />
         <module name="Minecraft" />
         <module name="Minesweeper" />
         <module name="ModernFP" />
@@ -31,6 +32,7 @@
       <module name="Functional" target="1.8" />
       <module name="IntroductionToAlgorithms" target="1.8" />
       <module name="Lambdas" target="1.8" />
+      <module name="MicroFuturistic" target="1.8" />
       <module name="Minecraft" target="1.8" />
       <module name="Minesweeper" target="1.8" />
       <module name="ModernFP" target="1.8" />

@@ -22,6 +22,7 @@
         <module>DesignJam</module>
         <module>Poker</module>
         <module>IntroductionToAlgorithms</module>
+        <module>MicroFuturistic</module>
     </modules>
 
     <dependencies>
