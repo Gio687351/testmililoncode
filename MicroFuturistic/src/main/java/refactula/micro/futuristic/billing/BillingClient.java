@@ -3,13 +3,14 @@ package refactula.micro.futuristic.billing;
 import refactula.micro.futuristic.model.BillingDetails;
 import refactula.micro.futuristic.model.Credits;
 import refactula.micro.futuristic.model.Username;
+import refactula.micro.futuristic.utils.Logger;
 import refactula.micro.futuristic.utils.NetworkClient;
 
 public class BillingClient extends NetworkClient implements BillingService {
     private final BillingService delegate;
 
-    public BillingClient(int minDelay, int maxDelay, BillingService delegate) {
-        super(minDelay, maxDelay);
+    public BillingClient(int minDelay, int maxDelay, Logger logger, BillingService delegate) {
+        super(minDelay, maxDelay, logger);
         this.delegate = delegate;
     }
 

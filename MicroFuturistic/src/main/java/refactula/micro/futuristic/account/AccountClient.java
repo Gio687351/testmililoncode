@@ -2,13 +2,14 @@ package refactula.micro.futuristic.account;
 
 import refactula.micro.futuristic.model.Token;
 import refactula.micro.futuristic.model.Username;
+import refactula.micro.futuristic.utils.Logger;
 import refactula.micro.futuristic.utils.NetworkClient;
 
 public class AccountClient extends NetworkClient implements AccountService {
     private final AccountService delegate;
 
-    public AccountClient(int minDelay, int maxDelay, AccountService delegate) {
-        super(minDelay, maxDelay);
+    public AccountClient(int minDelay, int maxDelay, Logger logger, AccountService delegate) {
+        super(minDelay, maxDelay, logger);
         this.delegate = delegate;
     }
 

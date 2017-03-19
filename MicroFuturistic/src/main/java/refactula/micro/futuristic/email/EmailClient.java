@@ -2,13 +2,14 @@ package refactula.micro.futuristic.email;
 
 import refactula.micro.futuristic.model.Email;
 import refactula.micro.futuristic.model.Username;
+import refactula.micro.futuristic.utils.Logger;
 import refactula.micro.futuristic.utils.NetworkClient;
 
 public class EmailClient extends NetworkClient implements EmailService {
     private final EmailService delegate;
 
-    public EmailClient(int minDelay, int maxDelay, EmailService delegate) {
-        super(minDelay, maxDelay);
+    public EmailClient(int minDelay, int maxDelay, Logger logger, EmailService delegate) {
+        super(minDelay, maxDelay, logger);
         this.delegate = delegate;
     }
 

@@ -1,16 +1,16 @@
 package refactula.micro.futuristic;
 
-import refactula.micro.futuristic.account.AccountClient;
+import refactula.micro.futuristic.account.AccountClientF;
 import refactula.micro.futuristic.account.AccountServer;
-import refactula.micro.futuristic.billing.BillingClient;
+import refactula.micro.futuristic.account.AccountServiceF;
+import refactula.micro.futuristic.billing.BillingClientF;
 import refactula.micro.futuristic.billing.BillingServer;
-import refactula.micro.futuristic.billing.BillingService;
-import refactula.micro.futuristic.email.EmailClient;
+import refactula.micro.futuristic.billing.BillingServiceF;
+import refactula.micro.futuristic.email.EmailClientF;
 import refactula.micro.futuristic.email.EmailServer;
-import refactula.micro.futuristic.email.EmailService;
-import refactula.micro.futuristic.frontend.FrontendClient;
-import refactula.micro.futuristic.frontend.FrontendServer;
-import refactula.micro.futuristic.frontend.FrontendService;
+import refactula.micro.futuristic.email.EmailServiceF;
+import refactula.micro.futuristic.frontend.FrontendClientF;
+import refactula.micro.futuristic.frontend.FrontendServerF;
 import refactula.micro.futuristic.model.BillingDetails;
 import refactula.micro.futuristic.model.CVCode;
 import refactula.micro.futuristic.model.CreditCardNumber;
@@ -19,36 +19,38 @@ import refactula.micro.futuristic.model.Username;
 import refactula.micro.futuristic.utils.Logger;
 
 import java.util.Random;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class SyncApplication {
+public class AsyncApplication {
 
     public static void main(String[] args) {
         Random random = new Random(573042751);
-        //Logger logger = System.out::println;
-        Logger logger = message -> {};
+        Logger logger = System.out::println;
+        // Logger logger = message -> {};
 
         int usersAmount = 100;
         int messagesAmount = 1000;
         int minNetworkDelay = 1;
         int maxNetworkDelay = 10;
-        int executorThreads = 16;
 
+        ScheduledExecutorService accountExecutor = Executors.newScheduledThreadPool(4);
         AccountServer accountServer = new AccountServer();
-        AccountClient accountService = new AccountClient(minNetworkDelay, maxNetworkDelay, logger, accountServer);
+        AccountServiceF accountService = new AccountClientF(accountExecutor, minNetworkDelay, maxNetworkDelay, logger, accountServer);
 
+        ScheduledExecutorService billingExecutor = Executors.newScheduledThreadPool(4);
         BillingServer billingServer = new BillingServer();
-        BillingService billingService = new BillingClient(minNetworkDelay, maxNetworkDelay, logger, billingServer);
+        BillingServiceF billingService = new BillingClientF(billingExecutor, minNetworkDelay, maxNetworkDelay, logger, billingServer);
 
+        ScheduledExecutorService emailExecutor = Executors.newScheduledThreadPool(4);
         EmailServer emailServer = new EmailServer(logger);
-        EmailService emailService = new EmailClient(minNetworkDelay, maxNetworkDelay, logger, emailServer);
+        EmailServiceF emailService = new EmailClientF(emailExecutor, minNetworkDelay, maxNetworkDelay, logger, emailServer);
 
-        FrontendServer frontendServer = new FrontendServer(accountService, billingService, emailService);
-        FrontendService frontendService = new FrontendClient(minNetworkDelay, maxNetworkDelay, logger, frontendServer);
-        ExecutorService executorService = Executors.newFixedThreadPool(executorThreads);
+        ScheduledExecutorService frontendExecutor = Executors.newScheduledThreadPool(4);
+        FrontendServerF frontendServer = new FrontendServerF(accountService, billingService, emailService);
+        FrontendClientF frontendClient = new FrontendClientF(frontendExecutor, minNetworkDelay, maxNetworkDelay, logger, frontendServer);
 
         Supplier<Username> usernameSupplier = indexedGenerator(i -> new Username("User #" + i));
         Supplier<Email> emailSupplier = indexedGenerator(i -> new Email("email" + i + "@mail.com"));
@@ -56,12 +58,11 @@ public class SyncApplication {
                 new CreditCardNumber(String.valueOf(i)),
                 new CVCode(String.valueOf(i))));
 
-        LoadTest loadTest = new LoadTest(
+        LoadTestF loadTest = new LoadTestF(
                 random,
                 usersAmount,
                 messagesAmount,
-                frontendService,
-                executorService,
+                frontendClient,
                 usernameSupplier,
                 emailSupplier,
                 billingDetailsSupplier);

@@ -5,13 +5,14 @@ import refactula.micro.futuristic.model.Credits;
 import refactula.micro.futuristic.model.Email;
 import refactula.micro.futuristic.model.Token;
 import refactula.micro.futuristic.model.Username;
+import refactula.micro.futuristic.utils.Logger;
 import refactula.micro.futuristic.utils.NetworkClient;
 
 public class FrontendClient extends NetworkClient implements FrontendService {
     private final FrontendService delegate;
 
-    public FrontendClient(int minDelay, int maxDelay, FrontendService delegate) {
-        super(minDelay, maxDelay);
+    public FrontendClient(int minDelay, int maxDelay, Logger logger, FrontendService delegate) {
+        super(minDelay, maxDelay, logger);
         this.delegate = delegate;
     }
 
