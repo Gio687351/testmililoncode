@@ -5,10 +5,10 @@
 <img src="https://github.com/Refactula.png" alt="Vlad the Refactula" width="200px"/>
 
 Name: **Refactula**  
-Level: **11**  
-Progress: 90.24% (1895/2100)  
+Level: **12**  
+Progress: 54.78% (1260/2300)  
 
-![Progress: 90.24%](Story/files/progress-bar.png)
+![Progress: 54.78%](Story/files/progress-bar.png)
 
 Ongoing Quests: [`Introduction to Algorithms`](#introduction-to-algorithms)
 
