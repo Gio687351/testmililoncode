@@ -33,7 +33,7 @@ public class LargeNumber {
     }
 
     public void sum(LargeNumber x, LargeNumber y) {
-        byte reminder = 0;
+        int reminder = 0;
         setZero();
         while (usedDigits < x.getDigitsAmount() || usedDigits < y.getDigitsAmount() || reminder > 0) {
             reminder += x.getDigit(usedDigits) + y.getDigit(usedDigits);
